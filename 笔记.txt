@@ -5,3 +5,12 @@
 
 
 document type文档类型
+
+div+css
+table
+
+标签都是矩形的（框）
+行级元素（inline）span、a、img：行级元素的宽高是内容撑开的，行级元素和行级元素会在一行显示
+块级元素（block）h1~h6\div\p\li\ul\ol\table：块级元素可以设置宽高、不设置宽的时候宽就是充满他的父元素、自己占一行
+
+
