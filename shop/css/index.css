@@ -1,0 +1,21 @@
+#header{
+    background: url(../img/banner.jpg) no-repeat center;
+    height: 600px;
+}
+#login, #header h1{
+    color: #fff;
+}
+#cart{
+    width: 260px;
+    height: 30px;
+    background: #000;
+    opacity: .5;/* 取值范围0~1 */
+    filter: alpha(opacity=50);/* ie下  取值范围0~100 */
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#header img{
+    vertical-align: middle;
+}

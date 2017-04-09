@@ -14,3 +14,36 @@ table
 块级元素（block）h1~h6\div\p\li\ul\ol\table：块级元素可以设置宽高、不设置宽的时候宽就是充满他的父元素、自己占一行
 
 
+css选择器：
+1、元素/标签选择器  h1{}
+2、id选择器  #id{}
+3、class/类选择器  .class{}
+4、后代选择器  h1 div{}
+5、子代选择器  h1 > div{}  有兼容性问题  css hack
+6、分组选择器  h1,div,p{}
+
+
+选择器的权重值：
+id:100  class:10  tag:1
+
+
+IETester.exe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
