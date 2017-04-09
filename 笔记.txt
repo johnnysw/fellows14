@@ -1,0 +1,7 @@
+网页开发：
+1、html：内容
+2、css：样式
+3、javascript：交互
+
+
+document type文档类型
