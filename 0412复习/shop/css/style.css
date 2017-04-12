@@ -1,0 +1,15 @@
+/* css重置 */
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+/* 在ie6下，如果a里面包含img标签，会自带一个蓝色的边框 */
+img{
+    border: 0;
+}

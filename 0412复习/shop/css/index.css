@@ -1,0 +1,20 @@
+#header{
+    background: url(../img/banner.jpg) center center no-repeat;
+    height: 600px;
+}
+.login{
+    color: #fff;
+}
+.cart{
+    background: #000000;
+    width: 260px;
+    height: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    opacity: .7;/* 0~1 */
+    filter: alpha(opacity=70);/* 0~100 兼容早期ie*/
+    cursor: pointer;/* 鼠标变成小手 */
+}
+.cart img{
+    vertical-align: middle;
+}
