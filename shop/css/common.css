@@ -13,3 +13,11 @@ li{
     list-style: none;
 }
 /* css重置结束 */
+
+.wrapper{
+    width: 1140px;
+    height: 100%;
+    /*background: #cccccc;*/
+    margin: 0 auto;
+}
+
