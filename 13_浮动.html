@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .aa{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        .div1{
+            background: #ff0000;
+        }
+        .div2{
+            background: #00ff00;
+        }
+        .div3{
+            background: #ffff00;
+        }
+        #div4{
+            /*width: 800px;*/
+            /*height: 600px;*/
+            border: 2px solid #000;
+        }
+        li{
+            list-style: none;
+            float: left;
+            width: 100px;
+            height: 30px;
+            background: #cccccc;
+            color: #fff;
+            margin-right: 5px;
+            text-align: center;/*文字水平居中*/
+            line-height: 30px;
+            /* 行间距。对于单行文字，行高等于高可以让单行文字垂直居中显示*/
+            cursor: pointer;
+        }
+        #nav{
+            /*height: 30px;*/
+            float: right;
+            width: 575px;
+        }
+    </style>
+</head>
+<body>
+    <!--<div id="div4">
+        <div class="aa div1">div1</div>
+        <div class="aa div2">div2</div>
+        <div class="aa div3">div3</div>
+    </div>-->
+
+    <ul id="nav">
+        <li>首页</li>
+        <li>美妆商城</li>
+        <li>特卖专场</li>
+        <li>新品上市</li>
+        <li>超人推荐</li>
+    </ul>
+    <!--<h1>hhhhhhh</h1>-->
+
+</body>
+</html>
+
+<!--
+float:left/right;
+浮动：浮动的元素空间释放，脱离文档流
+
+元素塌陷：子元素脱离文档流，父元素没有高度
+1、给父元素固定高度
+2、给父元素也浮动
+-->

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .aa{
+            width: 200px;
+            height: 200px;
+        }
+        .div1{
+            background: #ff0000;
+        }
+        .div2{
+            background: #00ff00;
+            /*clear: both;!* 清除s浮动，left/right/both *!*/
+
+            float: left;
+
+        }
+        .div3{
+            background: #ffff00;
+        }
+        #div4{
+            /*width: 800px;*/
+            /*height: 600px;*/
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div4">
+        <div class="aa div1">div1</div>
+        <div class="aa div2">div2</div>
+        <div class="aa div3">div3</div>
+    </div>
+
+</body>
+</html>
+
+<!--
+float:left/right;
+浮动：浮动的元素空间释放，脱离文档流
+
+元素塌陷：子元素脱离文档流，父元素没有高度
+1、给父元素固定高度
+2、给父元素也浮动
+-->
