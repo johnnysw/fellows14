@@ -1,3 +1,7 @@
+body{
+    height: 2000px;
+}
+/*  header开始  */
 #header{
     background: url(../img/banner.jpg) no-repeat center;
     height: 600px;
@@ -13,10 +17,10 @@
 #login a{
     color: #fff;
 }
-div.float#cart{
+#main-header #cart{
     width: 260px;
     height: 30px;
-    background: #000;
+    background: #000 url(../img/cart.png) 230px center no-repeat;
     opacity: .5;/* 取值范围0~1 */
     filter: alpha(opacity=50);/* ie下  取值范围0~100 */
     color: #fff;
@@ -24,7 +28,7 @@ div.float#cart{
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 25px;
-    line-height: 0;
+    line-height: 30px;
     float: right;
 }
 #header img{
@@ -70,10 +74,93 @@ div.float#cart{
 #makeup:hover #submenu{
     display: block;
 }
+#main-header p{
+    color: #fff;
+    position: relative;
+    left: 190px;
+    top: 35px;
+}
 
+/*  header结束  */
 
+/*  new-product开始  */
+#new-product{
+    margin-top: 56px;
+    height: 266px;
+}
+#new-product .sale{
+    width: 360px;
+    height: 210px;
+    /*position: relative;
+    top: 0;
+    left: 0;*/
+    background-repeat:  no-repeat;
+    float: left;
+    margin-right: 30px;
+}
+#new-product .bg1{
+    background-image: url(../img/bg1.jpg);
+}
+#new-product .bg2{
+    background-image: url(../img/bg2.jpg);
+}
+#new-product .bg3{
+    background-image: url(../img/bg3.jpg);
+    margin-right: 0;
+}
+#new-product .sale h4{
+    /*position: absolute;
+    right: 50px;
+    bottom: 50px;*/
+    margin-top: 150px;
+    margin-left: 200px;
+    color: #fff;
+    font-size: 30px;/* 字体大小 */
+}
+/*  new-product结束  */
 
+/* product开始 */
+.product-info{
+    width: 340px;
+    height: 440px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.product-info img{
+    width: 248px;
+    height: 248px;
+    border: 1px solid #ccc;
+}
+.product-info .new{
+    background: #fa558f;
+    color: #fff;
+    float: right;
+}
+.product-detail{
+    margin-left: 10px;
+}
+.product-detail h3{
+    margin-top: 10px;
+}
+.add{
+    width: 150px;
+    height: 50px;
+    background: orange;
+    color: #fff;
+    border: 0;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.product-detail input{
+    width: 150px;
+    height: 30px;
+    text-indent: 10px;
+    outline: none;
+}
 
+/* product结束 */
 
 
 

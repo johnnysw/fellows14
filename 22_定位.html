@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+            /*position: relative;
+            left: 200px;
+            top: 200px;*/
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        #div3{
+            width: 500px;
+            height: 500px;
+            background: #ffff00;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        body{
+            height: 2000px;
+        }
+        #div4{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: fixed;
+            left: 0;
+            top: 400px
+        }
+    </style>
+</head>
+<body>
+   <!-- <div id="div3">
+        <div id="div1">
+            <div id="div2"></div>
+        </div>
+    </div>-->
+    <div id="div4">
+        请联系我
+    </div>
+</body>
+</html>
+
+<!--
+定位position：
+相对定位relative：相对定位是相对于自己的初始位置，不空间释放，不脱离文档流
+绝对定位absolute：相对于离他最近的已经定位的祖先元素，脱离文档流
+固定定位fixed:相对于浏览器，有兼容性问题
+默认值static
+
+-->
