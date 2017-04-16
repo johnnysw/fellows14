@@ -40,6 +40,7 @@
 #main-header{
     height: 100px;
     line-height: 100px;
+    position: relative;
 }
 #nav li{
     width: 190px;
@@ -73,8 +74,8 @@
 }
 #main-header p{
     color: #fff;
-    position: relative;
-    left: 190px;
+    position: absolute;
+    right: 110px;
     top: 35px;
 }
 
