@@ -1,0 +1,14 @@
+#header{
+    background: url(../img/banner.jpg) no-repeat center center;
+    height: 600px;
+}
+#login, #my-shop, #cart{
+    color: #fff;
+    float: left;
+    width: 380px;
+}
+#login:hover{
+    text-decoration: underline;
+}
+
+

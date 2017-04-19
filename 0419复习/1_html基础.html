@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--  字符集 -->
+        <meta charset="UTF-8">
+        <title>淘宝网我喜欢</title>
+        <style>
+            #div1{
+                background: #f00;
+            }
+            #div2{
+                background: #ccc;
+            }
+            .aa{
+                width: 200px;
+                height: 200px;
+            }
+
+            /*
+                r:red
+                g:green
+                b:blue
+            */
+        </style>
+    </head>
+    <body>
+        <h1>这是一个h1标签</h1>
+        <h2>这是一个h2标签</h2>
+        <h3>这是一个h3标签</h3>
+        <h4>这是一个h4标签</h4>
+        <h5>这是一个h5标签</h5>
+        <h6>这是一个h6标签</h6>
+
+        <a href="http://www.baidu.com" target="_blank">baidu</a>
+        <a href="http://www.baidu.com" target="_blank">baidu</a>
+
+        <ol>
+            <li>列表1</li>
+            <li>列表2</li>
+            <li>列表3</li>
+            <li>列表4</li>
+        </ol>
+
+        <ul>
+            <li><a href="http://www.baidu.com">baidu</a></li>
+            <li>列表2</li>
+            <li>列表3</li>
+            <li>列表4</li>
+        </ul>
+
+
+        <img src="img/01.jpg" alt="图片加载失败" title="这是一张图片">
+
+        <p>ppppppp</p>
+
+        <!-- 内联样式  -->
+        <div id="div1" class="aa">div+css</div>
+        <div id="div2" class="aa">div+css</div>
+
+        <span style="background: green;width: 200px;height: 200px;">spanspan</span>
+        <span style="background: green;">spanspan</span>
+
+    </body>
+</html>
+<!--
+行级元素inline：a\img\span:行级元素和行级元素在一行显示，行级元素不能够设置宽高，宽高是通过内容撑开的
+块级元素block:div\ul\ol\p\h1~h6:块级元素自己占一行，可以设置宽高
+
+语义化
+
+css选择器：
+1、元素/标签选择器  div{}
+2、id选择器  #id{}
+3、class选择器  .class{}
+4、后代选择器   #div1 div{}
+5、子代选择器   #div1 > div{}  兼容性问题
+6、分组选择器  #div1,#div2{}
+7、伪类选择器   ：hover{}  早期ie，只支持给a加hover
+
+-->
+
+

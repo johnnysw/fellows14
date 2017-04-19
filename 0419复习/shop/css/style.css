@@ -1,0 +1,19 @@
+/* css重置  */
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+img{
+    border: 0;
+}
+.wrapper{
+    width: 1140px;
+    background: #cccccc;
+    margin: 0 auto;
+}
