@@ -12,8 +12,9 @@ li{
 img{
     border: 0;
 }
+/* css重置  */
 .wrapper{
     width: 1140px;
-    background: #cccccc;
+    /*background: #cccccc;*/
     margin: 0 auto;
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            width: 200px;
+            height: 200px;
+        }
+        .div1{
+            background: #ff0000;
+        }
+        .div2{
+            background: #00ff00;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        .div3{
+            background: #ffff00;
+        }
+        #div4{
+            width: 100px;
+            height: 100px;
+            background: #cccccc;
+            position: fixed;
+            left: 20px;
+            top: 200px;
+        }
+        #div5{
+            width: 50px;
+            height: 50px;
+            background: #ddd;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="aa div1"></div>
+    <div class="aa div2"></div>
+    <div class="aa div3"></div>
+
+    <div id="div4">
+        <div id="div5"></div>
+    </div>
+</body>
+</html>
+
+<!--
+position:
+static:默认值
+relative：相对定位, 相对于自己的初始位置，不空间释放不脱离文档流
+absolute:绝对定位，相对于离他最近的已经定位的祖先元素，如果祖先元素都没定位那就相对于body，脱离文档流
+fixed:固定定位,相对于浏览器，脱离文档流
+
+-->
