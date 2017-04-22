@@ -88,9 +88,11 @@ li{
 #submenu{
     width: 1140px;
     height: 300px;
-    background: #ffffff;
+    background: #ccc;
     margin-left: -190px;
     display: none;
+    position: relative;
+    z-index: 1;
 }
 #makeup:hover #submenu{
     display: block;
