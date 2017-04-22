@@ -21,3 +21,86 @@ li{
     margin: 0 auto;
 }
 
+/*  header开始  */
+#header{
+    background: url(../img/banner.jpg) no-repeat center;
+    height: 600px;
+}
+#login a:hover{
+    text-decoration: underline;
+    /*border-bottom: 1px solid #fff;*/
+}
+#login, #header h1{
+    color: #fff;
+    width: 380px;
+}
+#login a{
+    color: #fff;
+}
+#main-header #cart{
+    width: 260px;
+    height: 30px;
+    background: #000 url(../img/cart.png) 230px center no-repeat;
+    opacity: .5;/* 取值范围0~1 */
+    filter: alpha(opacity=50);/* ie下  取值范围0~100 */
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 25px;
+    line-height: 30px;
+    float: right;
+}
+#header img{
+    vertical-align: middle;
+}
+#header .float{
+    float: left;
+}
+#header h1.float{
+    text-align: center;
+}
+#main-header{
+    height: 100px;
+    line-height: 100px;
+    position: relative;
+}
+#nav li{
+    width: 190px;
+    height: 40px;
+    background: #fa558f;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+#nav li:hover{
+    background: #3c3b3b;
+}
+#nav a{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#nav .selected{
+    background: #3c3b3b;
+}
+#submenu{
+    width: 1140px;
+    height: 300px;
+    background: #ffffff;
+    margin-left: -190px;
+    display: none;
+}
+#makeup:hover #submenu{
+    display: block;
+}
+#main-header p{
+    color: #fff;
+    position: absolute;
+    right: 110px;
+    top: 35px;
+}
+
+/*  header结束  */
+

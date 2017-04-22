@@ -1,0 +1,17 @@
+#header{
+    background: url(../img/banner33.jpg) no-repeat center;
+    height: 250px;
+}
+#brand{
+    margin-top: 30px;
+}
+#brand a{
+    float: left;
+    width: 116px;
+    height: 99px;
+    margin-right: 23px;
+    margin-bottom: 20px;
+}
+#brand img{
+
+}
