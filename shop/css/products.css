@@ -1,0 +1,92 @@
+#boutique{
+    height: 1038px;
+    margin-top: 50px;
+}
+#menu{
+    width: 240px;
+}
+#menu h4{
+    background: #464646;
+    width: 230px;
+    height: 35px;
+    color: #fff;
+    line-height: 35px;
+    padding-left: 10px;
+}
+#menu li{
+    width: 230px;
+    height: 35px;
+    background: #f9f9f9;
+    padding-left: 10px;
+    color: #8c8c8c;
+    margin-top: 10px;
+    line-height: 35px;
+    position: relative;
+    cursor: pointer;
+}
+#menu li img{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -5px;
+}
+#brand label{
+    color: #555555;
+    margin-left: 20px;
+    margin-top: 2px;
+    display: block;
+    cursor: pointer;
+}
+#brand label input{
+    margin-right: 5px;
+}
+#product{
+    width: 800px;
+    margin-left: 50px;
+}
+#product .product-info{
+    width: 248px;
+    height: 456px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+#product .product-info img{
+    width: 248px;
+    height: 248px;
+    display: block;
+}
+#product .product-detail{
+    background: #fcf9ff;
+    height: 198px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#product .add{
+    width: 150px;
+    height: 50px;
+    background: orange;
+    color: #fff;
+    border: 0;
+    margin-top: 5px;
+    font-size: 20px;
+    outline: none;
+}
+.product-detail input{
+    width: 150px;
+    height: 30px;
+    text-indent: 10px;
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
