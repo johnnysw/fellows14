@@ -1,0 +1,64 @@
+#header{
+    background: url(../img/banner33.jpg) no-repeat center;
+    height: 250px;
+}
+#register-info{
+    height: 500px;
+    margin-top: 30px;
+}
+#register-info .reg{
+    color: #999;
+    margin: 20px 0;
+}
+#register-info .reg a{
+    color: #000;
+}
+#register-info .reg a:hover{
+    color: #EF8743;
+    text-decoration: underline;
+}
+#register-info p{
+    margin-top: 20px;
+}
+#reg-form{
+    width: 555px;
+    height: 318px;
+}
+#reg-form label span{
+    width: 150px;
+    float: left;/* 1.使span可以设置宽高，2.在一行  */
+    color: #5d5959;
+}
+#reg-form label input{
+    width: 400px;
+    height: 38px;
+    outline: none;
+    text-indent: 10px;
+}
+/* 属性选择器 */
+#register-info input[type="submit"]{
+    width: 444px;
+    height: 41px;
+    background: #EF8743;
+    color: #fff;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 55px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#register-info input[type="submit"]:hover {
+    background: #ffffff;
+    color: #000;
+    border: 1px solid #000;
+}
+#register-info .promise{
+    width: 555px;
+    margin-left: 30px;
+}
+#register-info .promise h3{
+    color: #EF8743;
+}
+

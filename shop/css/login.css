@@ -4,6 +4,7 @@
 }
 #login-container{
     margin-top: 30px;
+    height: 350px;
 }
 #login-container form{
     width: 570px;
@@ -69,6 +70,10 @@
     height: 42px;
     background: #fff;
     border: 1px solid #000;
+    display: block;
+    text-align: center;
+    line-height: 42px;
+    color: #000;
 }
 #register .btn:hover {
     background: #EF8743;

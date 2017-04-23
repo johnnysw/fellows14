@@ -1,4 +1,7 @@
-
+#header{
+    background: url(../img/banner.jpg) no-repeat center;
+    height: 600px;
+}
 
 /*  new-product开始  */
 #new-product{
@@ -117,22 +120,6 @@
 
 /* problem结束 */
 
-/* footer开始 */
-#footer{
-    height: 82px;
-    background: #fa558f;
-    line-height: 82px;
-}
-#footer h3, #footer h4{
-    color: #fff;
-}
-#footer h3{
-    float: left;
-}
-#footer h4{
-    float: right;
-}
-/* footer结束 */
 
 
 

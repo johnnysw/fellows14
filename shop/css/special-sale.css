@@ -4,6 +4,7 @@
 }
 #brand{
     margin-top: 30px;
+    height: 300px;
 }
 #brand a{
     float: left;
@@ -12,6 +13,50 @@
     margin-right: 23px;
     margin-bottom: 20px;
 }
-#brand img{
-
+#good{
+    height: 1000px;
+}
+.product-info{
+    width: 340px;
+    height: 440px;
+    border: 1px solid #ccc;
+    float: left;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.product-info img{
+    width: 248px;
+    height: 248px;
+    border: 1px solid #ccc;
+    vertical-align: bottom;
+}
+.product-info .new{
+    background: #fa558f;
+    color: #fff;
+    float: right;
+}
+.product-detail{
+    background: #ccc;
+    height: 180px;
+    /*width: 340px;*/
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.product-detail h3{
+    /*margin-top: 10px;*/
+}
+.add{
+    width: 150px;
+    height: 50px;
+    background: orange;
+    color: #fff;
+    border: 0;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.product-detail input{
+    width: 150px;
+    height: 30px;
+    text-indent: 10px;
+    outline: none;
 }

@@ -23,8 +23,8 @@ li{
 
 /*  header开始  */
 #header{
-    background: url(../img/banner.jpg) no-repeat center;
-    height: 600px;
+    background: url(../img/banner33.jpg) no-repeat center;
+    height: 250px;
 }
 #login a:hover{
     text-decoration: underline;
@@ -38,23 +38,28 @@ li{
     color: #fff;
 }
 #main-header #cart{
-    width: 260px;
-    height: 30px;
+    width: 280px;
+    height: 50px;
     background: #000 url(../img/cart.png) 230px center no-repeat;
     opacity: .5;/* 取值范围0~1 */
     filter: alpha(opacity=50);/* ie下  取值范围0~100 */
     color: #fff;
     text-align: center;
-    padding: 10px 20px;
     cursor: pointer;
     margin-top: 25px;
-    line-height: 30px;
+    line-height: 50px;
     float: right;
+}
+#cart a{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 #header img{
     vertical-align: middle;
 }
-#header .float{
+.float{
     float: left;
 }
 #header h1.float{
@@ -101,8 +106,26 @@ li{
     color: #fff;
     position: absolute;
     right: 110px;
-    top: 35px;
+    top: 75px;
+    height: 25px;
+    line-height: 25px;
 }
-
 /*  header结束  */
+
+/* footer开始 */
+#footer{
+    height: 82px;
+    background: #fa558f;
+    line-height: 82px;
+}
+#footer h3, #footer h4{
+    color: #fff;
+}
+#footer h3{
+    float: left;
+}
+#footer h4{
+    float: right;
+}
+/* footer结束 */
 

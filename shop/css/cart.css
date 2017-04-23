@@ -1,0 +1,115 @@
+#cart-container{
+    height: 600px;
+    background: #efefef;
+}
+#cart-mine{
+    width: 855px;
+    height: 504px;
+    margin-top: 50px;
+}
+#cart-price{
+    width: 280px;
+    height: 381px;
+    margin-top: 50px;
+}
+#cart-mine .cosmetic{
+    width: 134px;
+    height: 134px;
+    float: left;
+}
+#cart-mine .cart-detail{
+    width: 840px;
+    height: 204px;
+    margin-top: 30px;
+}
+#cart-mine .close{
+    float: right;
+    cursor: pointer;
+}
+#cart-mine .cart-info{
+    float: left;
+    margin-left: 30px;
+}
+#cart-mine .price{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #000;
+    width: 625px;
+}
+#cart-mine .on-sale{
+    margin-right: 50px;
+    font-size: 20px;
+}
+#cart-mine input[type="number"]{
+    width: 82px;
+    height: 34px;
+    text-indent: 10px;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+#cart-mine .time span{
+    color: #999;
+    font-size: 14px;
+}
+#cart-mine .time{
+    padding-top: 20px;
+}
+#cart-mine .arrive{
+    float: right;
+}
+#cart-price{
+    border-left: 1px solid #000;
+}
+#cart-price .btn{
+    width: 140px;
+    height: 40px;
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 70px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+#cart-price .continue{
+    background: orange;
+}
+#cart-price .continue:hover{
+    background: #000;
+}
+#cart-price .submit{
+    background: #000000;
+}
+#cart-price .submit:hover{
+    background: orange;
+}
+#cart-price .description{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 70px;
+}
+#cart-price .gap{
+    margin-right: 70px;
+}
+#cart-price .total{
+    margin-left: 70px;
+}
+#cart-price .total .sum{
+    font-weight: bolder;
+}
+#cart-price .total div{
+    border-top: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
