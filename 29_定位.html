@@ -8,32 +8,41 @@
             margin: 0;
             padding: 0;
         }
-        div{
-            position: absolute;
-            top: 0;
-            left: 0;
+        body{
+            height: 2200px;
         }
         #div1{
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             background: #ff0000;
-            z-index: 1;
+            position: relative;
+            left: 100px;
+            top: 100px;
         }
         #div2{
             width: 200px;
             height: 200px;
             background: #00ff00;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
         }
         #div3{
             width: 100px;
             height: 100px;
-            background: #ffff00;
+            background: #cccccc;
+            position: fixed;
+            left: 10px;
+            top: 500px;
         }
     </style>
 </head>
 <body>
-    <div id="div1"></div>
-    <div id="div2"></div>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
     <div id="div3"></div>
 </body>
 </html>

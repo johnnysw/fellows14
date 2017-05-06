@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="鲜花，很多鲜花">
+        <meta name="description" content="这是一个卖鲜花的网站">
+        <!-- 在选项卡里显示图片 -->
+        <link rel="shortcut icon" href="favicon.ico" />
+        <title>Title</title>
+        <style>
+            body{
+                height: 4000px;
+            }
+            a{
+                background: #ff0000;
+                width: 200px;
+                height: 200px;
+                /*float: left;*/
+                display: block;
+            }
+            /*div{*/
+                /*background: #00ff00;*/
+                /*width: 200px;*/
+                /*height: 200px;*/
+                /*display: inline;*/
+
+            /*}*/
+            /* css3选择器 兄弟选择器 */
+            #div1 ~ h1{
+                background: #ff0000;
+            }
+            #p1{
+                width: 300px;
+                border: 1px solid #000;
+            }
+            /* css3 伪元素选择器 */
+            /*#p1::first-letter{
+                background: #ff0000;
+            }*/
+            #p1::first-line{
+                background: #ff0000;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>h1</h1>
+        <h6>h6</h6>
+        <div>div</div>
+        <a href="http://www.baidu.com" target="_blank">baidu</a>
+        <a href="http://www.baidu.com" target="_blank">baidu</a>
+        <ol>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+            <li>1</li>
+        </ol>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <p>pppp</p>
+        <img src="img/2.jpg" alt="图片加载失败" title="123">
+        <table border="1">
+            <tr>
+                <td colspan="2">11</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>44</td>
+            </tr>
+        </table>
+        <form action="">
+            <label>用户名:<input type="text" id="username"></label><br>
+            <label>密码： <input type="password"></label><br>
+            性别： <label><input type="radio" name="sex">男</label>
+            <label><input type="radio" name="sex">女</label><br>
+            爱好：
+                <label><input type="checkbox" name="hobby">足球</label>
+                <label><input type="checkbox" name="hobby">篮球</label>
+                <label><input type="checkbox" name="hobby">排球</label><br>
+            学校：
+            <select name="" id="">
+                <option value="">黑大</option>
+                <option value="">理工</option>
+                <option value="">农大</option>
+                <option value="">林大</option>
+            </select><br>
+            数量：<input type="number"><!-- html5 -->
+            <br>
+            邮箱： <input type="email"><!-- html5 -->
+            <br>
+            日期： <input type="date"><!-- html5 -->
+            <br>
+            范围：<input type="range"><!-- html5 -->
+            <br>
+            <input type="submit" value="提交">
+            <input type="reset">
+        </form>
+
+        <h1>1</h1>
+        <h1>2</h1>
+        <h1>3</h1>
+        <div id="div1">div1</div>
+        <h1>1</h1>
+        <h1>2</h1>
+        <h1>3</h1>
+
+        <p id="p1">
+            阿斯顿发生发阿斯顿发送到阿斯顿发生的发生阿斯顿发斯蒂芬分
+        </p>
+    </body>
+</html>
+<!--
+行级元素inline  a  img  span
+块级元素block
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
