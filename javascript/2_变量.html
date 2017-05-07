@@ -5,7 +5,6 @@
         <title>Title</title>
     </head>
     <body>
-
         <script>
             /*
                 其他语言变量的定义：
@@ -34,7 +33,7 @@
             var school;
             var f;//undefined
 
-            console.log(typeof a);
+            /*console.log(typeof a);
             console.log(typeof b);
             console.log(typeof c);
             console.log(typeof d);
@@ -43,7 +42,7 @@
             console.log(typeof(f));
 
             console.log(a + 2);
-            console.log(a * 2);
+            console.log(a * 2);*/
 
 //            var 34bad;//不能以数字开头
 //            var per人 = 55;//不能包含中文
@@ -59,18 +58,42 @@
             console.log(typeof g);
             g = "abc";
             console.log(typeof g);
-            alert(g);
+//            alert(g);
 //            alert(h);
             var j;
             g += "def";//相当于：g = g + "def";
             console.log(g);
 
             var k = 5;
-            console.log(typeof(k + "10"));
-            console.log(k - "a");
+//            console.log(typeof(k + "10"));
+//            console.log(k - "a");
 
+            console.log(++k);//k = k + 1;
+            console.log(k);
+            console.log(2 == "2");
+//            alert( (2<4)==(5>3)==(3<=3)==(2>=2)==(2!=2)==(2==2)==true );
+            console.log(5 / 0);
+            var l = false;//true:1  false:0
+            console.log(typeof(l + ""));
 
+            if(" "){
+                console.log("true");
+            }else{
+                console.log("false");
+            }
 
+            //命名规范
+            var iNum = 5;//int
+            var fNum = 0.5;//float
+            var sName = "zhangsan";//string
+            var bFlag = true;//boolean
+
+            var result = window.prompt("请输入", "hello");
+            console.log(result);
+
+            var abcdef = "123";
+//            console.log(window.abcdef);
+            window.alert(123);
         </script>
     </body>
 </html>
