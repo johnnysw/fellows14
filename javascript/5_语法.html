@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="">-->
+</head>
+<body>
+    <h1 id="hh" class="aa bb">hhhhhhhhhhh</h1>
+
+    <script src="common.js"></script>
+
+    <script>
+        /*
+        js基本数据类型：五种
+        js引用类型：内置对象、自定义对象、dom对象
+
+        dom:document object model
+        */
+
+        var a = 5;
+        var b = a;
+        b = 6;
+//        alert(a);
+        var obj1 = {
+            name : "zhangsan",
+            age : 28
+        };
+        var obj2 = obj1;
+        obj2.name = "lisi";
+//        alert(obj1.name);
+        if(NaN == NaN){
+            console.log("true");
+        }else{
+            console.log("false");
+        }
+        console.log(typeof undefined);
+        console.log(typeof null);
+
+
+        var oH1 = document.getElementById("hhhh");
+//        console.log(oH1.className);
+        console.log(oH1);
+
+
+       /* var num=020;//八进制10为十进制的16
+        alert(num);//虽然我们用八进制方法表示一个数,但输出时,系统会自动输出它的十进制表现形式
+
+        var num=0x12;//十进制18
+        num=0xab;//171
+        alert(num);//输出的仍是十进制的171*/
+
+
+
+//        alert("safas\"fasfasf");
+        var a = 10;
+        console.log(a.toString(16));
+
+        var b = 10;
+        console.log(parseInt(b));
+        console.log(parseFloat(b));
+
+
+    </script>
+</body>
+</html>
