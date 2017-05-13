@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+         随机生成两个小数给变量x.y，然后显示这两个数中的最大值。
+         （提示：语句“var x=Math.random();”可为变量生成一个随机小数：另外，使用条件运算符‘'?:")
+
+         * */
+
+        // 0~36 选7
+        /*function fn(){
+            console.log(parseInt(Math.random() * 37));
+        }
+        for(var i=0; i<7; i++){
+            fn();
+        }*/
+
+        //返回指定区间内的随机数
+        /*function getRangeRandom(low, high){
+            return Math.random() * (high - low) + low;
+        }
+        console.log(getRangeRandom(3, 99));*/
+
+        /*var x = Math.random();
+        var y = Math.random();
+        document.write("<h1>x=" + x + "</h1>");
+        document.write("y=" + y + "<br>");
+        if(x > y){
+            document.write("最大值为：" + x)
+        }else{
+            document.write("最大值为：" + y)
+        }*/
+
+        function getMax(x, y){
+            return x > y ? x : y;
+        }
+        var x = Math.random();
+        var y = Math.random();
+        document.write("<h1>x=" + x + "</h1>");
+        document.write("<h1>y=" + y + "</h1>");
+        document.write("<h1>最大值为：" + getMax(x, y) + "</h1>");
+
+
+
+    </script>
+</body>
+</html>

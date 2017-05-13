@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var a = 0.1;
+    console.log(a.toString(16));
+    console.log(5 - "a");
+
+
+
+    function fn2(){
+        alert(123);
+    }
+    function fn(arg, callback){
+        callback && callback();
+    }
+//    fn(2, fn2);
+    fn(2);*/
+
+
+    /*function fn1(fn){
+        fn();//fn2();
+    }
+    fn1(function(){
+        alert(123);
+    });*/
+
+    var fn1 = function(){
+        alert(123);
+    };
+   //函数立即调用
+    (function(fn){
+        fn();
+    })(fn1);
+
+
+
+    (function(){
+        var a = 5;
+
+    })();
+
+
+</script>
+</body>
+</html>
