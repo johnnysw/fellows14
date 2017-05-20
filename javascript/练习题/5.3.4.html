@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数。
+    function fn(num){
+        var bFlag = false;//标识位，标识是否符合条件
+        for(var i=2; i<=Math.sqrt(num); i++){
+            if(num % i == 0){
+                bFlag = false;
+                break;
+            }else{
+                bFlag = true;
+            }
+        }
+        if(bFlag){
+            return true;
+        }
+        return false;
+    }
+
+    var result = [];
+    for(var i=100; i<=1000; i++){
+        if(fn(i)){
+            result.push(i);
+        }
+    }
+    for(var i=0; i<result.length; i++){
+        document.write(result[i] + "&nbsp;");
+        if((i + 1) % 6 == 0){
+            document.write("<br>");
+        }
+    }
+    document.write("个数为：" + result.length);
+
+
+</script>
+</body>
+</html>

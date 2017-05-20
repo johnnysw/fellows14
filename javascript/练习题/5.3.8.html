@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        function getPI(n){
+            var sum = 0;
+            for(var i=1; i<=n; i++){
+                sum += 4 * Math.pow(-1, i - 1) / (2 * i - 1);
+            }
+            return sum;
+        }
+
+        var arr = [100, 500, 1000, 10000];
+        for(var i=0; i<arr.length; i++){
+            document.write(getPI(arr[i]) + "<br>");
+        }
+</script>
+</body>
+</html>
