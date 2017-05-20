@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function print(num){
+        for(var i=1; i<=num; i++){
+            for(var k=1; k<=num-i; k++){
+                document.write("&nbsp;");
+            }
+            for(var j=1; j<=i; j++){
+                document.write("*&nbsp;");
+            }
+            document.write("<br>");
+        }
+    }
+    print(5);
+
+
+</script>
+</body>
+</html>

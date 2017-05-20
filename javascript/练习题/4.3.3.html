@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //编写程序，计算10!(即 1*2*3＊·…10）的结果(10的阶乘)。
+        /*
+        * 10! = 10 * 9!
+        * 9! = 9 * 8!
+        * 8! = 8 * 7!
+        * n! = n * (n-1)!
+        * 1! = 1
+        * */
+
+        function factorial(num){
+            if(num == 1){
+                return 1;
+            }
+            return num * arguments.callee(num - 1);
+        }
+
+        function factorial2(num){
+            var result = 1;
+            for(var i=1; i<=num; i++){
+                result *= i;//result = result * i;
+            }
+            return result;
+        }
+        document.write(factorial(10) + "<br>");
+        document.write(factorial2(10) + "<br>");
+
+        //编写程序，计算 1!+2!+3!+…..＋10！的结果。
+        var sum = 0;
+        for(var i=1; i<=10; i++){
+            sum += factorial(i);
+        }
+        document.write(sum);
+
+    </script>
+</body>
+</html>
