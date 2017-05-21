@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var i = 0;
+    /*var timer = setInterval(function(){
+        console.log(i++);
+        if(i > 10){
+            clearInterval(timer);
+        }
+    }, 1000);*/
+
+
+    var timer2 = setTimeout(function(){
+        console.log(i++);
+    }, 1000);
+
+    clearTimeout(timer2);
+
+
+</script>
+</body>
+</html>
