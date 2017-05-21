@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history</title>
+    <style>
+        #back{
+            background: #cccccc;
+        }
+        .aa{
+
+        }
+    </style>
+</head>
+<body>
+    <button id="back">返回</button><!-- dom对象：document object model -->
+
+    <div id="div1">
+        <div class="aa">001</div>
+        <div class="aa">002</div>
+        <div class="aa">003</div>
+        <div class="aa">004</div>
+    </div>
+    <div>01</div>
+    <div>02</div>
+    <div>03</div>
+    <div>04</div>
+    <div>05</div>
+
+
+    <script>
+        var oBack = document.getElementById("back");
+        console.log(oBack);
+        //事件 event
+        //事件三要素：事件源  事件处理方法 事件对象
+        oBack.onclick = function(){
+            history.back();
+        };
+//        oBack.onclick();
+
+//        var aDiv = document.getElementsByClassName("aa");//有兼容性问题
+//        console.log(aDiv);
+
+        var aDiv2 = document.getElementsByTagName("div");
+        console.log(aDiv2);
+
+        var oDiv1 = document.getElementById("div1");
+        var aDiv3 = oDiv1.getElementsByTagName("div");
+        console.log(aDiv3);
+
+
+    </script>
+</body>
+</html>

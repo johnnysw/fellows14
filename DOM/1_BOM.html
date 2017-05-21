@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <a href="2_dom1.html">history</a>
+    <script>
+        var a = 5;
+        function fn(){
+            console.log("我是fn");
+        }
+        console.log(window.a);
+        console.log(window.fn);
+
+//        window.alert("123");
+//        window.document.write("BOM");
+
+
+        //  http://www.taobao.com
+        //  http://m.taobao.com
+//        firefox:
+//            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:53.0) Gecko/20100101 Firefox/53.0"
+        function toTaoBao(){
+            if(navigator.userAgent.indexOf("iPhone") != -1){
+                location.href = "http://m.taobao.com";//重定向
+            }else{
+                location.href = "http://www.taobao.com";
+            }
+        }
+//        toTaoBao();
+
+    </script>
+</body>
+</html>
