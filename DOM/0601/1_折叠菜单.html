@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            li{
+                list-style: none;
+            }
+            #container{
+                width: 200px;
+                border: 1px solid #000;
+                text-align: center;
+            }
+            #container h3{
+                background: #000000;
+                color: #fff;
+                cursor: pointer;
+            }
+            #container .submenu li:hover{
+                background: #cccccc;
+            }
+            #container .submenu{
+                display: none;
+            }
+        </style>
+        <script>
+            /*window.onload = function(){
+
+            };*/
+        </script>
+    </head>
+    <body>
+        <ul id="container">
+            <li>
+                <h3>管理区</h3>
+                <ul class="submenu">
+                    <li>001</li>
+                    <li>002</li>
+                    <li>003</li>
+                </ul>
+            </li>
+            <li>
+                <h3>交流区</h3>
+                <ul class="submenu">
+                    <li>001</li>
+                    <li>002</li>
+                    <li>003</li>
+                </ul>
+            </li>
+        </ul>
+
+        <script>
+            var oContainer = document.getElementById("container");
+            var aH3 = oContainer.getElementsByTagName("h3");//nodelist
+//            var aUl = oContainer.getElementsByClassName("submenu");//有兼容性问题
+            var aUl = oContainer.getElementsByTagName("ul");
+//            var bFlag1 = false;//定义标识位，表示是否展开，false是合上，true是展开
+//            var bFlag2 = false;//定义标识位，表示是否展开，false是合上，true是展开
+            for(var i=0; i<aH3.length; i++){
+                aH3[i].index = i;//给每个h3对象自定义属性index，保存住当时的i的值
+                //aH3[0].index = 0;
+                //aH3[1].index = 1;
+                aH3[i].bFlag = false;//给每个对象定义自己的标识位，表示是否展开，false是合上，true是展开
+                aH3[i].onclick = function(){
+//                    console.log(this.xx);
+//                    aUl[this.index].style.display = "block";
+//                    console.log(aUl[this.index].style.display);
+                    /*if(aUl[this.index].style.display == "block"){
+                        aUl[this.index].style.display = "none";
+                    }else{
+                        aUl[this.index].style.display = "block";
+                    }*/
+
+                    if(this.bFlag){
+                        aUl[this.index].style.display = "none";
+//                        bFlag1 = false;
+                    }else{
+                        aUl[this.index].style.display = "block";
+//                        bFlag1 = true;
+                    }
+                    this.bFlag = !this.bFlag;
+                };
+            }
+
+
+//            var arr = [1, 2, 3];
+            //事件三要素：事件源  事件处理函数  事件对象e
+            //aUl[i].style.display 可以设置值，取值的话只能取到内联样式的值
+            //this  当前对象的引用
+
+            var obj1 = new Object();
+            obj1.name = "zhangsan";
+            obj1.age = 18;
+            obj1.xx = "asdf";
+
+            var obj2 = {
+                name : "lisi",
+                age : 18
+            };
+
+
+
+
+        </script>
+    </body>
+</html>
