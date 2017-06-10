@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #menu li{
+            width: 100px;
+            height: 30px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #menu{
+            display: none;
+            position: absolute;
+        }
+        #menu li:hover{
+            background: #cccccc;
+        }
+        .aa{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+        <li>005</li>
+    </ul>
+    <a href="http://www.baidu.com" id="baidu">baidu</a>
+    <script>
+        var oMenu = document.getElementById("menu");
+        var aLi = oMenu.getElementsByTagName("li");
+        document.oncontextmenu = function(e){
+            e = e || window.event;
+            oMenu.style.display = "block";
+            oMenu.style.top = e.clientY + "px";
+            oMenu.style.left = e.clientX + "px";
+
+            return false;//阻止浏览器默认行为
+        };
+        document.onclick = function(){
+//            console.log("document.onclick");
+            oMenu.style.display = "none";//oMenu.className = "aa";
+        };
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+//                console.log("li.onclick");
+
+                alert(this.innerHTML);
+            };
+        }
+
+        /*var oBd = document.getElementById("baidu");
+        oBd.onclick = function(e){
+            console.log(getTarget(e));
+            return false;
+        };
+
+        function getTarget(e){
+            e = e || window.event;
+            return e.target || e.srcElement;
+
+           /!* if(e){
+                return e.target;//标准浏览器
+            }else{
+                return window.event.srcElement;//早期IE
+            }*!/
+        }
+*/
+        /*
+        事件三要素：
+        事件源  e.target   window.event.srcElement
+        事件处理函数
+        事件对象e
+
+
+        * */
+    </script>
+</body>
+</html>
