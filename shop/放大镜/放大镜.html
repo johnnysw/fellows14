@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small, #big{
+            float: left;
+        }
+        #small{
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+        #big{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            opacity: .5;
+            filter: alpha(opacity=50);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #big img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #mask{
+            width: 100%;
+            height: 100%;
+            background: #ff0000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+    </style>
+</head>
+<body>
+    <div id="small">
+        <img src="1.jpg" alt="">
+        <div id="drag"></div>
+        <div id="mask"></div>
+    </div>
+    <div id="big">
+        <img src="2.jpg" alt="">
+    </div>
+    <script>
+        (function () {
+            var oSmall = document.getElementById("small");
+            var oDrag = document.getElementById("drag");
+            var oBig = document.getElementById("big");
+            var oBigImg = oBig.getElementsByTagName("img")[0];
+            var oMask = document.getElementById("mask");
+            oMask.onmouseover = function(){
+                console.log("oSmall.onmouseover");
+                oDrag.style.display = "block";
+                oBig.style.display = "block";
+            };
+            oMask.onmouseout = function(){
+                console.log("oSmall.onmouseout");
+                oDrag.style.display = "none";
+                oBig.style.display = "none";
+            };
+            /*oDrag.onmouseover = function(){
+                console.log("oDrag.onmouseover");
+            };*/
+            oMask.onmousemove = function(e){
+                e = e || window.event;
+                var left = e.clientX - oDrag.offsetWidth / 2;
+                var top = e.clientY - oDrag.offsetHeight / 2;
+                //判断drag的边界范围
+                if(left <= 0){
+                    left = 0;
+                }
+                if(top <= 0){
+                    top = 0;
+                }
+                var maxX = oSmall.offsetWidth - oDrag.offsetWidth;
+                if(left >= maxX){
+                    left = maxX;
+                }
+                var maxY = oSmall.offsetHeight - oDrag.offsetHeight;
+                if(top >= maxY){
+                    top = maxY;
+                }
+                oDrag.style.left = left + "px";
+                oDrag.style.top = top + "px";
+
+
+                //改变大图的位置
+                var scaleX = left / maxX;
+                var scaleY = top / maxY;
+
+                oBigImg.style.left = -scaleX * (oBigImg.offsetWidth - oBig.offsetWidth) + "px";
+                oBigImg.style.top = -scaleY * (oBigImg.offsetHeight - oBig.offsetHeight) + "px";
+            };
+
+
+
+        })();
+        
+    </script>
+</body>
+</html>

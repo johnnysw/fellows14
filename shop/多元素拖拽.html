@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            position: absolute;
+        }
+        #div1{
+            background: #ff0000;
+            top: 0;
+        }
+        #div2{
+            background: #00ff00;
+            top: 200px;
+        }
+        #div3{
+            background: #ffff00;
+            top: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+    <script>
+        function drag(elem){
+            elem.onmousedown = function(e){
+                var iDisX = e.clientX - elem.offsetLeft;
+                var iDisY = e.clientY - elem.offsetTop;
+                document.onmousemove = function(e){
+                    e = e || window.event;
+                    elem.style.left = e.clientX - iDisX + "px";
+                    elem.style.top = e.clientY - iDisY + "px";
+                };
+            };
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            };
+        }
+
+        var oDiv1 = document.getElementById("div1");
+        var oDiv2 = document.getElementById("div2");
+        var oDiv3 = document.getElementById("div3");
+        drag(oDiv1);
+        drag(oDiv2);
+        drag(oDiv3);
+
+    </script>
+
+</body>
+</html>
