@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">move</button>
+    <div id="div1"></div>
+
+    <script src="javascript/wichung-1.0.js"></script>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oDiv = document.getElementById("div1");
+        oBtn.onclick = function(){
+            /*var timer = setInterval(function(){
+                oDiv.style.left = oDiv.offsetLeft + 10 + "px";
+                oDiv.style.top = oDiv.offsetTop + 10 + "px";
+                if(oDiv.offsetLeft >= 300){
+                    oDiv.style.left = 0;
+                    oDiv.style.top = 0;
+                    clearInterval(timer);
+                }
+            }, 30);*/
+            animate(oDiv, {
+                top: 400
+            }, function(){
+                animate(oDiv, {
+                    left: 400
+                });
+            });
+        };
+    </script>
+</body>
+</html>
