@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1></h1>
+    <script>
+        //js：弱类型的语言
+        //var => variable
+        //js基本数据类型：number string boolean undefined null
+        //js引用类型：自定义对象 内置对象  dom对象！
+        //js基于面向对象
+        var a = 5;
+        var b = 0.5;
+        var c = "aaa";
+        var d = "x";
+        var e = true;//false
+        var f;//undefined
+
+//        a = "aaa";
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(typeof c);
+        console.log(typeof d);
+        console.log(typeof e);
+        console.log(typeof f);
+
+        fn();
+        function fn(){
+            console.log("fnfn");
+        }
+
+        var fn2 = function(){//函数直接量
+            console.log("fn2");
+        };
+        fn2();
+        
+        function add(x, y) {//形式参数
+            var result = x + y;
+            return result;
+        }
+        var result = add(2, 3);//实际参数
+        console.log(result);
+        add(4, 5);//实际参数
+
+
+        var obj1 = new Object();//定义对象
+        obj1.name = "zhangsan";
+        obj1.age = 20;
+        obj1.eat = function(){
+            console.log("eating");
+        };
+        console.log(obj1.name);
+        obj1.eat();
+
+        var obj2 = {
+            name: "lisi",
+            age: 19,
+            code: function(){
+                console.log("coding");
+            }
+        };
+        console.log(obj2.name);
+        obj2.code();
+
+        var arr = [1, 2, 3];
+
+
+
+
+    </script>
+</body>
+</html>

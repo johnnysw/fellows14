@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            .aa{
+                background: #ff0000;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="hh">h1h1</h1>
+        <ul id="nav">
+            <li>001</li>
+            <li>002</li>
+            <!--<li>003</li>-->
+            <!--<li>004</li>-->
+        </ul>
+        <script>
+            //dom:document object model
+            var oH1 = document.getElementById("hh");
+    //        oH1.style.background = "#f00";
+            oH1.className = "aa";
+            console.log(oH1.id);
+    //        console.log(oH1);
+
+            var oH2 = document.getElementById("hhhh");
+            var a;
+            console.log(a);
+            console.log(oH2);
+            console.log(typeof oH2);
+
+            console.log(a == oH2);//true
+            console.log(a === oH2);//false
+
+            var oNav = document.getElementById("nav");
+            var aLi = oNav.getElementsByTagName("li");
+            console.log(aLi);
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].onclick = function(){
+                    //console.log(i);//2
+                    console.log(this.innerHTML);//this对于当前对象的引用
+                };
+            }
+            /*if(){
+
+            }else{
+
+            }*/
+        </script>
+    </body>
+</html>
