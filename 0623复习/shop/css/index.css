@@ -1,0 +1,85 @@
+#single{
+    margin-top: 30px;
+}
+#single-pic{
+    width: 494px;
+    height: 567px;
+    overflow: hidden;
+}
+#single-description{
+    width: 570px;
+    height: 621px;
+}
+#big-pic{
+    border: 1px solid #ccc;
+    padding: 6px;
+    width: 480px;
+    height: 405px;
+}
+#big-pic img{
+    width: 480px;
+    height: 400px;
+}
+#small-pic{
+    width: 800px;
+    margin-top: 10px;
+}
+#small-pic img{
+    width: 150px;
+    height: 125px;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin-right: 10px;
+}
+#single-description{
+    margin-left: 30px;
+}
+#single-description .lip{
+    font-size: 12px;
+    color: #999;
+}
+#single-description .price {
+    color: #fa558f;
+    font-size: 30px;
+    margin: 30px 0;
+}
+#single-description .num input{
+    width: 50px;
+    height: 37px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    text-indent: 5px;
+}
+#single-description .add{
+    width: 152px;
+    height: 36px;
+    background: #3c3b3b;
+    color: #fff;
+    border: 2px solid #3c3b3b;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0;
+}
+#single-description .add:hover { /* 伪类选择器 */
+    background: #fff;
+    color: #000;
+}
+#single-description .brand{
+    border-top: 1px solid #f00;
+    border-bottom: 1px solid #f00;
+    padding: 20px 0;
+}
+#single-description .brand span{
+    color: #999;
+}
+#single-description .brand a{
+    color: #ff530d;
+}
+#single-description h4{
+    margin: 20px 0;
+}
+#single-description p{
+    color: #999;
+    font-size: 12px;
+}

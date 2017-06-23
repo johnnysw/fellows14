@@ -1,0 +1,72 @@
+/* 样式重置 css reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;/*  去掉li前面的符号 */
+}
+a{
+    text-decoration: none;/*  去掉a的下划线 */
+}
+img{
+    border: 0;/* 在早期IE下 a标签里面有img标签时的蓝色边框的 兼容性问题 */
+}
+/* 样式重置 css reset */
+
+.wrapper{
+    width: 1140px;
+    margin: 0 auto;
+}
+#header{
+    height: 250px;
+    background: url(../img/banner33.jpg) no-repeat center;
+}
+.float{
+    float: left;
+}
+#login, #shop, #cart{
+    width: 380px;
+    height: 100px;
+}
+#login, #shop{
+    line-height: 100px;
+}
+#login a{
+    color: #fff;
+}
+#shop{
+    color: #fff;
+    text-align: center;
+}
+#cart{
+    width: 280px;
+    height: 50px;
+    background: #000000 url(../img/cart.png) no-repeat 210px center;
+    text-align: center;
+    line-height: 50px;
+    float: right;
+    margin-top: 25px;
+    opacity: .6;/* 0~1 */
+    filter: alpha(opacity=60);/* 0~100 */
+    cursor: pointer;
+}
+#cart a{
+    color: #fff;
+}
+#menu{
+    height: 40px;
+    clear: both;
+}
+#menu li{
+    float: left;
+    width: 190px;
+    height: 40px;
+    background: #fa558f;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+
