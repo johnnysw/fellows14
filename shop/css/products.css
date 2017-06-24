@@ -15,7 +15,7 @@
 }
 #menu li{
     width: 230px;
-    height: 35px;
+    /*height: 35px;*/
     background: #f9f9f9;
     padding-left: 10px;
     color: #8c8c8c;
@@ -27,8 +27,12 @@
 #menu li img{
     position: absolute;
     right: 10px;
-    top: 50%;
-    margin-top: -5px;
+    top: 10px;
+}
+#menu .submenu{
+    /*display: none;*/
+    height: 0;
+    overflow: hidden;
 }
 #brand label{
     color: #555555;
