@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 300px;
+            height: 300px;
+            background: #ffff00;
+        }
+        #div3{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body id="body">
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        var oDiv2 = document.getElementById("div2");
+        var oDiv3 = document.getElementById("div3");
+        var oBody = document.getElementById("body");
+        var oHtml = document.getElementById("html");
+
+        /*oDiv1.onclick = function(){
+            alert("div1");
+        };
+        oDiv2.onclick = function(){
+            alert("div2");
+        };
+        oDiv3.onclick = function(){
+            alert("div3");
+        };
+        oBody.onclick = function(){
+            alert("body");
+        };
+        oHtml.onclick = function(){
+            alert("html");
+        };*/
+
+        /*oDiv1.onclick = function(){
+            alert(1);
+        };
+        oDiv1.onclick = function(){
+            alert(2);
+        };*/
+
+//        oDiv1.addEventListener("click", function(){
+//            alert(2);
+//        }, false);
+
+        /*oDiv1.addEventListener("click", function(e){
+            alert("div1");
+            console.log(this);
+            e.stopPropagation();
+        }, false);
+        oDiv2.addEventListener("click", function(e){
+            alert("div2");
+            e.stopPropagation();
+        }, false);
+        oDiv3.addEventListener("click", function(e){
+            alert("div3");
+            e.stopPropagation();
+        }, false);*/
+
+//        oDiv1.addEventListener("click", function(){
+//            alert("div1");
+//        }, true);
+//        oDiv2.addEventListener("click", function(){
+//            alert("div2");
+//        }, true);
+//        oDiv3.addEventListener("click", function(){
+//            alert("div3");
+//        }, true);
+
+
+       /* oDiv1.attachEvent("onclick", function(){
+            alert(1);
+            window.event.cancelBubble = true;
+//            alert(this === window);
+        });
+        oDiv2.attachEvent("onclick", function(){
+            alert(2);
+            window.event.cancelBubble = true;
+
+        });
+        oDiv3.attachEvent("onclick", function(){
+            alert(3);
+            window.event.cancelBubble = true;
+
+        });*/
+//        oDiv1.attachEvent("onclick", function(){
+//            alert(2);
+//        });
+//        oDiv1.attachEvent("onclick", function(){
+//            alert(3);
+//        });
+
+        addEvent(oDiv1, "click", function(){
+            alert(1);
+        });
+
+        function addEvent(elem, type, handler){
+            if(elem.addEventListener){//能力检测
+                elem.addEventListener(type, handler);
+            }else if(elem.attachEvent){
+                elem.attachEvent("on" + type, handler);
+            }else{
+                elem["on" + type] = handler;
+            }
+        }
+
+        /*var obj = {
+            name : "zhangsan",
+            age : 20
+        };*/
+        /*var p = "name";
+        console.log(obj.p);
+        console.log(obj[p]);*/
+
+        /*for(var p in obj){
+            console.log(obj[p]);
+        }*/
+    </script>
+</body>
+</html>
+<!--
+obj.addEventListener(type, function(){
+}, false/true);
+默认false 事件冒泡
+true  事件捕获
+先捕获后冒泡!!!
+阻止事件冒泡： e.stopPropagation();
+
+
+IE: attachEvent(on+type, function(){
+});
+只支持事件冒泡 不支持事件捕获
+顺序是相反的   this指向window
+阻止事件冒泡： window.event.cancelBubble = true;
+
+事件代理/事件委托:利用事件冒泡把子元素的事件委托给父元素绑定
+
+-->

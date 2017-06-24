@@ -23,6 +23,7 @@
     <script>
         var oDiv = document.getElementById("div1");
         oDiv.onmousedown = function(e){
+            e = e || window.event;
             var iDisX = e.clientX - oDiv.offsetLeft;
             var iDisY = e.clientY - oDiv.offsetTop;
             document.onmousemove = function(e){

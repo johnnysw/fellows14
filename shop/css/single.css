@@ -8,6 +8,9 @@
     overflow: hidden;
     position: relative;
 }
+#single .wrapper{
+    position: relative;
+}
 #single-description{
     width: 570px;
     height: 612px;
@@ -138,3 +141,57 @@
 #single-pic img.selected{
     border: 1px solid #000;
 }
+#magnify{
+    width: 480px;
+    height: 400px;
+    position: absolute;
+    overflow: hidden;
+    left: 500px;
+    top: 0px;
+    display: none;
+}
+#magnify img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#drag{
+    width: 200px;
+    height: 200px;
+    background: #cccccc;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    display: none;
+}
+#mask{
+    width: 480px;
+    height: 405px;
+    background: #ff0000;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

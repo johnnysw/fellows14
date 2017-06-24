@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="nav">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+    <li>006</li>
+    <li>007</li>
+    <li>008</li>
+    <li>009</li>
+    <li>010</li>
+</ul>
+
+<script>
+    var oNav = document.getElementById("nav");
+    /*var aLi = oNav.getElementsByTagName("li");
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].onclick = function(){
+            console.log(this.innerHTML);
+        };
+    }*/
+    oNav.onclick = function(e){
+        var target = e.target || window.event.srcElement;
+        console.log(target.innerHTML);
+    };
+</script>
+</body>
+</html>
