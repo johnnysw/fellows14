@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <ul id="ul1">
+        <li>item 1</li>
+        <li class="aa">item 2</li>
+        <li class="aa">item 3</li>
+    </ul>
+
+    <script>
+
+        function $(selector, context) {
+            context = context || document;
+            switch(selector.charAt(0)){
+                case '#': //id
+                    return [document.getElementById(selector.substring(1))];
+                    break;
+                case '.': //class
+                    return context.getElementsByClassName(selector.substring(1));
+                    break;
+                default: //tag
+                    return context.getElementsByTagName(selector);
+                    break;
+            }
+        }
+
+        var oBtn = $('#btn')[0];
+        oBtn.onclick = function () {
+            alert('11111');
+        }
+
+        var aLi = $('.aa');
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function () {
+                alert(this.innerHTML);
+            }
+        }
+
+    </script>
+</body>
+</html>

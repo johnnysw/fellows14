@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <ul id="ul1">
+        <li>item 1</li>
+        <li class="aa">item 2</li>
+        <li class="aa">item 3</li>
+    </ul>
+    <script>
+        //document.getElementById('aa');
+        //context.getElementsByTagName('li');
+        //context.getElementsByClassName('aa');
+        //context.getElementsByName('username');
+        //document.querySelector()
+
+        var oBtn = document.querySelector('#btn');
+        oBtn.onclick = function () {
+            alert('haha');
+        }
+
+        var aLi = document.querySelectorAll('.aa');
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function () {
+                alert(this.innerHTML);
+            }
+        }
+    </script>
+</body>
+</html>

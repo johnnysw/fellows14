@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var o1 = {
+        name: 'lisi',
+        age: 34,
+        brother: {
+            name: 'lihua'
+        }
+    };
+    //var o2 = o1;
+
+    //var o2 = {};
+
+    function cloneObj(obj) {
+        var newObj = {};
+        for(var p in obj){
+            if(typeof obj[p] === 'object'){
+               newObj[p] = arguments.callee(obj[p]);
+            }else{
+                newObj[p] = obj[p];
+            }
+        }
+        return newObj;
+    }
+
+    var o2 = cloneObj(o1);
+
+
+    /*for(var p in o1){ //p = property
+       o2[p] = o1[p];//o2.name = o1.name = 'lisi';
+        //o2.brother=o1.brother={}
+    }*/
+
+
+    o2.brother.name = 'wangwu';
+
+    console.log(o1.brother.name);
+
+</script>
+</body>
+</html>

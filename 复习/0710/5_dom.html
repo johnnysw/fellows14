@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div2{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="div2">
+        <div id="div1"></div>
+    </div>
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var oH1 = document.getElementById('h11');
+//        console.log( oDiv1.children );//childNodes
+//        console.log( oDiv1.parentNode ); // document.body
+//        console.log( oH1.offsetParent );
+        //console.log( oH1.nextElementSibling );//previousSibling/previousElementSibling
+
+        var oSpan = document.createElement('span');
+        oSpan.innerHTML = 'xixi';
+//        oDiv1.appendChild(oSpan);
+        //oDiv1.removeChild(oH1);
+//        oDiv1.insertBefore(oSpan, oH1);
+        //oDiv1.replaceChild(oSpan, oH1);
+
+        //封装获取所有当前元素的元素节点的方法
+        /**
+         * @param elem 当前元素
+         * @return {Array} 返回当前元素的元素节点
+         */
+        function siblings(elem) {
+            var arr = [];
+            var elements = elem.parentNode.children;
+            for(var i=0; i<elements.length; i++){
+                if(elements[i] != elem){
+                    arr.push(elements[i]);
+                }
+            }
+            return arr;
+        }
+//        console.log( siblings(oH1) );
+        /**
+         * 删除给定的元素
+         * @param elem
+         */
+        function remove(elem) {
+            elem.parentNode.removeChild(elem);
+        }
+
+        /**
+         * 在给定的当前元素的前面插入一个新元素
+         * @param elem
+         */
+        function before(elem, newNode) {
+            elem.parentNode.insertBefore(newNode, elem);
+        }
+
+//        before(oH1, oSpan);
+        /**
+         * 在给定的当前元素的后面面插入一个新元素
+         * @param elem
+         * @param newNode
+         */
+        function after(elem, newNode) {
+            if(elem.nextSibling){
+                before(elem.nextSibling, newNode);
+            }else{
+                elem.parentNode.appendChild(newNode);
+            }
+        }
+        after(oH1, oSpan);
+    </script>
+</body>
+</html>
