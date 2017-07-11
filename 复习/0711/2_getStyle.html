@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 240px;
+            height: 200px;
+            background: #ff0000;
+            border: 5px solid #000;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">123</div>
+    <script>
+        var oDiv = document.getElementById('div1');
+//        console.log(  window.getComputedStyle(oDiv, false).width  );
+//        console.log(  oDiv.currentStyle.width  );
+//        console.log(oDiv.offsetWidth);
+
+        /**
+         * 获取当前元素样式
+         * @param elem
+         * @param attr
+         * @return {*}
+         */
+        function getStyle(elem, attr) {
+            if(elem.currentStyle){//IE
+                return elem.currentStyle[attr];
+            }else if(window.getComputedStyle){
+                return getComputedStyle(elem, false)[attr];
+            }else{
+                return elem.style[attr];
+            }
+        }
+    </script>
+</body>
+</html>

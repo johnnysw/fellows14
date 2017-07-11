@@ -152,3 +152,44 @@ function extend(target, obj) {
 function trim(str) {
     return str.replace(/^\s+|\s+$/g, '');
 }
+
+/**
+ * 获取当前元素样式
+ * @param elem
+ * @param attr
+ * @return {*}
+ */
+function getStyle(elem, attr) {
+    //能力检测
+    if(elem.currentStyle){//IE
+        return elem.currentStyle[attr];
+    }else if(window.getComputedStyle){//标准浏览器
+        return getComputedStyle(elem, false)[attr];
+    }else{
+        return elem.style[attr];
+    }
+}
+
+
+function addEvent(elem, type, fn) {
+    if(elem.addEventListener){//标准
+        elem.addEventListener(type, fn, false);
+    }else if(elem.attachEvent){
+        elem[type+fn] = function () {
+            fn.call(elem);
+        };
+        elem.attachEvent('on'+type, elem[type+fn]);
+    }else{
+        elem['on' + type] = fn;
+    }
+}
+
+function removeEvent(elem, type, fn) {
+    if(elem.removeEventListener){
+        elem.removeEventListener(type, fn, false);
+    }else if(elem.detachEvent){
+        elem.detachEvent('on'+type, elem[type+fn]);
+    }else{
+        elem['on' + type] = null;
+    }
+}

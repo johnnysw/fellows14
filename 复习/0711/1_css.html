@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1"></div>
+<script>
+    var oDiv = document.getElementById('div1');
+    oDiv.style.width = '200px';
+    oDiv.style.height = '200px';
+    oDiv.style.background = '#f00';
+
+
+    function getStyle(elem, attr) {
+        if(elem.currentStyle){//IE
+            return elem.currentStyle[attr];
+        }else if(window.getComputedStyle){
+            return getComputedStyle(elem, false)[attr];
+        }else{
+            return elem.style[attr];
+        }
+    }
+
+    function css(elem, attr, value) {
+        if(value){//如果给value传了值
+            elem.style[attr] = value;
+        }else{
+            if(typeof attr === 'string'){
+                return getStyle(elem, attr);
+            }else{
+                for(var p in attr){
+                    switch(p){
+                        case 'width':
+                        case 'height':
+                        case 'padding':
+                        case 'paddingLeft':
+                        case 'paddingRight':
+                        case 'paddingTop':
+                        case 'paddingBottom':
+                            value = /\%/.test(attr[p])?attr[p]:Math.max(parseInt(attr[p]), 0) + 'px';
+                            break;
+                        case 'left':
+                        case 'top':
+                        case 'bottom':
+                        case 'right':
+                        case 'margin':
+                        case 'marginLeft':
+                        case 'marginRight':
+                        case 'marginTop':
+                        case 'marginBottom':
+                            value = /\%/.test(attr[p])?attr[p]:parseInt(attr[p]) + 'px';
+                            break;
+                        default:
+                            value = attr[p];
+                    }
+                    elem.style[p] = value;
+                }
+            }
+        }
+    }
+
+    css(oDiv, {
+        width: 400,
+        height: '300px',
+        background: '#00f'
+    });
+
+//    css(oDiv, 'width', '400px');
+
+//    console.log(   css(oDiv, 'width')  );
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <script>
+        var oBtn = document.getElementById('btn');
+        /*oBtn.onclick = function () {
+            alert(1);
+        };
+        oBtn.onclick = null;*/
+        var fn1 = function () {
+            alert(11);
+        };
+        var fn2 = function () {
+            alert(22);
+        };
+
+        /*oBtn.addEventListener('click', fn, false);
+
+        oBtn.removeEventListener('click', fn, false);*/
+
+        /*oBtn.attachEvent('onclick', fn);
+        oBtn.detachEvent('onclick', fn);*/
+
+        function addEvent(elem, type, fn) {
+            if(elem.addEventListener){//标准
+                elem.addEventListener(type, fn, false);
+            }else if(elem.attachEvent){
+                elem[type+fn] = function () {
+                    fn.call(elem);
+                };
+                elem.attachEvent('on'+type, elem[type+fn]);
+            }else{
+                elem['on' + type] = fn;
+            }
+        }
+
+        function removeEvent(elem, type, fn) {
+            if(elem.removeEventListener){
+                elem.removeEventListener(type, fn, false);
+            }else if(elem.detachEvent){
+                elem.detachEvent('on'+type, elem[type+fn]);
+            }else{
+                elem['on' + type] = null;
+            }
+        }
+
+        addEvent(oBtn, 'click', fn1);
+        addEvent(oBtn, 'click', fn2);
+        /*removeEvent(oBtn, 'click', fn1);
+        removeEvent(oBtn, 'click', fn2);*/
+
+
+    </script>
+</body>
+</html>

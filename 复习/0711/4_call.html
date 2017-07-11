@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    /*function aa(name) {//函数声明
+        alert(name);
+    }*/
+    //aa('lisi');
+
+    /*var aa = function (name) {//函数表达式
+        alert(name);
+    };*/
+
+    /*var aa = new Function( 'name', 'alert(name)');*/
+
+
+    //aa('lisi');
+
+
+
+    function aa(name, age) {//函数声明
+        console.log(this);
+        console.log(name);
+        console.log(age);
+    }
+
+    aa.call({name: 'lisi'}, 'lisi', 12);
+    //aa.apply({name: 'lisi'}, ['lisi', 12]);
+</script>
+</body>
+</html>
