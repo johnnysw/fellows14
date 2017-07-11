@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul1">
+    <li>item 1</li>
+    <li class="cc aa">item 2</li>
+    <li class="aa">item 3</li>
+</ul>
+<div id="div1">
+    <h1>haha</h1>
+    <h2 class="aa">hehe</h2>
+    <h3 class="aa">xixi</h3>
+</div>
+<script src="myjslib.js"></script>
+<script>
+    function getByClass(className, context) {
+        context = context || document;
+        var result = [];
+        var arr = context.getElementsByTagName('*');
+        var re = new RegExp("\\b"+className+"\\b");
+        for(var i=0; i<arr.length; i++){
+            if(re.test(arr[i].className)){
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    }
+
+    var oUl = document.getElementById('ul1');
+    var oDiv = document.getElementById('div1');
+
+    var aLi = getByClass('aa');
+
+    console.log(aLi);
+</script>
+</body>
+</html>

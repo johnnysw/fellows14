@@ -5,12 +5,30 @@ function $(selector, context) {
             return [document.getElementById(selector.substring(1))];
             break;
         case '.': //class
-            return context.getElementsByClassName(selector.substring(1));
+            return getByClass(selector.substring(1), context);
             break;
         default: //tag
             return context.getElementsByTagName(selector);
             break;
     }
+}
+/**
+ * 查找符合className的元素
+ * @param className
+ * @param context
+ * @return {Array}
+ */
+function getByClass(className, context) {
+    context = context || document;
+    var result = [];
+    var arr = context.getElementsByTagName('*');
+    var re = new RegExp("\\b"+className+"\\b");
+    for(var i=0; i<arr.length; i++){
+        if(re.test(arr[i].className)){
+            result.push(arr[i]);
+        }
+    }
+    return result;
 }
 /**
  * 返回指定的元素的下一个元素兄弟
@@ -124,4 +142,13 @@ function extend(target, obj) {
         }
     }
     return target;
+}
+
+/**
+ * 去除字符串首尾空格
+ * @param str
+ * @return {string}
+ */
+function trim(str) {
+    return str.replace(/^\s+|\s+$/g, '');
 }
