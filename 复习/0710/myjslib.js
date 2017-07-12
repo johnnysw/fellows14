@@ -170,7 +170,6 @@ function getStyle(elem, attr) {
     }
 }
 
-
 function addEvent(elem, type, fn) {
     if(elem.addEventListener){//标准
         elem.addEventListener(type, fn, false);

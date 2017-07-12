@@ -24,14 +24,35 @@
 
 
 
-    function aa(name, age) {//函数声明
+    /*function aa(name, age) {//函数声明
         console.log(this);
         console.log(name);
         console.log(age);
+    }*/
+
+    //aa.call({name: 'lisi'}, 'lisi', 12);
+    //aa.apply({name: 'lisi'}, ['lisi', 12]);
+
+    function aa() {
+        console.log(this);
     }
 
-    aa.call({name: 'lisi'}, 'lisi', 12);
-    //aa.apply({name: 'lisi'}, ['lisi', 12]);
+    aa.call({name: 'lisi'}); //aa();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>

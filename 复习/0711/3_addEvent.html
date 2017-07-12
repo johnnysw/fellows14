@@ -9,33 +9,34 @@
     <script>
         var oBtn = document.getElementById('btn');
         /*oBtn.onclick = function () {
-            alert(1);
+            alert(11); // this
         };
         oBtn.onclick = null;*/
-        var fn1 = function () {
-            alert(11);
+
+        var fn1 = function(){
+            alert(111);
         };
-        var fn2 = function () {
-            alert(22);
+        var fn2 = function(){
+            alert(222);
         };
 
-        /*oBtn.addEventListener('click', fn, false);
+        /*oBtn.addEventListener('click', fn1, false);
 
-        oBtn.removeEventListener('click', fn, false);*/
+        oBtn.removeEventListener('click', fn1, false);*/
 
-        /*oBtn.attachEvent('onclick', fn);
-        oBtn.detachEvent('onclick', fn);*/
+        /*oBtn.attachEvent('onclick', fn1);
+        oBtn.detachEvent('onclick', fn1);*/
 
         function addEvent(elem, type, fn) {
             if(elem.addEventListener){//标准
                 elem.addEventListener(type, fn, false);
-            }else if(elem.attachEvent){
+            }else if(elem.attachEvent){//ie
                 elem[type+fn] = function () {
                     fn.call(elem);
                 };
                 elem.attachEvent('on'+type, elem[type+fn]);
             }else{
-                elem['on' + type] = fn;
+                elem['on'+type] = fn;
             }
         }
 
@@ -45,14 +46,16 @@
             }else if(elem.detachEvent){
                 elem.detachEvent('on'+type, elem[type+fn]);
             }else{
-                elem['on' + type] = null;
+                elem['on'+type] = null;
             }
         }
 
         addEvent(oBtn, 'click', fn1);
         addEvent(oBtn, 'click', fn2);
-        /*removeEvent(oBtn, 'click', fn1);
+
+       /* removeEvent(oBtn, 'click', fn1);
         removeEvent(oBtn, 'click', fn2);*/
+
 
 
     </script>

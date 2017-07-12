@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        //Cat类有时也叫做构造函数
+        //当你定义一个函数的时候，将属性放在构造函数中，方法放在原型中
+        function Cat(name) {
+            this.name = name;
+        }
+
+        //prototype: 原型, 原型链
+        Cat.prototype.eat =  function () {
+            alert(this.name + ' is eating!');
+        };
+
+        var cat1 = new Cat('mimi');
+        var cat2 = new Cat('xiaohua');
+        cat1.eat();
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <script>
+        function getByClass(className, context) {
+            context = context || document;
+            var result = [];
+            var arr = context.getElementsByTagName('*');
+            var re = new RegExp("\\b"+className+"\\b");
+            for(var i=0; i<arr.length; i++){
+                if(re.test(arr[i].className)){
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+
+        function addEvent(elem, type, fn) {
+            if(elem.addEventListener){//标准
+                elem.addEventListener(type, fn, false);
+            }else if(elem.attachEvent){
+                elem[type+fn] = function () {
+                    fn.call(elem);
+                };
+                elem.attachEvent('on'+type, elem[type+fn]);
+            }else{
+                elem['on' + type] = fn;
+            }
+        }
+
+        function $(selector, context) {
+            context = context || document;
+            switch(selector.charAt(0)){
+                case '#': //id
+                    var elem = document.getElementById(selector.substring(1));
+                    break;
+                case '.': //class
+                    //getByClass(selector.substring(1), context);
+                    break;
+                default: //tag
+                    //context.getElementsByTagName(selector);
+                    break;
+            }
+
+            return {
+                click: function (fn) {
+                    addEvent(elem, 'click', fn);
+                }
+            };
+        }
+
+        $('#btn').click(function(){
+            alert('hahahehe');
+        });
+
+
+
+    </script>
+</body>
+</html>
