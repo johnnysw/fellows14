@@ -6,6 +6,13 @@
 </head>
 <body>
     <button id="btn">click</button>
+    <div class="aa">001</div>
+    <div class="aa">002</div>
+    <div class="aa">003</div>
+    <div class="aa">004</div>
+    <form action="xx.java/register">
+        用户名: <input type="text" name="username">
+    </form>
     <script src="jquery-1.11.2.js"></script>
     <script>
         /*$('#btn').click(function () {
@@ -20,6 +27,26 @@
         $('#btn').on('click', function () {
             alert('haha');
         });
+
+
+        document.getElementById("id");
+        document.getElementsByTagName("div");
+
+        document.getElementsByClassName("aa");//兼容性问题
+        document.getElementsByName("username");//兼容性问题
+
+        var oBtn = document.querySelector("#btn");//兼容性问题
+        console.log(oBtn);
+        var aAa = document.querySelectorAll(".aa");//兼容性问题
+        console.log(aAa);
+
+        document.createElement("div");
+        document.removeChild();
+        document.cloneNode();
+        document.appendChild();
+        document.insertBefore(new, old);
+
+
     </script>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        input[type="submit"]{
+
+        }
+    </style>
+</head>
+<body>
+    <div class="aa" id="div1">
+        <p>pppp
+         <p>p1p1p1</p>
+        </p>
+    </div>
+    <div class="aa" id="div2">2</div>
+    <ul id="ul1">
+        <li id="li1">001</li>
+        <li id="li2">002</li>
+        <li class="aa">003</li>
+        <li>004</li>
+    </ul>
+
+    <form action="">
+        用户名： <input type="text" name="username" value="张三"><br>
+        电话： <input type="text" name="tel" value="13112345678"><br>
+        <input type="hidden" value="1" name="userid">
+        <input type="submit" value="提交更新">
+    </form>
+
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        $(function(){
+//            $(".aa").css("background", "red");
+//            $("#div1, #div2").css("background", "red");
+//            $("#div1  p").css("background", "red");
+
+//            $("#li2 ~ li").css("background", "red");
+
+//            $("#ul1 li:eq(-1)").css("background", "red");
+//            $("#ul1 li:even").css("background", "red");
+//            $("#ul1 li:odd").css("background", "green");
+//            $("#ul1 li:first").css("background", "green");
+//            $("#ul1 li:last").css("background", "red");
+//            $("#ul1 li:gt(1)").css("background", "red");//>
+//            $("#ul1 li:lt(2)").css("background", "red");//<
+//            $("#ul1 li:not(:eq(1))").css("background", "red");//<
+
+                /*$("#ul1 li:contains(3)").css("background", "red");
+
+                $("input[type^=sub]").css();*/
+                $("#ul1 li:first-child").css("background", "red");
+        });
+    </script>
+</body>
+</html>

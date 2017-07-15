@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">divdiv</div>
+    <input type="text" value="zhangsan" id="username">
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        /*var oDiv = document.getElementById("div1");
+        oDiv.aa = "123";
+        console.log(oDiv.aa);
+
+        oDiv.setAttribute("bb", "234");
+        console.log(oDiv.getAttribute("bb"));*/
+        $(function(){
+            var $div1 = $("#div1");
+            $div1.attr("aa", "123");
+            $div1.removeAttr("aa");
+            console.log($div1.attr("aa"));
+
+            $div1.prop("bb", "234");
+            console.log($div1.prop("bb"));
+
+//            console.log($("#username").val());
+            $("#username").val("lisi");
+        });
+
+
+    </script>
+</body>
+</html>
