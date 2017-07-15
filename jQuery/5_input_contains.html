@@ -19,12 +19,15 @@
             $("#search").on("keyup", function(){
 //                console.log(this.value);
 //                console.log($(this).val());
+//                console.log(e.keyCode);
                 if(this.value != ""){
-                    $("#menu li:contains(" + this.value + ")").css("background", "red");
+                    $("#menu li").css("background", "transparent");
+                    $("#menu li:contains("+ this.value.toLowerCase() +")").css("background", "red");
                 }else{
                     $("#menu li").css("background", "transparent");
                 }
             });
+
         });
     </script>
 </body>

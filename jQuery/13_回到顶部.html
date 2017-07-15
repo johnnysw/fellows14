@@ -36,8 +36,9 @@
                 var iScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
                 if(iScrollTop <= 0){
                     clearInterval(timer);
+                }else{
+                    window.scrollTo(0, iScrollTop-=50);
                 }
-                window.scrollTo(0, iScrollTop-=50);
             }, 100);
         };*/
 
@@ -45,12 +46,18 @@
         //jq方法
         $(function(){
             $("#top").on("click", function(){
+                var target;
+                if(document.documentElement.scrollTop){//$("html).scrollTop()
+                    target = $("html");
+                }else{
+                    target = $("body");
+                }
                 var timer = setInterval(function(){
-                    var iScrollTop = $("body").scrollTop();
+                    var iScrollTop = target.scrollTop();
                     if(iScrollTop <= 0){
                         clearInterval(timer);
                     }
-                    $("body").scrollTop(iScrollTop-=50);
+                    target.scrollTop(iScrollTop-=50);
                 }, 100);
             });
         });
