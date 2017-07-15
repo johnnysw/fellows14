@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        #top{
+            width: 50px;
+            height: 50px;
+            background: #ff0000;
+            text-align: center;
+            line-height: 50px;
+            position: fixed;
+            right: 10px;
+            bottom: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">top</div>
+
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        //原生方法
+        /*var oTop = document.getElementById("top");
+        oTop.onclick = function(){
+            var timer = setInterval(function(){
+                var iScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+                if(iScrollTop <= 0){
+                    clearInterval(timer);
+                }
+                window.scrollTo(0, iScrollTop-=50);
+            }, 100);
+        };*/
+
+
+        //jq方法
+        $(function(){
+            $("#top").on("click", function(){
+                var timer = setInterval(function(){
+                    var iScrollTop = $("body").scrollTop();
+                    if(iScrollTop <= 0){
+                        clearInterval(timer);
+                    }
+                    $("body").scrollTop(iScrollTop-=50);
+                }, 100);
+            });
+        });
+    </script>
+
+
+</body>
+</html>

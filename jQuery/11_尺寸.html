@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            padding: 10px;
+            border: 10px solid #000;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script src="jquery-1.11.2.js"></script>
+
+    <script>
+        /*var oDiv1 = document.getElementById("div1");
+        console.log(oDiv1.offsetWidth);//content+padding+border
+        */
+        $(function(){
+            var $div1 = $("#div1");
+            console.log("width=" + $div1.width());//content
+            console.log("innerWidth=" + $div1.innerWidth());//content+padding
+            console.log("outerWidth=" + $div1.outerWidth(true));//content+padding+border  true+margin
+
+//            $div1.width(500);
+//            $div1.innerWidth(500);
+            $div1.outerWidth(500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">
+        divdivdiv
+    </div>
+
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        var $div1 = $("#div1");
+        var $div2 = $("<div id='div2'></div>");
+        /*$div2.appendTo($div1).css();
+        $div1.append($div2).css();*/
+//        console.log($div1.html());
+//            $div1.html("<h1>hhhh</h1>");
+            $div1.text("<h1>hhhh</h1>");
+    });
+</script>
+</body>
+</html>

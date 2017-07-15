@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            background: #ff0000;
+        }
+        .bb{
+            color: #0f0;
+        }
+        /*#div1{*/
+            /*background: #ff0000;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+    <div id="div1">div</div>
+
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        var oDiv = document.getElementById("div1");
+//        oDiv.className = "aa bb";
+//        $("#div1").addClass("aa").addClass("bb");
+
+//        $("#div1").css("background", "red");
+        /*$("#div1").css({
+            background : "red",
+            color: "#0f0",
+            fontSize: "20px",
+            borderTopColor : "#000"
+        });*/
+        var $div1 = $("#div1");
+
+        /*$div1.css("width", function(){
+            var w ;
+            //逻辑运算
+            w = 200;
+            return w;
+        });*/
+
+//        $div1.hasClass("aa");//true/false  不能链式操作
+//        $div1.removeClass("bb");
+        $div1.on("click", function(){
+            $(this).toggleClass("aa");
+        });
+
+
+    });
+</script>
+</body>
+</html>
