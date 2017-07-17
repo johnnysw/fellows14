@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<ul id="one" class="level-1">
+    <li class="item-i">I</li>
+    <li id="ii" class="item-ii">II
+        <ul class="level-2">
+            <li class="item-a">A</li>
+            <li class="item-b">B
+                <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                </ul>
+            </li>
+            <li class="item-c">C</li>
+        </ul>
+    </li>
+    <li class="item-iii">III</li>
+</ul>-->
+
+<ul>
+    <li><span>Click me!</span></li>
+    <li>You can also <span>Click me!</span></li>
+</ul>
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+//    $('li.item-a').closest('ul').css('background-color', 'red');
+//    $('li.item-a').parents('ul').css('background-color', 'red');
+
+
+    $( document ).on("click", function( e ) {
+//        $( e.target ).closest("li").css("background", "#f00");
+        $( e.target ).parents("li").css("background", "#f00");
+    });
+</script>
+</body>
+</html>

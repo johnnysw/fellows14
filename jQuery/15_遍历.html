@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aa{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<!--<ul id="ul1">
+    <li>01</li>
+    <li>02</li>
+    <li class="bb">03</li>
+    <li>04</li>
+    <li>05</li>
+</ul>
+<div id="div1">div1
+    <div id="div2">div2
+        <div id="div3">div3</div>
+    </div>
+    <div class="bb">bb</div>
+</div>
+
+
+<ul id="ul2">
+    <li>01</li>
+    <li>02</li>
+    <li class="bb">03</li>
+    <li>04</li>
+    <li>05</li>
+</ul>-->
+
+<!--<ul id="one" class="level-1">
+    <li class="item-i">I</li>
+    <li id="ii" class="item-ii">II
+        <ul class="level-2">
+            <li class="item-a">A</li>
+            <li class="item-b">B
+                <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                </ul>
+            </li>
+            <li class="item-c">C</li>
+        </ul>
+    </li>
+    <li class="item-iii">III</li>
+</ul>-->
+
+
+<!--<ul id="ul1">
+    <li>001</li>
+    <li class="bb">002</li>
+    <li>003</li>
+    <li>004</li>
+    <li class="cc">005</li>
+    <li>006</li>
+</ul>-->
+
+<ul id="menu" style="width:100px;">
+    <li>
+        <ul>
+            <li> <a href="#">Home</a> </li>
+        </ul>
+    </li>
+    <li>End</li>
+</ul>
+
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        $("#menu a").click(function() {
+//            $(this).parent("ul").css("background", "#f00"); //0
+//            $(this).parent("li").parent("ul").css("background", "yellow"); //1
+//            $(this).parents("ul").css("background", "yellow"); //2
+            $(this).closest("ul").css("background", "yellow"); //3 return false;
+        });
+
+//        $('li.item-a').closest('ul').css('background-color', 'red');
+//        $('li.item-a').parents('ul').css('background-color', 'red');
+//        $("#ul1 li:eq(-1)").addClass("aa");
+//        $("#ul1 li").eq(-1).addClass("aa");
+        /*$('li').filter('.bb').addClass("aa");
+//            $('li:even').addClass("aa");
+
+
+        $("#ul1").on("click", function(e){
+            console.log(e);
+            var $target = $(e.target);
+            if ( $target.is("li") ) {
+                $target.css("background-color", "red");
+            }
+        });*/
+
+//        $("#ul1 li").add("#div1").add("#ul2 li").addClass("aa");
+//            $("#ul1 li").eq(0).next().andSelf().addClass("aa");
+//        console.log($("#div1").contents());
+//            $("#ul1 li").eq(0).next().addClass("aa").end().addClass("aa");
+
+//            $("#div1").children("#div2").addClass("aa").children("#div3").css("background", "green").end().end().css("background", "yellow");
+
+//        $("#div1").children(".bb").addClass("aa");//children亲子代
+//        $("#div1").find("#div3").addClass("aa");//find后代
+
+
+//        $("#div3").parents("#div1").addClass("aa");
+
+//        $("#ul1 li.bb").nextUntil("li.cc").addClass("aa");
+//        $("#ul1 li.bb").siblings().addClass("aa");
+    });
+
+    /*var oUl2 = document.getElementById("ul2");
+    oUl2.onclick = function(e){
+        console.log(e);
+    };*/
+
+</script>
+</body>
+</html>

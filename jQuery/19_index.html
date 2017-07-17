@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+    <li>006</li>
+</ul>
+
+<ul id="ul2">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+    <li>006</li>
+</ul>
+
+<div id="div1"></div>
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        console.log($("li").size());//不推荐使用
+        console.log($("li").length);
+        $("li").on("click", function(){
+            console.log($(this).index());
+        });
+
+        var obj1 = {
+            name : "zhangsan",
+            age : 18,
+            school : "heida"
+        };
+        var obj2 = {
+            school : "weichuang"
+        };
+        var obj3 = {
+            sex : "男"
+        };
+
+        $.extend(obj1, obj2, obj3);
+        console.log(obj1);
+
+        $("#div1").load("login.html");
+//jQuery ==  $
+
+        $("li", $("#ul1"))
+        $("#ul1 li")
+    });
+</script>
+
+</body>
+</html>

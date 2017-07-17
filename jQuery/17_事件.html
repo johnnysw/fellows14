@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        //on  off
+        /*$("#div1").on("mouseleave", function(){
+            console.log("div1 mouseleave");
+        });
+        $("#div2").on("mouseleave", function(){
+            console.log("div2 mouseleave");
+        });*/
+        /*$("#div1").hover(function(){
+            console.log("滑入");//mouseenter
+        }, function(){
+            console.log("滑出");//mouseleave
+        });*/
+        /*$("#div1").toggle(function(){
+            $(this).css("background", "yellow");
+        }, function(){
+            $(this).css("background", "green");
+        });*/
+        $("#div1").on("click", "#div2", function(){
+            console.log("123");
+        });
+
+
+    });
+</script>
+</body>
+</html>

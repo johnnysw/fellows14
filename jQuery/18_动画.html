@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 300px;
+            height: 300px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+    <button id="animate">animate</button>
+    <button id="animated">animated</button>
+    <button id="fadeIn">fadeIn</button>
+    <button id="fadeOut">fadeOut</button>
+    <button id="fadeToggle">fadeToggle</button>
+    <button id="slideDown">slideDown</button>
+    <button id="slideUp">slideUp</button>
+    <button id="slideToggle">slideToggle</button>
+    <div id="div1"></div>
+    <h1>hhhh</h1>
+
+    <script src="jquery-1.11.2.js"></script>
+    <script src="jquery.easing.1.3.js"></script>
+    <script>
+        var $div1 = $("#div1");
+        $("#hide").on("click", function(){
+            $div1.hide(5000);
+        });
+        $("#show").on("click", function(){
+            $div1.show(5000);
+        });
+        $("#toggle").on("click", function(){
+            $div1.toggle(1000);
+        });
+        $("#animate").on("click", function(){
+            $div1.animate({
+                width: 500
+            }, 2000, "easeOutBounce", function(){
+                $div1.animate({
+                    height: 500
+                }, 1000, "easeOutBounce")
+            });
+        });
+        $("#animated").on("click", function(){
+            $("#div1:animated").css("background", "#0f0");
+        });
+        $("#fadeIn").on("click", function(){
+            $div1.fadeIn(1000);
+        });
+        $("#fadeOut").on("click", function(){
+            $div1.fadeOut(1000);
+        });
+        $("#fadeToggle").on("click", function(){
+            $div1.fadeToggle(1000);
+        });
+        $("#slideDown").on("click", function(){
+            $div1.slideDown(1000);
+        });
+        $("#slideUp").on("click", function(){
+            $div1.slideUp(1000);
+        });
+        $("#slideToggle").on("click", function(){
+            $div1.slideToggle(1000);
+        });
+
+
+    </script>
+
+
+</body>
+</html>

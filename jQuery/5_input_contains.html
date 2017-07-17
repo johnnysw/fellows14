@@ -20,11 +20,9 @@
 //                console.log(this.value);
 //                console.log($(this).val());
 //                console.log(e.keyCode);
+                $("#menu li").css("background", "transparent");
                 if(this.value != ""){
-                    $("#menu li").css("background", "transparent");
                     $("#menu li:contains("+ this.value.toLowerCase() +")").css("background", "red");
-                }else{
-                    $("#menu li").css("background", "transparent");
                 }
             });
 
