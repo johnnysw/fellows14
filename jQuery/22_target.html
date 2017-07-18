@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+/*        var oUl = document.getElementById("ul1");
+        var aLi = oUl.getElementsByTagName("li");
+       /!* for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(e){
+                console.log(this === e.target);
+//                console.log(e.target);
+            };
+        }*!/
+       oUl.onclick = function(e){
+           console.log(this);
+           console.log(e.target);
+       };*/
+/*    $("#ul1 li").on("click", function(e){
+        console.log(this);
+        console.log(e.target);
+        console.log(e.currentTarget);
+    });*/
+    $("#ul1").on("click", function(e){
+        console.log(this);
+        console.log(e.target);
+        console.log(e.currentTarget);
+        console.log(this === e.currentTarget);
+    });
+
+    </script>
+
+
+</body>
+</html>
