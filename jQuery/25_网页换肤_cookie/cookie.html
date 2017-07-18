@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*var date = new Date();
+    date.setDate(date.getDate() + 20);
+
+    document.cookie = "username=zhangsan;expires="+date.toUTCString();
+    document.cookie = "age=20";*/
+
+//    console.log(document.cookie);
+
+    addCookie("school", "weichuang", 7);//7天
+    addCookie("name", "lisi");
+//    console.log(document.cookie);
+    console.log(getCookie("name"));
+    console.log(getCookie("school"));
+
+    delCookie("name");
+    console.log(getCookie("name"));
+
+    function addCookie(key, val, expires){//expires表示过期天数
+        var str = key + "=" + val;
+        if(expires){
+            var date = new Date();
+            date.setDate(date.getDate() + expires);
+            str += ";expires=" + date.toUTCString();//toUTCString 把date转化为string
+        }
+        document.cookie = str;
+    }
+
+
+    //school=weichuang; name=lisi
+    function getCookie(key){
+        var arr = document.cookie.split(";");
+        for(var i=0; i<arr.length; i++){
+            var temp = arr[i].split("=");
+            if(temp[0].trim() == key){
+                return temp[1];
+            }
+        }
+    }
+    function delCookie(key){
+        var date  = new Date();
+        date.setDate(date.getDate() - 100);
+        document.cookie = key + "=abc;expires=" + date.toUTCString();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="js/jquery-1.11.2.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script>
+    $(function(){
+        $.cookie("username", "wangwu", {expires: 30});
+        $.cookie("username", "lisi", {expires: 30});
+
+        console.log($.cookie("username"));
+
+        $.cookie("username", "", {expires: -1});
+
+        console.log($.cookie("username"));
+
+
+    });
+
+
+</script>
+</body>
+</html>
