@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        /*p + p {
+            color: #f00;
+        }*/
+        p ~ p {
+            color: #f00;
+        }
+        input{
+            background: #00ff00;
+        }
+        input:focus{
+            background: #ff0000;
+        }
+        /*#ul1 li:not(:nth-child(even)){
+            background: #ff0000;
+        }*/
+        /*ul li:first-child{
+            background: #00ff00;
+        }*/
+        /*ul li:only-child{
+            background: #ff0000;
+        }*/
+        #ul1 li:nth-last-child(2){
+            background: #ff0000;
+        }
+
+        #div1 h1:first-of-type{
+            background: #ff0000;
+        }
+        #div2{
+            width: 200px;
+            border: 1px solid;
+        }
+        /*#div2::first-line{
+            background: #ff0000;
+        }*/
+        #div2::first-letter{
+            background: #ff0000;
+        }
+        #div2::selection{
+            background: #0f0;
+        }
+    </style>
+</head>
+<body>
+    <p>p1</p>
+    <p>p2</p>
+    <h3>这是一个标题</h3>
+    <p>p3</p>
+    <h3>这是一个标题</h3>
+    <p>p4</p>
+    <p>p5</p>
+
+    <input type="text" placeholder="请输入用户名">
+    <input type="password">
+
+    <ul id="ul1">
+        <li>001</li>
+        <li>002</li>
+        <li class="aa">003</li>
+        <li>004</li>
+        <li>005</li>
+    </ul>
+
+    <ul>
+        <li>111</li>
+    </ul>
+
+
+    <div id="div1">
+        <div>11</div>
+        <div>22</div>
+        <h1>hhhhhh</h1>
+        <div>33</div>
+        <h1>hhhhhh</h1>
+    </div>
+
+
+    <div id="div2">&nbsp;啊啊啊啊啊asdf asdf asdfa dsfs adfa sdf asdfa  dsfa dsfasdf asdfsd afdsasd</div>
+
+</body>
+</html>

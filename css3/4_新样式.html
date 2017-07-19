@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            -webkit-text-shadow: 10px 10px 2px rgba(255, 0, 0, 0.5);
+            -moz-text-shadow: 10px 10px 2px rgba(255, 0, 0, 0.5);
+            -ms-text-shadow: 10px 10px 2px rgba(255, 0, 0, 0.5);
+            -o-text-shadow: 10px 10px 2px rgba(255, 0, 0, 0.5);
+            text-shadow: 10px 10px 2px rgba(255, 0, 0, 0.5), 20px 20px 2px rgba(0, 255, 0, 0.5);
+            font-family: "Serendity Script";
+
+
+        }
+        #div2{
+            border: 1px solid;
+            width: 300px;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+        #div3{
+            width: 200px;
+            border: 1px solid;
+            word-break: break-all;
+            font-family: "Serendity Script";
+        }
+        @font-face {
+            font-family: 'Serendity Script';
+            src: url('Serendipity Script/Serendity Script.eot'); /* IE9+ */
+            src: url('Serendipity Script/Serendity Script.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('Serendipity Script/Serendity Script.woff') format('woff'), /* chrome、firefox */
+            url('Serendipity Script/Serendity Script.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('Serendipity Script/Serendity Script.svg#fontname') format('svg'); /* iOS 4.1- */
+        }
+
+        #div4{
+            width: 300px;
+            height: 200px;
+            background: #ff0000;
+
+            border-radius: 50px;
+        }
+        #div5{
+            width: 300px;
+            height: 300px;
+            background: #ff0000;
+
+            box-shadow: 10px 10px 20px 20px rgba(0, 255, 0, 0.6);
+        }
+        #div6{
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            border: 10px solid gray;
+            border-image: url(border-img.png) 10/10px
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">divdivdiv</div>
+
+    <div id="div2">阿斯顿发送到发生的发生阿斯顿发生发斯蒂芬阿斯顿发送到发斯蒂芬</div>
+
+    <div id="div3">asdfasdfasdfasdklfjsaldjflkasjfdlkasjdlkfjsadlkfjlasdjf</div>
+
+
+    <!--<div id="div4"></div>-->
+
+    <div id="div5"></div>
+
+    <div id="div6"></div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*#div1::after{
+            content: "aaa";
+            background: #ff0000;
+            width: 200px;
+            height: 200px;
+        }
+        #div1::before{
+            content: "bbb";
+        }*/
+        a::after{
+            content: attr(href);
+        }
+
+        #ul1{
+            /*height: 30px;*/
+            /*float: left;*/
+            /*position: absolute;*/
+            /*overflow: hidden;*/
+        }
+        #ul1 li{
+            list-style: none;
+            float: left;
+        }
+
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">div</div>
+
+    <a href="http://www.baidu.com">baidu</a><br>
+    <a href="http://www.taobao.com">taobao</a><br>
+    <a href="http://www.jd.com">jd</a>
+
+
+    <ul id="ul1" class="clearfix">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+</html>
