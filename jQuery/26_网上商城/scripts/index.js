@@ -49,7 +49,7 @@ $(function(){
 
     function changeImg(){
         $menus.eq(nowIndex).addClass("chos").siblings().removeClass("chos");
-        $imgs.eq(nowIndex).stop().fadeIn().siblings().stop().fadeOut();
+        $imgs.eq(nowIndex).stop(false, true).fadeIn().siblings().stop(false, true).fadeOut();
     }
 
     //tooltip
