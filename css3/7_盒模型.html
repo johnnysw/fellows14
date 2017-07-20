@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            padding: 10px;
+            border: 10px solid;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        alert(oDiv1.offsetWidth);
+    </script>
+</body>
+</html>
+<!--
+标准盒模型：width=content
+怪异/混杂盒模型:width=content+padding+border
+
+-->
+
+
+
+
+
+
+
+
+

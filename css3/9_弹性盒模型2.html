@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #left, #center, #right{
+            height: 300px;
+            flex-grow: 1;
+        }
+        #left{
+            background: #00ff00;
+        }
+        #center{
+            background: #ff0000;
+        }
+        #right{
+            background: #0000ff;
+        }
+        #main{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="left">left</div>
+        <div id="center">center</div>
+        <div id="right">right</div>
+    </div>
+
+</body>
+</html>

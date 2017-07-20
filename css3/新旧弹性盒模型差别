@@ -1,0 +1,32 @@
+1、在使用弹性盒模型的时候父元素必须要加display:box 或 display:inline-box:
+    新版弹性盒模型：flex：display : flex
+    老版弹性盒模型：box : display : -webkit-box
+2、box-orient 定义盒模型的主轴方向
+新版：flex：flex-direction: row / column
+老版：box : -webkit-box-orient:
+        horizontal 水平显示
+           vertical 垂直方向  
+3、box-direction 元素排列顺序
+新版：flex : flex-direction: row-reverse / column-reverse;
+老版：box : -webkit-box-direction:
+           normal 正序
+           reverse 反序
+4、box-pack 主轴方向富裕的空间管理
+     新版：flex : justify-content : flex-start / flex-end / center / space-between / space-around;
+     老版：box : -webkit-box-pack
+              start 所有子元素在盒子左侧显示，富裕空间在右侧
+              end 所有子元素在盒子右侧显示，富裕空间在左
+              center 所有子元素居中
+              justify 富裕空间在子元素之间平均分布
+5、box-align 侧轴方向方向富裕的空间管理
+     新版：flex : align-items : flex-start / flex-end / center / baseline
+     老版：box : -webkit-box-align
+              star 所有子元素在据顶
+              end 所有子元素在据底
+              center 所有子元素居中
+6、Box-flex 定义盒子的弹性空间
+     新版：flex : flex-grow
+     老版：box : -webkit-box-flex
+7、box-ordinal-group 设置元素的具体位置
+     新版：flex : order
+     老版：box : -webkit-box-ordinal-group
