@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+
+            /*transition: all 2s linear 1s;*/
+
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: linear;
+            transition-delay: 1s;
+        }
+       /* #div1:hover{
+            width: 500px;
+            background: #00ff00;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        oDiv1.onclick = function(){
+            this.style.width = "500px";
+        };
+    </script>
+</body>
+</html>
