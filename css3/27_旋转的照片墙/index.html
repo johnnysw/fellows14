@@ -48,6 +48,7 @@
             top: 50%;
             margin-top: -30px;
             display: none;
+            cursor: pointer;
         }
         #prev{
             background-image: url(img/prev.png);
@@ -75,6 +76,7 @@
         var oPrev = document.getElementById("prev");
         var oNext = document.getElementById("next");
         var aImg;
+        var nowIndex = 1;//保存的当前显示的图片，取值1~24
 
         //图片预加载
         for(var i=0; i<NUM; i++){
@@ -140,6 +142,7 @@
         var fBigRowGap = (oContainer.offsetHeight - BIG_HEIGHT) / 2;
         var fBigColGap = (oContainer.offsetWidth - BIG_WIDTH) / 2;
         var bFlag = true;//标志位，true表示当前是散开的要合上，false表示当前是合上的要散开
+        //把小图片的点击事件委托给container绑定
         oContainer.onclick = function(e){
             if(this === e.target){//e.target = oContainer/div/span
                 return false;
@@ -162,6 +165,9 @@
                     }
                     oSpan.style.backgroundImage = "url(img/"+ imgURL +".jpg)";
                     oSpan.style.backgroundPosition = -THUMB_WIDTH * aImg[i].pos.col + "px "+ (-THUMB_HEIGHT * aImg[i].pos.row) +"px";
+                    oSpan.style.transitionDelay = "0ms";
+
+                    nowIndex = imgURL;// 取值1~24
                 }
                 oPrev.style.display = oNext.style.display = "block";
             }else{
@@ -173,18 +179,40 @@
                     aImg[i].style.borderWidth = "5px";
                     var oSpan = aImg[i].getElementsByTagName("span")[0];
                     oSpan.style.opacity = 0;
+                    oSpan.style.transitionDelay = "0ms";
                 }
                 oPrev.style.display = oNext.style.display = "none";
             }
             bFlag = !bFlag;
         };
 
+        oPrev.onclick = oNext.onclick = function(){
+            if(this === oNext){
+                nowIndex++;
+                if(nowIndex == NUM + 1){
+                    nowIndex = 1;
+                }
+            }else{
+                nowIndex--;
+                if(nowIndex == 0){
+                    nowIndex = NUM;
+                }
+            }
 
+            var arr = [];//0~23
+            for(var i=0; i<NUM; i++){
+                arr.push(i);
+            }
+            arr.sort(function(a, b){
+                return Math.random() - 0.5;
+            });
 
-
-
-
-
+            for(var i=0; i<arr.length; i++){
+                var oSpan = aImg[arr[i]].getElementsByTagName("span")[0];
+                oSpan.style.transitionDelay = (i + 1) * 50 + "ms";
+                oSpan.style.backgroundImage = "url(img/"+ nowIndex +".jpg)";
+            }
+        };
     </script>
 </body>
 </html>
