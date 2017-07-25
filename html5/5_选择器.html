@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1" class="aa">div1
+        <div class="aa">div2</div>
+        <div class="aa">div3</div>
+    </div>
+
+    <script>
+        document.getElementById("id");
+        document.getElementsByTagName("div");
+
+        //兼容性问题
+        document.getElementsByName("username");
+        document.getElementsByClassName("aa");
+        var aDiv = document.querySelectorAll("#div1 .aa");
+//        console.log(aDiv);
+        var oDiv1 = document.querySelector("#div1");
+//        oDiv1.className += " cc";
+//        console.log(oDiv1.className);//string
+//        console.log(oDiv1.classList.add("cc"));//object
+//        oDiv1.classList.remove("bb");
+        oDiv1.classList.toggle("bb");//
+
+
+        /**
+         * 查找符合className的元素
+         * @param className
+         * @param context
+         * @return {Array}
+         */
+        function getByClass(className, context) {
+            context = context || document;
+            var result = [];
+            var arr = context.getElementsByTagName('*');
+            var re = new RegExp("\\b"+className+"\\b");
+            for(var i=0; i<arr.length; i++){
+                if(re.test(arr[i].className)){
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>

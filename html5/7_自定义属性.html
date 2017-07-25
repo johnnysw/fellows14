@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1" data-aa-bb="456"></div>
+
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        oDiv1.aa = "123";//jq prop()
+        console.log(oDiv1.aa);
+
+        oDiv1.setAttribute("bb", "234");//jq attr()
+        console.log(oDiv1.getAttribute("bb"));
+
+        console.log($("#div1").data("aaBb"));//aa-bb  aaBb
+
+
+        console.log(oDiv1.dataset.aaBb);
+    </script>
+</body>
+</html>
