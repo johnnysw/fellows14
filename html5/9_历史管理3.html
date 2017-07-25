@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #nav li{
+            float: left;
+            width: 120px;
+            height: 30px;
+        }
+        div{
+            height: 300px;
+        }
+        #div1{
+            background: #ff0000;
+            margin-top: 500px;
+        }
+        #div2{
+            background: #00ff00;
+        }
+        #div3{
+            background: #ffff00;
+            margin-bottom: 1000px;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <ul id="nav" class="clearfix">
+        <li><a href="#div1">Link 1</a></li>
+        <li><a href="#div2">Link 2</a></li>
+        <li><a href="#div3">Link 3</a></li>
+    </ul>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        $(function(){
+            $("#nav a").on("click", function(e){
+                var href = $(this).attr("href");//#div1 #dvi2 #div3
+                var top = $(href).offset().top;
+                $(document.body).animate({
+                    scrollTop : top
+                }, 500);
+                history.pushState(top, "");
+                return false;//阻止默认行为+阻止事件冒泡
+//                e.preventDefault();//阻止默认行为
+//                e.stopPropagation();//阻止事件冒泡
+            });
+
+            window.onpopstate = function(e){
+                $(document.body).animate({
+                    scrollTop : e.state
+                }, 500);
+            };
+
+
+
+        });
+
+
+    </script>
+</body>
+</html>

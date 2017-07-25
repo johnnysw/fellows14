@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* document.cookie = "name=zhangsan"*/
+
+    localStorage.username = "lisi";
+    localStorage.setItem("age", 18);
+    console.log(localStorage.username);
+    console.log(localStorage.getItem("age"));
+
+    localStorage.removeItem("age");
+    localStorage.clear();
+
+
+    sessionStorage.name = "zhangsan";
+    sessionStorage.setItem("age", 18);
+
+//    session 会话 保存在服务端的
+
+</script>
+</body>
+</html>
