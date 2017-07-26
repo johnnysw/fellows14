@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<iframe id="iframe" src="http://www.b.com/index2.html" frameborder="0"></iframe>
+
+<script>
+    window.onload = function(){
+        var oIfream = document.getElementById("iframe");
+        var win = oIfream.contentWindow;
+        win.postMessage("hello", "http://www.b.com");
+    };
+
+
+</script>
+</body>
+</html>

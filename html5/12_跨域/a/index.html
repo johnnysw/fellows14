@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+a
+
+<!--<script src="jquery-1.12.4.js"></script>-->
+<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $.get("http://www.b.com/index.html", {
+        name :"zhangsan"
+    });
+
+   // (index):1 XMLHttpRequest cannot load http://www.b.com/index.html?name=zhangsan. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://www.a.com' is therefore not allowed access.
+</script>
+</body>
+</html>

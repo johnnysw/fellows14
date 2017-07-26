@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: #000000;
+            margin: 0;
+        }
+
+        #cvs {
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<canvas id="cvs" width="500px" height="400px"></canvas>
+
+<script>
+    window.onload = function () {
+        var oCvs = document.getElementById("cvs");
+        var ctx = oCvs.getContext("2d");
+        /*
+         //画直线
+         ctx.beginPath();
+         ctx.moveTo(100, 100);
+         ctx.lineTo(300, 300);
+         ctx.strokeStyle = "#f00";
+         ctx.lineWidth = 5;
+         ctx.lineCap = "round";
+         ctx.stroke();
+
+         ctx.beginPath();
+         ctx.moveTo(200, 150);
+         ctx.lineTo(300, 250);
+         ctx.strokeStyle = "#000";
+         ctx.lineWidth = 5;
+         ctx.lineCap = "round";
+         ctx.stroke();*/
+
+
+        var x = oCvs.width / 2;
+        var y = oCvs.height / 2;
+        var radius = 75;
+//        var startAngle = 1.1 * Math.PI;
+//        var endAngle = 1.9 * Math.PI;
+        var startAngle = 0;
+        var endAngle = 4;
+        var counterClockwise = false;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, startAngle, endAngle,
+            counterClockwise);
+        ctx.lineWidth = 15;
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+    };
+
+</script>
+</body>
+</html>
