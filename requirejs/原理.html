@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">add</button>
+    <script>
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function(){
+            var oScript = document.createElement("script");
+            oScript.src = "xx.js";
+            oScript.onload = function(){
+
+            };
+            document.body.appendChild(oScript);
+        };
+
+//        defer async
+        /*
+        AMD(Asynchronization Module Definition异步模块定义):
+                requirejs   依赖前置
+
+        CMD(Common Module Definition通用模块定义):
+                seajs   依赖就近
+
+
+
+        * */
+    </script>
+</body>
+</html>

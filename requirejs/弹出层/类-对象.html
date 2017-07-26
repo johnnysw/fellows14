@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+    类： 人类   具有相同属性和方法的对象的集合
+    对象：张三
+    -->
+    Class Animal(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    Class Cat extends Animal(color){
+        this.color = color
+    }
+
+    var mimi = new Cat();
+
+    <script>
+        //类
+        function People(name, age){//构造函数
+            this.name = name;
+            this.age = age;
+        }
+        People.prototype.code = function(){//prototype原型
+            alert("coding...");
+        };
+
+        //对象
+        var p1 = new People("zhangsan", 18);
+        p1.code();
+
+
+        function aa(name, age){
+            console.log(this);
+            console.log(name);
+            console.log(age);
+        }
+        var obj = {
+            name: "zhangsan",
+            school: "heida"
+        };
+//        aa.call(obj, "lisi", 18);
+//        aa.apply(obj, ["lisi", 18]);
+        aa.bind(obj)("lisi", 18);
+
+    </script>
+<!--
+改变this的指向:
+call
+apply
+bind
+
+
+
+
+-->
+
+</body>
+</html>
