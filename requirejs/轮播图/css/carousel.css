@@ -1,0 +1,58 @@
+.carousel-container{
+    position: relative;
+    width: 520px;
+    height: 280px;
+}
+.carousel-imgs img{
+    display: none;
+}
+.carousel-imgs .selected{
+    display: block;
+}
+.carousel-nav{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+.carousel-nav li, .carousel-arrows div{
+    width: 20px;
+    height: 20px;
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    float: left;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.carousel-nav .selected{
+    background: orange;
+}
+.carousel-arrows{
+    /*position: absolute;
+    left: 10px;
+    bottom: 10px;*/
+}
+
+.carousel-arrows .carousel-left.bottom{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.carousel-arrows .carousel-right.bottom{
+    position: absolute;
+    left: 35px;
+    bottom: 10px;
+}
+.carousel-arrows .carousel-left.center{
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    left: 0;
+}
+.carousel-arrows .carousel-right.center{
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 0;
+}
