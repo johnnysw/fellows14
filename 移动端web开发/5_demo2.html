@@ -21,12 +21,10 @@
         }
         figure{
             width: 960px;
+            height: 540px;
             margin: 0 auto;
-        }
-        figure img{
-            width: 960px;
-            /*height: 540px;*/
-            display: block;
+            background: url(01.jpg) no-repeat;
+            background-size: cover;
         }
         article{
             width: 960px;
@@ -63,6 +61,11 @@
             h3, article, figure{
                 width: 100%;
             }
+            figure{
+                background-image: url(01_s_2x.jpg);
+                height: 0;
+                padding-top: 56.25%;/* 高度/宽度 */
+            }
             #left{
                 width: 67%;
                 margin-right: 3%;
@@ -70,14 +73,14 @@
             #right{
                 width: 30%;
             }
-            figure img{
-                width: 100%;
-                max-width: 100%;
-            }
+
         }
         @media (max-width: 479px) {
             #left, #right{
                 width: 100%;
+            }
+            figure{
+                background-image: url(01_s.jpg);
             }
         }
     </style>
@@ -89,9 +92,7 @@
     <nav>
         <h3>导航</h3>
     </nav>
-    <figure>
-        <img src="01.jpg" alt="">
-    </figure>
+    <figure></figure>
     <article class="clearfix">
         <section id="left">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
@@ -107,5 +108,11 @@
     <footer>
         <h3>页脚</h3>
     </footer>
+
+    <script>
+        window.onresize = function(){
+            console.log(document.body.offsetWidth);
+        };
+    </script>
 </body>
 </html>
