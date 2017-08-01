@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="my_theme.min.css">
+    <link rel="stylesheet" href="jquery.mobile.icons.min.css">
+    <script src="jquery-1.11.2.js"></script>
+    <script>
+        /*
+        原生：touchstart touchend touchmove touchcancel
+        tap
+        swipeleft swiperight
+
+         */
+        $(document).on("pageinit","#pageone",function(){
+
+
+
+        });
+
+    </script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page" data-theme="a" id="pageone">
+        <div data-role="header">
+            <a href="#" data-role="button">首页</a>
+            <h1>欢迎来到我的主页</h1>
+            <a href="#" data-role="button">搜索</a>
+        </div>
+        <div role="main" class="ui-content">
+            <h3>this is content2</h3>
+            <a href="1_page.html" data-transition="slideup reverse" >1_page</a>
+            <a href="1_page.html" class="ui-btn ui-btn-inline ui-btn-icon-right">返回</a>
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-l">arrow-l</button>
+
+            <a href="#link" data-role="button" data-icon="search" data-iconpos="top">上</a>
+            <a href="#link" data-role="button" data-icon="search" data-iconpos="right">右</a>
+            <a href="#link" data-role="button" data-icon="search" data-iconpos="bottom">下</a>
+            <a href="#link" data-role="button" data-icon="search" data-iconpos="left">左</a>
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="plus">更多</a></li>
+                    <li><a href="#" data-icon="minus">更少</a></li>
+                    <li><a href="#" data-icon="delete">删除</a></li>
+                    <li><a href="#" data-icon="check">喜爱</a></li>
+                    <li><a href="#" data-icon="info">信息</a></li>
+                </ul>
+            </div>
+
+            <div data-role="collapsible">
+                <h1>点击我 - 我可以折叠！</h1>
+                <p>我是可折叠的内容。</p>
+            </div>
+        </div>
+        <div data-role="footer">
+            <h3>this is footer2</h3>
+        </div>
+    </div>
+
+
+</body>
+</html>
