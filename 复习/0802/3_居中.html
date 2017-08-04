@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            text-align: center;
+            line-height: 200px;
+        }
+        #div1 span{
+            background: #ff0000;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #999999;
+            /*overflow: hidden;*/
+            position: relative;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background: #00ff00;
+           /*margin: 50px auto;*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*margin-top: -50px;
+            margin-left: -50px;*/
+            transform: translate(-50%, -50%);
+        }
+        #div4{
+            width: 600px;
+            height: 500px;
+            border: 1px solid #000;
+            background: #ccc url(2.jpg) no-repeat 0 0/cover fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <span>span</span>
+    </div>
+
+    <div id="div2">
+        <div id="div3"></div>
+    </div>
+
+    <div id="div4"></div>
+</body>
+</html>

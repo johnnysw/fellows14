@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #id2 .aa .bb .cc .dd{
+
+        }
+        input[type="text"][class="aa"]{
+            background: #ff0000;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<!--
+盒模型：
+标准盒模型：width=content
+怪异盒模型：width=content+padding+border
+
+
+-->
+    <div class="aa bb"></div>
+
+    <input type="text" class="aa">
+
+<script>
+    window.onscroll = function(){
+        var iScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        oDiv.style.top = 500 + iScrollTop;
+    };
+
+
+</script>
+</body>
+</html>
