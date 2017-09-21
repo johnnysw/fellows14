@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <ul>
+      <li>001</li>
+      <li>002</li>
+      <li>003</li>
+  </ul>
+  <button id="btn">
+
+  </button>
+    <script>
+        var oBtn = document.querySelector("#btn");
+
+//        oBtn.onclick = function () {
+//            alert(11111);
+//        }
+//
+//        oBtn.onclick = function () {
+//            alert(22222);
+//        }
+
+//        oBtn.onclick = null;
+
+
+        var fn = function(e){
+            e.stopPropagation();
+            e.cancelBubble = true;
+
+            e.preventDefault();
+            e.returnValue = false;
+        };
+
+//        oBtn.addEventListener('click',fn,false);
+
+//        oBtn.attachEvent('onclick',function(){
+//
+//        })
+//
+//        oBtn.removeEventListener('click',fn);
+
+//        oBtn.addEventListener('click',function(){
+//            alert(22222);
+//        },false);
+
+
+
+
+//        document.getElementsByTagName('li');
+//            document.querySelector("");
+//            var aLi = document.querySelectorAll("li");
+//            for(var i=0;i<aLi.length;i++){
+//                aLi[i].onclick = function () {
+//                    setTimeout(function () {
+//                        console.log(this.innerHTML);
+//                    }.bind(this),1000);
+//                }
+//            }
+
+// call  apple  bind
+
+
+//    var a = 20;
+//
+//    var obj = {
+//        a:10,
+//        fn:function(x,y){
+//            console.log(this.a,x,y);
+//        }
+//    }
+//    obj.fn.bind(window,1,2)();
+//    obj.fn.apply(window,[1,2]);
+//      obj.fn.call(window,1,2);
+
+
+//    obj.fn();
+
+
+
+
+
+
+
+    //
+
+
+
+
+
+
+
+
+//        number string undefined null boolean
+
+//        undefined === null
+        //console.log(1 - 'a');
+
+//        undefined
+
+//        var a = {name:123};
+//        console.log(a.age);
+
+//    var arr = [1,2,3,3,4,6,4,6,7];
+//
+//     arr.forEach(function(value){
+//        if(arr.lastIndexOf(value) == arr.indexOf(value)){
+//            console.log(value);
+//        }
+//     })
+
+//        var oDiv1 = document.getElementById('div1');
+//        var oDiv1 = document.body.firstElementChild;
+//        var oDiv = document.createElement('div');
+//        oDiv.innerHTML = "bbbb";
+//        document.body.insertBefore(oDiv,oDiv1);
+
+//        document.body.appendChild(oDiv);
+//        document.body.removeChild(oDiv);
+
+//        console.log(document.body.firstElementChild);
+
+
+
+//        setTimeout(function(){
+//            console.log(11111);
+//        },0)
+//
+
+//        setInterval(function () {
+//            console.log(11111);
+//        },1000)
+//
+//    function fn() {
+//        console.log(11111);
+//        setTimeout(arguments.callee,1000)
+//    }
+//    fn();
+
+//    function fn() {
+//        console.log(arguments[0]);
+//    }
+//    fn(1,2,3);
+
+
+
+
+
+    </script>
+</body>
+</html>
