@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            width: 960px;
+            height: 100px;
+            background: #cccccc;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            margin: 30px auto;
+        }
+        figure{
+            width: 960px;
+            height: 540px;
+            margin: 0 auto;
+            background: url(01.jpg) no-repeat;
+            background-size: cover;
+        }
+        article{
+            width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #left{
+            width: 630px;
+            height: 300px;
+            background: #00ff00;
+            float: left;
+            margin-right: 30px;
+        }
+        #left, #right{
+            display: table;
+        }
+        #left p, #right p{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        #right{
+            width: 300px;
+            height: 300px;
+            background: #ffff00;
+            float: left;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        @media (max-width: 959px) {
+            h3, article, figure{
+                width: 100%;
+            }
+            figure{
+                background-image: url(01_s_2x.jpg);
+                height: 0;
+                padding-top: 56.25%;/* 高度/宽度 */
+            }
+            #left{
+                width: 67%;
+                margin-right: 3%;
+            }
+            #right{
+                width: 30%;
+            }
+
+        }
+        @media (max-width: 479px) {
+            #left, #right{
+                width: 100%;
+            }
+            figure{
+                background-image: url(01_s.jpg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>页头</h3>
+    </header>
+    <nav>
+        <h3>导航</h3>
+    </nav>
+    <figure></figure>
+    <article class="clearfix">
+        <section id="left">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
+                vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam
+                quis magna facilisis, eget feugiat nisi lacinia.</p>
+        </section>
+        <section id="right">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
+                vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam
+                quis magna facilisis, eget feugiat nisi lacinia.</p>
+        </section>
+    </article>
+    <footer>
+        <h3>页脚</h3>
+    </footer>
+
+    <script>
+        window.onresize = function(){
+            console.log(document.body.offsetWidth);
+        };
+    </script>
+</body>
+</html>
