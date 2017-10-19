@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list"></ul>
+
+    <script src='jquery-1.11.2.js'></script>
+    <script>
+        //ajax:不刷新页面的请求
+
+        //jquery: $.get();  $.post();
+
+        /* let $list = $('#list');
+        $.get('product-data.json', {}, function (res) {
+            let list = res.productData;
+            for (let item of list) {
+                let $li = $(`<li>${item.name}</li>`);
+                $list.append($li);
+            }
+    
+        }, 'json'); */
+
+        //ajax原理
+
+        /* //1、创建对象
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        //2、向服务器发送请求
+        xmlhttp.open("GET", "test1.txt", true);
+        xmlhttp.send();
+
+        //3、服务器响应
+        xmlDoc = xmlhttp.responseXML;
+        txt = "";
+        x = xmlDoc.getElementsByTagName("ARTIST");
+        for (i = 0; i < x.length; i++) {
+            txt = txt + x[i].childNodes[0].nodeValue + "<br />";
+        }
+        document.getElementById("myDiv").innerHTML = txt;
+ */
+
+
+        //省 - 市 - 县 - 街道
+
+        /* $.get(url, {}, function(res){
+            res //市的信息
+            $.get(url, {市}, function(){
+
+                $.get()
+            });
+        }); */
+
+
+        /*let p1 = new Promise((reslove, reject) => {
+            $.get('product-data.json', {}, function (res) {
+                let list = res.productData;
+                if(list.length > 0){
+                    reslove();
+                }else{
+                    reject();
+                }
+            }, 'json');
+        });
+
+        p1.then(()=>{
+            console.log('成功');
+        }).catch(()=>{
+            console.log('失败');
+        });*/
+
+        /*let flag1 = false, flag2 = false, flag3 = false;
+        $.get(url, function(){
+            flag1 = true;
+        });
+        $.get(url, function(){
+            flag2 = true;
+        });
+        $.get(url, function(){
+            flag2 = true;
+        });
+
+
+        setInterval(function(){
+            if(flag1 && flag2 && flag3){
+                ...
+            }
+        }, 500);*/
+
+        let p1 = new Promise((reslove, reject)=>{
+            setTimeout(()=>{
+                console.log('p1');
+                reslove();
+            }, 1000);
+        });
+        let p2 = new Promise((reslove, reject)=>{
+            setTimeout(()=>{
+                console.log('p2');
+                reslove();
+            }, 2000);
+        });
+        let p3 = new Promise((reslove, reject)=>{
+            setTimeout(()=>{
+                console.log('p3');
+                reslove();
+            }, 3000);
+        });
+
+        /*Promise.all([p1, p1, p3]).then(()=>{
+            console.log('成功');
+        }).catch(()=>{
+            console.log('失败');
+        });*/
+        Promise.race([p1, p1, p3]).then(()=>{
+            console.log('成功');
+        }).catch(()=>{
+            console.log('失败');
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
