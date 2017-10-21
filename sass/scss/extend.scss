@@ -39,12 +39,20 @@ div{
 //    width: 30px;
 //  }
 //}
-$i:4;
-@while $i > 0{
-  .col-#{$i}{
-    width: 20px * $i;
-  }
-  $i : $i - 1;
+//$i:4;
+//@while $i > 0{
+//  .col-#{$i}{
+//    width: 20px * $i;
+//  }
+//  $i : $i - 1;
+//}
+
+@function add($a, $b){
+  @return $a + $b;
+}
+
+.div1{
+  width: add(30px,50px);
 }
 
 
