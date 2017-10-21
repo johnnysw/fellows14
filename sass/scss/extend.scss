@@ -1,0 +1,16 @@
+@import "base";
+
+body{
+  color:#ff6600;
+  ul{
+    background-color: #fff;
+  }
+}
+
+
+div{
+  @extend body;
+  font-size: 23px;
+}
+
+
