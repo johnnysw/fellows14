@@ -7,10 +7,44 @@ body{
   }
 }
 
-
+$flag:false;
 div{
   @extend body;
-  font-size: 23px;
+  //@if($flag){
+  //  font-size: 23px;
+  //}@else{
+  //font-size: 13px;
+  //}
+
+
+}
+
+//@for $i from 1 through 4{
+//  .col-#{$i}{
+//    width: 20px * $i;
+//  }
+
+//}
+
+
+//@for $i from 1 to 4 {
+//  .col-#{$i} {
+//    width: 20px * $i;
+//  }
+//}
+//$list: success,fail,warn;
+//
+//@each $var in $list{
+//  .alert-#{$var}{
+//    width: 30px;
+//  }
+//}
+$i:4;
+@while $i > 0{
+  .col-#{$i}{
+    width: 20px * $i;
+  }
+  $i : $i - 1;
 }
 
 
