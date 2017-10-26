@@ -20,7 +20,11 @@
         <!--class style-->
         <!--<div :class="{red:isRed,font:isFont}">ddddddddddd</div>-->
         <!--<div :class="classObj">ddddddddddd</div>-->
-        <div :class="[classA,classB]">ddddddddddd</div>
+        <!--<div :class="[classA,classB]">ddddddddddd</div>-->
+        <div :style="{background:bgStyle}">dddddd</div>
+        <div :style="styleObj">dddddd</div>
+        <div :style="[styleA,styleB]">dddddd</div>
+
     </div>
 </body>
 <script src="vue.js"></script>
@@ -28,6 +32,18 @@
     var vm = new Vue({
         el:'#app',
         data:{
+            bgStyle:"red",
+            styleObj:{
+                background:'red',
+                "font-size":'40px'
+            },
+            styleA:{
+                background:'red',
+                color:'green'
+            },
+            styleB:{
+                "font-size":'40px'
+            },
             aa:'id1',
             isRed:false,
             isFont:true,
