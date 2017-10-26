@@ -8,17 +8,65 @@
     <div id="app">
         <input type="text" v-model="msg">
         {{msg}}
+        <button @click="fn">click</button>
     </div>
 </body>
 <script src="vue.js"></script>
 <script>
-
     var vm = new Vue({
         el:'#app',//作用域
         data:{
-            msg:'aaa'
+            msg:'aaa',
+            vv:11
+        },
+        methods:{
+            fn:function(){
+                alert(111111);
+            }
         }
     });
+
+
+
+//    function V(obj) {
+//        for(var p in obj){
+//            if(p == 'el'){
+//                this['$' + p] = document.querySelector(obj[p]);
+//            }else if(p == 'data'){
+//                this['$' + p] = obj[p];
+//                    for(var q in obj[p]){
+//                    this[q] = obj[p][q];
+//                }
+//            }
+//        }
+//    }
+//
+//    var v = new V({
+//        el:'#app',
+//        data:{
+//            msg:'aaa',
+//            vv:11
+//        }
+//    });
+
+
+
+
+
+
+//    //访问器属性
+//    var obj = {
+//
+//    };
+//    Object.defineProperty(obj,'name',{
+//        set:function(val){
+//            document.getElementById('ipt').value = val;
+//        }
+//    })
+
+
+
+
 
 
 </script>
