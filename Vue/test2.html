@@ -7,37 +7,35 @@
         .red{
             width: 200px;
             height: 200px;
-            background: red;
         }
     </style>
 </head>
 <body>
     <div id="app">
-        <button @click="isRed = !isRed">change</button>
+        <button @click="fn">change</button>
         <!--<div :class="[red]"></div>-->
-        <div :class="{red:isRed}"></div>
+        <!--<div :class="{red:isRed}"></div>-->
+        <div class='red' :style="{background:bgColor}"></div>
     </div>
 </body>
 <script src="vue.js"></script>
 <script>
-
     new Vue({
         el:'#app',
         data:{
             red:'red',
-            isRed:true
+            isRed:true,
+            bgColor:'red'
         },
         methods:{
             fn(){
-                this.isRed = !this.isRed;
+//                this.isRed = !this.isRed;
 
-
-
-//                if(this.red == 'red'){
-//                    this.red = ''
-//                }else{
-//                    this.red = 'red';
-//                }
+                if(this.bgColor == 'red'){
+                    this.bgColor = '';
+                }else{
+                    this.bgColor = 'red';
+                }
             }
         }
     });
