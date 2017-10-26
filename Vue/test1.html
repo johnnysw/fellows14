@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="count++">click</button>
+        当前点击次数:<span v-html="count"></span>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            count:"<h1>hhhhh</h1>"
+        },
+        methods:{
+//            add(){
+//                this.count++;
+//            }
+        }
+    });
+
+
+</script>
+</html>

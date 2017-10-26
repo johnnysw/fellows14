@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" @keyup.shift.enter="fn">
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+
+    new Vue({
+        el:'#app',
+        data:{
+
+        },
+        methods:{
+            fn(){
+                console.log(event.target.value);
+            }
+        }
+    })
+
+
+</script>
+</html>

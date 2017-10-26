@@ -8,7 +8,7 @@
     <div id="app">
         <input type="text" v-model="msg">
         {{msg}}
-        <button @click="fn">click</button>
+        <button @click="fn('zs',23)">click</button>
     </div>
 </body>
 <script src="vue.js"></script>
@@ -20,8 +20,9 @@
             vv:11
         },
         methods:{
-            fn:function(){
-                alert(111111);
+            fn:function(name,age){
+                console.log(event.target);
+                console.log(name,age);
             }
         }
     });
