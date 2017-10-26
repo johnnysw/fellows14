@@ -33,13 +33,13 @@
     <div id="app">
         <h1>services</h1>
         <ul>
-            <li v-for="(obj,index) in arr" @click="change(index)"
+            <li v-for="obj in arr" @click="change(obj)"
                 :class="{red:obj.active,green:!obj.active}">
                 {{obj.name}} <span>{{obj.price}}</span>
             </li>
         </ul>
         <hr/>
-        total: <span>0</span>
+        total: <span>{{total()}}</span>
     </div>
 </body>
 <script src="vue.js"></script>
@@ -54,10 +54,26 @@
                 {name:'ddd',price:316,active:false},
                 {name:'eee',price:532,active:false}
             ],
+            sum:0
         },
         methods:{
-            change(index){
-                this.arr[index].active = !this.arr[index].active;
+            change(o){
+//                this.arr[index].active = !this.arr[index].active;
+                o.active = !o.active;
+//                this.total();
+            },
+            total(){
+                let total = 0;
+                this.arr.forEach(function (val, index) {
+                    if(val.active){
+                        total += val.price;
+                    }
+                });
+
+//                this.sum = total;
+
+                return total;
+
             }
         }
     });
