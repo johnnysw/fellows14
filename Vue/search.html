@@ -12,10 +12,10 @@
 <body>
 
     <div id="app">
-        <input type="text" v-model="msg">
+        <input type="text" v-model="msg" @keyup="search">
         <button @click="add">add</button>
         <ul>
-            <li v-for="obj in arr" @click="obj.active = !obj.active" :class="{red:obj.active}">
+            <li v-for="obj in showArr" @click="obj.active = !obj.active" :class="{red:obj.active}">
                 {{obj.val}}
             </li>
         </ul>
@@ -23,11 +23,12 @@
 </body>
 <script src="vue.js"></script>
 <script>
-    var vm = new Vue({
+    new Vue({
         el:'#app',
         data:{
             msg:'',
-            arr:[]
+            arr:[],
+            showArr:[]
         },
         methods:{
             add(){
@@ -36,9 +37,16 @@
                 this.arr.sort((a,b)=>{
                     return a.val > b.val;
                 });
+                this.showArr = this.arr;
             },
             change(obj){
                 obj.active = !obj.active;
+            },
+            search(){
+                var filterArr = this.arr.filter((obj)=>{
+                    return obj.val.includes(this.msg);
+                });
+                this.showArr = filterArr;
             }
         }
     })
