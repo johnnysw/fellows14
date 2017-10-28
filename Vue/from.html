@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <input type="text" v-model="msg">
+            <input type="password" v-model="pwd">
+            <input type="email" v-model="email">
+            <input type="radio" v-model='sex' value="l">男
+            <input type="radio" v-model='sex' value="m">女
+            <input type="checkbox" v-model='school' value="林大">林大
+            <input type="checkbox" v-model='school' value="黑大">黑大
+            <input type="checkbox" v-model='school' value="理工">理工
+            <select name="" id="" v-model="sport">
+                <option value="足球">足球</option>
+                <option value="篮球">篮球</option>
+                <option value="乒乓球">乒乓球</option>
+            </select>
+        </form>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'',
+            pwd:'ssss',
+            email:'eeeee',
+            sex:'l',
+            school:['黑大','林大'],
+            sport:'乒乓球'
+        }
+    })
+
+</script>
+</html>
