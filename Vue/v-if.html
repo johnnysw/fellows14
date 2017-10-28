@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <!--<h1 v-if="show == 1">-->
+            <!--hhhhhhhh-->
+        <!--</h1>-->
+        <!--<h2 v-else-if="show == 2">-->
+            <!--h2h2h2h2h2h-->
+        <!--</h2>-->
+        <!--<p v-else>-->
+            <!--pppppppp-->
+        <!--</p>-->
+
+        <!--<h1 v-show="show">-->
+            <!--hhhhhhhhhhh-->
+        <!--</h1>-->
+        <!--<p v-else="show">-->
+            <!--ppppp-->
+        <!--</p>-->
+
+        <template v-show="show">
+            <h1>hhhh</h1>
+            <p>ppppp</p>
+            <span>ssssssss</span>
+        </template>
+
+
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            show:true
+        }
+    })
+
+
+</script>
+</html>
