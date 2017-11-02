@@ -82,6 +82,39 @@
                 }
                $('#product-list').append(trStr.replace('$parts',liStr));
             }
+            
+            $('tr').on('click','.add',function () {
+                var $input = $(this).prev();
+                $input.val($input.val() * 1 + 1);
+                var $total = $(this).parent().prev().text() * $input.val();
+                $(this).parent().next().text($total);
+                changeTotal();
+            });
+
+            $('tr').on('click','.sub',function () {
+                var $input = $(this).next();
+                $input.val($input.val() * 1 - 1);
+                var $total = $(this).parent().prev().text() * $input.val();
+                $(this).parent().next().text($total);
+                changeTotal();
+            });
+
+            $(':checkbox').on('click',function(){
+                changeTotal();
+            });
+            $('.del').on('click',function(){
+                $(this).parents('tr').remove();
+            });
+
+            function changeTotal(){
+                var total = 0;
+                $(':checked').each(function(index,el){
+                    total += $(el).parents('tr').find('.total-price').text() * 1;
+                });
+                $('#total').text(total);
+            }
+
+
 
 
 
