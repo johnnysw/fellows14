@@ -29,7 +29,7 @@
         <tbody id="product-list">
         <tr v-for="product in productList">
             <td>
-                <input type="checkbox">
+                <input type="checkbox" v-model="checkedProduct" :value="product">
             </td>
             <td>
                 <img :src="product.productImg" alt="" width="100">
@@ -44,9 +44,9 @@
             </td>
             <td class="price">{{product.productPrice}}</td>
             <td>
-                <button class="sub">-</button>
+                <button class="sub" @click="sub(product)">-</button>
                 <input type="text" :value="product.productQuentity">
-                <button class="add">+</button>
+                <button class="add" @click="add(product)">+</button>
             </td>
             <td class="total-price">{{product.productPrice * product.productQuentity}}</td>
             <td>
@@ -58,7 +58,7 @@
         <tr><td colspan="6">
         </td>
             <td>
-                总计：<span id="total">0</span>
+                总计：<span id="total">{{totalPrice}}</span>
             </td>
             <td>
                 <button>结账</button>
@@ -70,15 +70,35 @@
 <script src="../vue.js"></script>
 <script src="axios.min.js"></script>
 <script>
-    new Vue({
+    var vm = new Vue({
         el:'#cart',
         data:{
-            productList:[]
+            productList:[],
+            checkedProduct:[]
         },
         mounted:function () {
             axios.get('cart.json').then((res)=>{
                 this.productList = res.data.result.productList;
             });
+        },
+        computed:{
+            totalPrice:function(){
+                var total = 0;
+                this.checkedProduct.forEach(function (val,index) {
+                    total += val.productPrice * val.productQuentity;
+                });
+                return total;
+            }
+        },
+        methods:{
+            add(obj){
+                obj.productQuentity++;
+            },
+            sub(obj){
+                if(obj.productQuentity > 0){
+                    obj.productQuentity--;
+                }
+            }
         }
     })
 
