@@ -27,7 +27,7 @@
         </tr>
         </thead>
         <tbody id="product-list">
-        <tr v-for="product in productList">
+        <tr v-for="(product,index) in productList">
             <td>
                 <input type="checkbox" v-model="checkedProduct" :value="product">
             </td>
@@ -50,7 +50,7 @@
             </td>
             <td class="total-price">{{product.productPrice * product.productQuentity}}</td>
             <td>
-                <a href="javascript:;" class="del">删除</a>
+                <a href="javascript:;" class="del" @click="del(index,product)">删除</a>
             </td>
         </tr>
         </tbody>
@@ -98,6 +98,10 @@
                 if(obj.productQuentity > 0){
                     obj.productQuentity--;
                 }
+            },
+            del(index,obj){
+                this.productList.splice(index,1);
+                this.checkedProduct.splice(this.checkedProduct.indexOf(obj),1);
             }
         }
     })
