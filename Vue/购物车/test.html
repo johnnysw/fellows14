@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td{
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<div id="cart">
+    <button id="btn-add" @click="addCart">添加商品</button>
+    <table id="tbl">
+        <thead>
+        <tr>
+            <th></th>
+            <th>商品图片</th>
+            <th>商品信息</th>
+            <th>赠送</th>
+            <th>商品金额</th>
+            <th>商品数量</th>
+            <th>总金额</th>
+            <th>编辑</th>
+        </tr>
+        </thead>
+        <tbody id="product-list">
+
+        <tfoot>
+        <tr><td colspan="6">
+        </td>
+            <td>
+                总计：<span id="total">0</span>
+            </td>
+            <td>
+                <button>结账</button>
+            </td>
+        </tr></tfoot>
+    </table>
+</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        var html =  '<tr>'
+            +'<td>'
+            +'<input type="checkbox">'
+            +'</td>'
+            +'<td>'
+            +'<img src="$img" alt="" width="100">'
+            +'</td>'
+            +'<td>$productName</td>'
+            +'<td>'
+            +' <ul>$parts</ul>'
+            +'</td>'
+            +'<td class="price">$price</td>'
+            +'<td>'
+            +'<button class="sub">-</button>'
+            +'<input type="text" value="$quentity">'
+            +'<button class="add">+</button>'
+            +'</td>'
+            +'<td class="total-price">$total</td>'
+            +'<td>'
+            +'<a href="javascript:;" class="del">删除</a>'
+            +'</td>'
+            +'</tr>';
+
+        $.get('cart.json',{},function(res){
+            var list = res.result.productList;
+            for(var i=0;i<list.length;i++){
+                var trStr = html.replace('$img',list[i].productImg)
+                    .replace('$productName',list[i].productName)
+            .replace('$price',list[i].productPrice)
+            .replace('$quentity',list[i].productQuentity)
+            .replace('$total',list[i].productPrice * list[i].productQuentity);
+
+                var liStr = '';
+                for(var j=0;j<list[i].parts.length;j++){
+                    liStr += '<li>'+list[i].parts[j].partsName+'</li>';
+                }
+               $('#product-list').append(trStr.replace('$parts',liStr));
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        },'json');
+
+
+
+
+
+
+    })
+</script>
+</html>
