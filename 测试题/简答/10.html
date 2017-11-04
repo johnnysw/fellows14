@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">
+        <button id="btn" style="border: 1px">btn</button>
+    </div>
+
+</body>
+<script src="jquery-1.11.2.js"></script>
+<script>
+
+    $('#btn').on('click',function(){
+        alert(11111);
+    })
+
+    var btn = $('#btn').remove();
+
+    $('#div1').append(btn[0]);
+
+
+
+</script>
+</html>
