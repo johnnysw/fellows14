@@ -6,8 +6,8 @@
 </head>
 <body>
     <div id="app">
-        <demo1 msg="aaaa"></demo1>
-        <demo1 msg="bbbb"></demo1>
+        <demo1 v-bind:my-msg-a="a" msg2="cccc"></demo1>
+        <demo1 :my-msg-a="b"></demo1>
     </div>
     <!--<div id="app2">-->
         <!--<demo1></demo1>-->
@@ -21,15 +21,16 @@
 //        template:'<div><h1>hhhhhhhhh</h1><p>pppp</p></div>'
 //    });
 
-    new Vue({
+    var vm = new Vue({
         el:'#app',
         data:{
-
+            a:'aaaaa',
+            b:'bbbbb'
         },
         components:{
             demo1:{
-                template:'<h1>{{msg1}}</h1>',
-                props:['msg1']
+                template:'<h1>{{myMsgA}},{{msg2}}</h1>',
+                props:['myMsgA','msg2']
             }
         }
     })
