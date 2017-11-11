@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <demo1 msg="aaaa"></demo1>
+        <demo1 msg="bbbb"></demo1>
+    </div>
+    <!--<div id="app2">-->
+        <!--<demo1></demo1>-->
+    <!--</div>-->
+</body>
+<script src="vue.js"></script>
+<script>
+
+    //全局
+//    Vue.component('demo',{
+//        template:'<div><h1>hhhhhhhhh</h1><p>pppp</p></div>'
+//    });
+
+    new Vue({
+        el:'#app',
+        data:{
+
+        },
+        components:{
+            demo1:{
+                template:'<h1>{{msg1}}</h1>',
+                props:['msg1']
+            }
+        }
+    })
+//
+//    new Vue({
+//        el:'#app2'
+//    })
+
+
+</script>
+</html>
