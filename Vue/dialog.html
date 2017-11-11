@@ -23,19 +23,37 @@
 <div id="app">
     <button @click="loginShow=true">登录</button>
     <button @click="regShow=true">注册</button>
-    <mydialog v-show="loginShow"></mydialog>
-    <mydialog v-show="regShow"></mydialog>
+    <mydialog v-show="loginShow" @close="closeDialog">
+        <span slot="title">登录</span>
+        <div slot="content">
+            name:<input type="text"><br/>
+            password: <input type="password">
+        </div>
+    </mydialog>
+
+    <mydialog v-show="regShow">
+        <span slot="title">注册</span>
+        <div slot="content">
+            name:<input type="text"><br/>
+            password: <input type="password"><br/>
+            确认密码: <input type="password">
+        </div>
+    </mydialog>
 </div>
 </body>
 <script src="vue.js"></script>
 <script type="text/x-template" id="dialog">
     <div id="dialog-box">
         <div id="title">
-            <span>name</span>
-            <span id="close">[X]</span>
+            <slot name="title">
+                title
+            </slot>
+            <span id="close" @click="$emit('close',123,234)">[X]</span>
         </div>
         <div id="content">
-            content
+            <slot name="content">
+                content
+            </slot>
         </div>
     </div>
 </script>
@@ -45,6 +63,12 @@
         data:{
             loginShow: false,
             regShow:false
+        },
+        methods:{
+            closeDialog(a,b){
+                this.loginShow = false;
+                console.log(a,b);
+            }
         },
         components:{
             mydialog:{
