@@ -12,6 +12,10 @@
     </div>
     <router-view></router-view>
 
+    <template id="newsDetail"> <div>
+        News Detail - {{$route.params.dddd}},{{$route.params.aaa}} ...... </div>
+    </template>
+
     <template id="home">
         <div> <h1>Home</h1> <p>{{msg}}</p> </div>
         <div>
@@ -29,10 +33,13 @@
         </div>
     </template>
     <template id="news">
-        <ul> <li>News 01</li>
-            <li>News 02</li>
-            <li>News 03</li>
+        <ul> <li>
+            <a v-link="{ path: '/home/news/detail/1'}">News 1</a>
+            </li>
+            <li><a v-link="{ path: '/home/news/detail/2'}">News 2</a></li>
+            <li><a v-link="{ path: '/home/news/detail/3'}">News 3</a></li>
         </ul>
+        <router-view></router-view>
     </template>
     <template id="message">
         <ul> <li>Message 01</li> <li>Message 02</li> <li>Message 03</li>
@@ -64,6 +71,10 @@
         template: '<div><h1>About</h1><p>This is the tutorial about vue-router.</p></div>'
     })
 
+    var NewsDetail = Vue.extend({
+        template: '#newsDetail'
+    })
+
     var router = new VueRouter();
 
     router.map(
@@ -72,7 +83,19 @@
                 component: Home, // 定义子路由
                 subRoutes: {
                     '/news': {
-                        component: News
+                        name: 'news',
+                        component: News,
+                        subRoutes: {
+                            'detail/:dddd/:aaa': {
+                                name: 'detail',
+                                component: NewsDetail
+                            },
+                            'detail/:dddd': {
+                                name: 'detail1',
+                                component: NewsDetail
+                            }
+
+                        }
                     },
                     '/message': {
                         component: Message
