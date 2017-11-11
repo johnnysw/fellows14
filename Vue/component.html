@@ -6,14 +6,26 @@
 </head>
 <body>
     <div id="app">
-        <demo1 v-bind:my-msg-a="a" msg2="cccc"></demo1>
-        <demo1 :my-msg-a="b"></demo1>
+        <!--<demo1 v-bind:my-msg-a="a" msg2="cccc"></demo1>-->
+        <!--<demo1 :my-msg-a="b"></demo1>-->
+        <demo1>
+            <p>pppppppppp</p>
+        </demo1>
     </div>
     <!--<div id="app2">-->
         <!--<demo1></demo1>-->
     <!--</div>-->
 </body>
 <script src="vue.js"></script>
+<script type="text/x-template" id="temp">
+    <div>
+        <slot>
+            <h1>我是默认值</h1>
+            fdafdsa
+        </slot>
+        aaaaaaaaaa
+    </div>
+</script>
 <script>
 
     //全局
@@ -29,7 +41,7 @@
         },
         components:{
             demo1:{
-                template:'<h1>{{myMsgA}},{{msg2}}</h1>',
+                template:'#temp',
                 props:['myMsgA','msg2']
             }
         }
