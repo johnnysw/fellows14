@@ -9,7 +9,12 @@
         <!--<demo1 v-bind:my-msg-a="a" msg2="cccc"></demo1>-->
         <!--<demo1 :my-msg-a="b"></demo1>-->
         <demo1>
-            <p>pppppppppp</p>
+            <p slot="title">
+                ppppppppp
+            </p>
+            <div slot="title1">
+                <h1>h1h1h1h</h1>
+            </div>
         </demo1>
     </div>
     <!--<div id="app2">-->
@@ -19,11 +24,16 @@
 <script src="vue.js"></script>
 <script type="text/x-template" id="temp">
     <div>
-        <slot>
+        <slot name="title">
             <h1>我是默认值</h1>
             fdafdsa
         </slot>
         aaaaaaaaaa
+        <slot name="title1">
+            <h1>我是默认值1</h1>
+            fdafdsa
+        </slot>
+
     </div>
 </script>
 <script>
