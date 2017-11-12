@@ -1,6 +1,7 @@
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const Uglify = require('uglifyjs-webpack-plugin');
 module.exports = {
     entry:{
         entry: "./src/index.js"
@@ -26,6 +27,18 @@ module.exports = {
                     fallback: "style-loader",
                     use: "css-loader"
                 })
+            },
+            {
+                test:/\.(png|gif|jpg)$/,
+                use:[
+                    {
+                        loader:'url-loader',
+                        options:{
+                            limit: 300000000,
+                            outputPath:'img/'
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -37,7 +50,8 @@ module.exports = {
             hash:true,
             template: "./src/index.html"
         }),
-        new ExtractTextPlugin('css/index.css')
+        new ExtractTextPlugin('css/index.css'),
+        // new Uglify()
     ],
     devServer:{
         contentBase: path.resolve(__dirname,'dist'),
