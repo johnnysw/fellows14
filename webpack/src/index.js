@@ -1,4 +1,2 @@
-/**
- * Created by apple on 17/11/12.
- */
+import css from './css/index.css'
 document.getElementById('div1').innerHTML = 'hello world122211';
