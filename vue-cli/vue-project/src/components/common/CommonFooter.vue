@@ -1,7 +1,11 @@
 <template>
-  <div class="header">
-      <button>首页</button>
-      <h2>movie</h2>
+  <div class="footer">
+      <ul>
+        <li>电影</li>
+        <li>音乐</li>
+        <li>书籍</li>
+        <li>图片</li>
+      </ul>
   </div>
 </template>
 
@@ -18,23 +22,21 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-      .header{
+      .footer{
         height    : 1rem;
         background: rgb(33, 150, 243);
-        display   : flex;
-        color     : #fff;
         position  : fixed;
-        top       : 0;
+        bottom    : 0;
         width     : 100%;
       }
-      .header button{
-        width : 1rem;
-        height: 1rem;
-        color : #fff;
+      .footer ul{
+        display: flex;
       }
-      .header h2{
+      .footer li{
         flex       : 1;
+        color      : #fff;
+        line-height: 1rem;
         text-align : center;
-        text-indent: -1rem;
       }
+  
 </style>
