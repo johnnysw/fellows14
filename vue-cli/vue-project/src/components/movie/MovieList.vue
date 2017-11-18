@@ -5,10 +5,13 @@
      </div>
      <div class='movie-title'>
        <span>
-         发达发达
+         {{title}}
        </span>
        <p>
-          发发发发发发发发发 
+          <span v-for="a in desc">
+            {{a}} 
+            </span>
+            ({{year}}) (平均{{avg}}分) 
        </p>
      </div>
   </div>
@@ -17,7 +20,8 @@
 <script>
 
 export default {
-  name: 'HelloWorld',
+  name : 'HelloWorld',
+  props: ['title','avg','desc','year'],
   data () {
     return {
     }
