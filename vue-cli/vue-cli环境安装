@@ -1,0 +1,25 @@
+1. 安装node.js,从node.js官网下载并安装node，安装过程很简单，
+    一路“下一步”就可以了（傻瓜式安装）。
+    安装完成之后，打开命令行工具(win+r，然后输入cmd)，输入 node -v，
+    如果出现相应的版本号，则说明安装成功。
+
+2.安装webpack，打开命令行工具输入：npm install webpack -g，
+    安装完成之后输入 webpack -v，
+    如果出现相应的版本号，则说明安装成功。
+
+3.安装vue-cli脚手架构建工具，打开命令行工具输入：npm install vue-cli -g，
+    安装完成之后输入 vue -V（注意这里是大写的“V”）
+    如果出现相应的版本号，则说明安装成功。
+
+4.在硬盘上找一个文件夹放工程用的,cd 目录路径
+
+5.安装vue脚手架输入：vue init webpack projectname ，
+    注意这里的“projectname” 是项目的名称可以说是随便的起名，
+    但是需要主要的是“不能用中文”。
+    注意：安装项目过程中，会出现下面的选项，
+    ? Use ESLint to lint your code? (Y/n) n
+    ---------------------是否启用eslint检测规则，这里个人建议选no
+
+6.cd 命令进入创建的工程目录，首先cd projectname（这里是自己建工程的名字）；
+7.安装项目依赖：npm install（时间比较长）
+8.启动项目，输入：npm run dev
