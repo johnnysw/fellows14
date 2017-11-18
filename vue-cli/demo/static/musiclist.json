@@ -1,0 +1,34 @@
+{
+  "albums":[
+    {
+      "name": "飙升榜",
+      "id":19723756,
+      "bg": "static/img/soar_music.jpg"
+    },
+    {
+      "name": "新歌榜",
+      "id":3779629,
+      "bg":"static/img/new_music.jpg"
+    },
+    {
+      "name": "原创榜",
+      "id":2884035,
+      "bg":"static/img/original_music.jpg"
+    },
+    {
+      "name": "KTV麦榜",
+      "id":21845217,
+      "bg":"static/img/ktv_music.jpg"
+    },
+    {
+      "name": "华语金曲榜",
+      "id":4395559,
+      "bg":"static/img/chinese_music.jpg"
+    },
+    {
+      "name": "我的专辑",
+      "id":98833242,
+      "bg":"static/img/my_music.jpg"
+    }
+  ]
+}
