@@ -1,6 +1,6 @@
 <template>
-    <div class="music">
-        <common-header title="music" bgColor="rgb(0, 150, 136)"></common-header>
+    <div class="book">
+        <common-header title="photo" bgColor="rgb(121, 85, 72)"></common-header>
         <common-footer></common-footer>
     </div>
 </template>

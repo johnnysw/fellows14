@@ -1,9 +1,9 @@
 <template>
   <div class="movie">
-      <common-header></common-header>
+      <common-header title="movie" bgColor="rgb(33, 150, 243)"></common-header>
       <movie-nav></movie-nav>
       <div class='list'>
-        <movie-list v-for="obj in movieList" :title="obj.nm" :year="obj.snum"
+        <movie-list v-for="(obj,index) in movieList" :key="index" :title="obj.nm" :year="obj.snum"
         :avg = "obj.sc" :img = "obj.img" :desc = "obj.cat"
         ></movie-list>
       </div>
