@@ -8,8 +8,8 @@
          {{title}}
        </span>
        <p>
-          <span v-for="a in desc">
-            {{a}} 
+          <span>
+            {{desc}} 
             </span>
             ({{year}}) (平均{{avg}}分) 
        </p>
@@ -34,6 +34,7 @@ export default {
 <style scoped>
     .top250{
       padding: 0.4rem;
+      margin : 0.4rem 0;
     }
     .movie-img{
       float : left;
