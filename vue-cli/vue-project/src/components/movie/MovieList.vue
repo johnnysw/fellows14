@@ -1,7 +1,7 @@
 <template>
   <div class="top250">
      <div class='movie-img'>
-        <img src="../../assets/logo.png" alt="">
+        <img :src="img" alt="">
      </div>
      <div class='movie-title'>
        <span>
@@ -21,7 +21,7 @@
 
 export default {
   name : 'HelloWorld',
-  props: ['title','avg','desc','year'],
+  props: ['title','avg','desc','year','img'],
   data () {
     return {
     }

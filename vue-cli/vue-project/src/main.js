@@ -7,6 +7,7 @@ import router from './router'
 Vue.config.productionTip = false
 require("./assets/js/rem.js");
 require("./assets/css/reset.css");
+global.API_PROXY = 'https://bird.ioliu.cn/v1/?url='
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

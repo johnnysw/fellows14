@@ -4,7 +4,7 @@
       <movie-nav></movie-nav>
       <div class='list'>
         <movie-list v-for="obj in movieList" :title="obj.title" :year="obj.year"
-        :avg = "obj.avg" :desc = "obj.desc"
+        :avg = "obj.rating.average" :img = "obj.images.large" :desc = "obj.genres"
         ></movie-list>
       </div>
       <common-footer></common-footer>
@@ -16,43 +16,22 @@ import CommonHeader from "../common/CommonHeader"
 import CommonFooter from "../common/CommonFooter"
 import MovieNav from "./MovieNav"
 import MovieList from "./MovieList"
+import Axios from 'axios'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      movieList:[
-        {
-          title: "霸王别姬",
-          year : 1994,
-          avg  : 9.6,
-          desc : [
-            "同性",
-            "爱情",
-            "悬疑"
-          ]
-        },
-        {
-          title: "正义联盟",
-          year : 2017,
-          avg  : 0.0,
-          desc : [
-            "同性",
-            "打片",
-          ]
-        },
-        {
-          title: "唯创网讯",
-          year : 2012,
-          avg  : 100,
-          desc : [
-            "教育",
-            "IT",
-            "惊悚"
-          ]
-        }
-      ]
+      movieList: []
     }
   },
+  mounted(){
+    Axios.get(API_PROXY + "https://api.douban.com/v2/movie/top250?count=10&start=10")
+    .then((res)=>{
+      this.movieList = res.data.subjects;
+      console.log(res.data.subjects);
+    });
+  }
+  ,
   components: {
     CommonHeader,
     CommonFooter,
