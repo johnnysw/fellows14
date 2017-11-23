@@ -1,10 +1,10 @@
 <template>
   <div class="footer">
       <ul>
-        <li>电影</li>
-        <li>音乐</li>
-        <li>书籍</li>
-        <li>图片</li>
+        <li><router-link to='/movie'>电影</router-link></li>
+        <li><router-link to="/music">音乐</router-link></li>
+        <li><router-link to="/book">书籍</router-link></li>
+        <li><router-link to="/photo">图片</router-link></li>
       </ul>
   </div>
 </template>
@@ -34,9 +34,14 @@ export default {
       }
       .footer li{
         flex       : 1;
-        color      : #fff;
         line-height: 1rem;
         text-align : center;
+      }
+      .footer li a{
+        color: #ccc;
+      }
+      .footer li a.router-link-active{
+        color: #fff;
       }
   
 </style>
