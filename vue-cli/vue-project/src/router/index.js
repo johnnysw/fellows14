@@ -5,6 +5,7 @@ import Movie from '@/components/movie/Movie'
 import Music from '@/components/music/Music'
 import Book from '@/components/book/Book'
 import Photo from '@/components/photo/Photo'
+import ComponentA from '@/components/ComponentA'
 
 // import CommonFooter from '@/components/common/CommonFooter'
 
@@ -14,8 +15,7 @@ export default new Router({
   routes: [
     {
       path     : '/',
-      name     : 'HelloWorld',
-      component: HelloWorld
+      component: ComponentA
     },
     {
       path     : '/movie',
