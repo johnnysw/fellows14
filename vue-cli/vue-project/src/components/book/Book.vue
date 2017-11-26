@@ -1,7 +1,7 @@
 <template>
     <div class="book">
         <common-header title="photo" bgColor="rgb(121, 85, 72)"></common-header>
-        <common-footer></common-footer>
+        <common-footer bgColor="rgb(121, 85, 72)"></common-footer>
     </div>
 </template>
 <script>

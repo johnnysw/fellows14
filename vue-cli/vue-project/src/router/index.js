@@ -6,6 +6,7 @@ import Music from '@/components/music/Music'
 import Book from '@/components/book/Book'
 import Photo from '@/components/photo/Photo'
 import ComponentA from '@/components/ComponentA'
+import MovieTop250 from '@/components/movie/MovieTop250'
 
 // import CommonFooter from '@/components/common/CommonFooter'
 
@@ -19,7 +20,12 @@ export default new Router({
     },
     {
       path     : '/movie',
-      component: Movie
+      component: Movie,
+      children : [
+        {path:'/movie/top250',component:MovieTop250},
+        {path:'/movie/hot',component:MovieTop250},
+        {path:'/movie/coming',component:MovieTop250}
+      ]
     },
     {
       path     : '/music',

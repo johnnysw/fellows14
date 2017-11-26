@@ -1,7 +1,7 @@
 <template>
     <div class="music">
         <common-header title="music" bgColor="rgb(0, 150, 136)"></common-header>
-        <common-footer></common-footer>
+        <common-footer bgColor="rgb(0, 150, 136)"></common-footer>
     </div>
 </template>
 <script>
