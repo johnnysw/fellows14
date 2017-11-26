@@ -7,6 +7,8 @@ import Book from '@/components/book/Book'
 import Photo from '@/components/photo/Photo'
 import ComponentA from '@/components/ComponentA'
 import MovieTop250 from '@/components/movie/MovieTop250'
+import Albums from '@/components/music/musicList'
+import Player from '@/components/music/MusicPlayer'
 
 // import CommonFooter from '@/components/common/CommonFooter'
 
@@ -15,12 +17,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path     : '/',
-      component: ComponentA
+      path: '/',
+      // component: 
+      redirect: '/movie/top250'
     },
     {
       path     : '/movie',
       component: Movie,
+      redirect : '/movie/top250',
       children : [
         {path:'/movie/top250',component:MovieTop250},
         {path:'/movie/hot',component:MovieTop250},
@@ -29,7 +33,12 @@ export default new Router({
     },
     {
       path     : '/music',
-      component: Music
+      component: Music,
+      redirect : '/music/music_albums',
+      children : [
+        {path:'/music/music_albums',component:Albums},
+        {path:'/music/music_player/:id/:name',component:Player}
+      ]
     },
     {
       path     : '/book',

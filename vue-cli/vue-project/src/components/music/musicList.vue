@@ -1,13 +1,16 @@
 <template>
-    <div class="music">
-        <common-header title="music" bgColor="rgb(0, 150, 136)"></common-header>
-        <router-view></router-view>
-        <common-footer bgColor="rgb(0, 150, 136)"></common-footer>
+    <div class="music-list">
+        <ul class='albums'>
+           
+            <li v-for='obj in musicList' :key="obj.id">
+                <router-link :to="'/music/music_player/'+obj.id+'/aa'">
+                    <img :src="obj.bg" alt="">
+                </router-link>
+            </li>
+        </ul>
     </div>
 </template>
 <script>
-import CommonHeader from "../common/CommonHeader"
-import CommonFooter from "../common/CommonFooter"
 import Axios from 'axios'
 export default {
     data(){
@@ -21,10 +24,6 @@ export default {
             this.musicList = res.data.albums;
         })
     },
-  components:{
-      CommonHeader,
-      CommonFooter
-  }
 }
 </script>
 <style>
@@ -38,6 +37,10 @@ export default {
         width : 50%;
         height: 33.33%;
         float : left;
+    }
+    .albums li img{
+         width : 100%;
+         height: 100%;
     }
 </style>
 
