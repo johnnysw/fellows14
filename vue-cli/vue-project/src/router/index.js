@@ -37,7 +37,7 @@ export default new Router({
       redirect : '/music/music_albums',
       children : [
         {path:'/music/music_albums',component:Albums},
-        {path:'/music/music_player/:id/:name',component:Player}
+        {path:'/music/music_player/:id',component:Player}
       ]
     },
     {

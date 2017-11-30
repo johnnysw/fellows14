@@ -3,7 +3,7 @@
         <ul class='albums'>
            
             <li v-for='obj in musicList' :key="obj.id">
-                <router-link :to="'/music/music_player/'+obj.id+'/aa'">
+                <router-link :to="'/music/music_player/'+obj.id">
                     <img :src="obj.bg" alt="">
                 </router-link>
             </li>
