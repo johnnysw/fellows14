@@ -1,9 +1,9 @@
 <template>
   <div class='detail'>
        <common-header title="photo" nav="<" bgColor="rgb(63, 81, 181)"></common-header>
-       <div class='photo-detail'>
-           <img :src="photoData[aa].src" alt="">
-       </div>
+        <v-touch class='photo-detail' :style="{background:bg}">
+            
+        </v-touch>
   </div>
 </template>
 <script>
@@ -19,6 +19,9 @@ export default {
       }  
     },
     computed: {
+        bg(){
+            return "url("+ this.$store.state.photoData[this.aa].src +") no-repeat center / contain #000"
+        },
         ...mapState(["photoData"])
     },
   components: {
@@ -28,6 +31,9 @@ export default {
 </script>
 <style>
     .photo-detail{
-        margin-top: 1rem;
+        position: absolute;
+        top     : 1rem;
+        bottom  : 0;
+        width   : 100%;
     }
 </style>
