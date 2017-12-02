@@ -9,7 +9,7 @@ import ComponentA from '@/components/ComponentA'
 import MovieTop250 from '@/components/movie/MovieTop250'
 import Albums from '@/components/music/musicList'
 import Player from '@/components/music/MusicPlayer'
-
+import PhotoDetail from '@/components/photo/PhotoDetail'
 // import CommonFooter from '@/components/common/CommonFooter'
 
 Vue.use(Router)
@@ -47,6 +47,10 @@ export default new Router({
     {
       path     : '/photo',
       component: Photo
+    },
+    {
+      path     : '/photo/detail/:index',
+      component: PhotoDetail
     }
   ]
 })

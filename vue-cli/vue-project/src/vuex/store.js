@@ -4,8 +4,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 
 const state = {
-    count : 2,
-    count1: 3
+    count    : 2,
+    count1   : 3,
+    photoData: []
 }
 
 const mutations = {
@@ -14,6 +15,9 @@ const mutations = {
     },
     reduce(state){
         state.count--; 
+    },
+    setPhotoData(state,data){
+        state.photoData = data;
     }
 }
 
@@ -28,6 +32,9 @@ const actions={
     },
     reduceAction({commit}){
         commit('reduce');
+    },
+    setPhotoData({commit},data){
+        commit('setPhotoData',data);
     }
 }
 
