@@ -6,7 +6,6 @@
             <swipe-item class="slide2"></swipe-item>
             <swipe-item class="slide3"></swipe-item>
         </swipe>
-        <icon type="link"></icon>
         <common-footer bgColor="rgb(121, 85, 72)"></common-footer>
     </div>
 </template>
@@ -14,14 +13,12 @@
 import CommonHeader from "../common/CommonHeader"
 import CommonFooter from "../common/CommonFooter"
 import {Swipe, SwipeItem} from 'vue-swipe'
-import {Icon} from 'antd'
 export default {
   components:{
       CommonHeader,
       CommonFooter,
       Swipe,
       SwipeItem,
-      Icon
   }
 }
 </script>
