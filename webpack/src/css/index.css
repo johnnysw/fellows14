@@ -6,3 +6,15 @@
     height: 300px;
     background: url("../img/1.jpg") no-repeat;
 }
+#div4{
+    transform: translate(-50%,-50%);
+}
+
+#aaa{
+    width: 300px;
+    height: 300px;
+}
+.bb{
+    width: 300px;
+    height: 300px;
+}
