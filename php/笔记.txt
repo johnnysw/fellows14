@@ -1,0 +1,106 @@
+CI：php的MVC框架
+M：模型model：与数据库打交道的，一般是数据库里面的一张表对应一个model，再该model里面完成对该表的增删改查等操作
+V：视图view：给用户看的界面，其中的数据是从数据库中查询出来进行展示的
+C：控制controller：是M与V之间桥梁，接收V发过来的请求，调用M对数据库的操作，把结果返回到V
+
+配置：
+从官网上下载CodeIgniter-3.1.6以后，把application、system、index.php拷贝到项目的文件夹当中
+system是系统的文件夹，除特殊情况外，不需要修改
+application是应用文件夹，我们的MVC代码写到这个文件夹里面：
+	1、config：配置文件
+	2、controllers：放C层代码的
+	3、models：放M层代码，对数据库操作
+	4、views：放V层代码的，界面展示
+index.php入口文件
+
+config文件夹下面：
+1、autoload.php
+	（1）$autoload['libraries'] = array('database', 'session');
+	（2）$autoload['helper'] = array('url');界面上还需要<?php echo site_url();?>,界面路径问题
+2、config.php
+	（1）如果服务器的端口被改变了，需要下面的配置，否则不需要配置：
+		$config['base_url'] = 'http://127.0.0.1:81/myci';
+	（2）$config['index_page'] = '';
+3、database.php
+	'hostname' => '127.0.0.1',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'myci',
+
+.htaccess：放在项目的根目录下，作用是不用每次都写index.php。项目的资源文件images\css\javascript文件夹放在项目的根目录下，并在该文件中配置
+
+controller：class User extends CI_Controller{}
+model：class User_model extends CI_Model{}
+
+controller：
+C接收V发过来的数据：
+$this -> input -> post("login");//get()
+跳转到view：
+$this->load->view('list', array("list" => $user_list));
+调用M：
+$this -> load -> model("user_model");
+$this -> user_model -> get_by_username($username);
+重定向：
+redirect("user/index");
+构造函数：
+public function __construct()
+	{
+		parent::__construct();
+		$this -> load -> model("user_model");
+	}
+
+
+Model：
+1、根据条件查询：
+	public function get_by_username_pwd($un, $pwd){
+            return $this -> db -> get_where("user", array(
+                "username" => $un,
+                "password" => $pwd
+            )) -> row();//如果返回多条数据result()
+        }
+2、查询全部：
+	public function get_all(){
+            return $this -> db -> get("user") -> result();
+        }
+3、插入数据：
+	public function save_user($username, $password){
+            $this -> db -> insert("user", array(
+                "username" => $username,
+                "password" => $password
+            ));
+            return $this->db->affected_rows();
+        }
+4、删除数据：
+	public function del_user($id){
+            $this->db->delete('user', array('user_id' => $id));
+            return $this->db->affected_rows();
+        }
+5、修改数据：
+	public function update_user($id, $un, $pwd){
+            $this->db->where('user_id', $id);
+            $this->db->update('user', array(
+                "username" => $un,
+                "password" => $pwd
+            ));
+            return $this->db->affected_rows();
+        }
+
+view：
+在head里面：<base href="<?php echo site_url(); ?>">
+
+放入session:
+$this->session->set_userdata(array(
+                    "userinfo" => $row
+                ));
+获取session：
+<?php echo $this->session->userdata('userinfo')->username; ?>
+
+
+
+
+
+
+
+
+
+
