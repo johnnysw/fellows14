@@ -23,6 +23,12 @@ class User extends CI_Controller {
 		$this->load->view('reg');
 	}
 
+	public function user_list(){
+		$this->load->model('User_model');
+		$users = $this->User_model->user_list();
+		$this->load->view('list',array('list'=>$users));
+	}
+
 	public function add(){
 		$name = $this->input->post('username');
 

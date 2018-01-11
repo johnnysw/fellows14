@@ -16,4 +16,11 @@ class User_model extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function user_list(){
+//        $query = $this -> db -> get("t_user");
+        $query = $this -> db -> get_where("t_user",array('name'=>'lisi'));
+
+        return $query->result();
+    }
+
 }
