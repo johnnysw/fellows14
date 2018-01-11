@@ -35,8 +35,8 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="130">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -244,12 +244,12 @@
       <updated>1515594570289</updated>
       <workItem from="1515594572101" duration="1556000" />
       <workItem from="1515631006425" duration="22000" />
-      <workItem from="1515633791099" duration="9327000" />
+      <workItem from="1515633791099" duration="9894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10905000" />
+    <option name="totallyTimeSpent" value="11472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="637" extended-state="0" />
@@ -414,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="130">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
