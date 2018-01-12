@@ -70,7 +70,7 @@
 			</td>	
         </tr>
     	<tr id="tr_area">
-    		<th>居住地区：</th>		
+    		<th>居住地区：</th>
     		<td><select onchange="showcity(this.value, document.getElementById('userCity'));" name="province" id="userProvince">
 	<option selected="selected" value="">--请选择省份--</option>
 	<option value="北京">北京</option> 
@@ -151,6 +151,24 @@
 <script type="text/javascript">
 $(function(){
 
+	$('#f_email').on('blur',function(){
+		var email = $(this).val();
+//		console.log(email);
+		$.get('user/check_email',{
+			email:email
+		},function(data){
+			if(data == '1'){
+				$('#error_msg').html("邮箱已存在").show("fast");
+			}else{
+				$('#error_msg').hide("fast");
+			}
+		},'text');
+
+	});
+
+
+
+
 	$('#btn-reg').on('click',function(){
 		var email = $('#f_email').val();
 		var name = $('#f_name').val();
@@ -159,7 +177,6 @@ $(function(){
 		var pwd2 = $('#f_pwd2').val();
 		var province = $('#userProvince').val();
 		var city = $('#userCity').val();
-
 		$.get('user/add_user',{
 			email:email,
 			name:name,
