@@ -1,0 +1,95 @@
+
+.error_msg {display:none;background:#fee;border:1px solid #fcc;padding:3px;margin:0 10px 10px 10px;}
+.error_msg a {margin:0 5px;}
+
+.success_msg {
+	margin:0 10px 10px 10px;
+	display:none;
+	font-size:12pt;
+	color:#40AA53;
+	padding:50px 0;
+	text-align:center;
+	font-wight:bold;
+}
+.success_msg a {margin:0 5px;color:#40AA53;}
+
+#ThickboxDialog {
+}
+
+#Dialog_Footer {
+	margin:0 auto;
+	border-top:1px solid #CCCCCC;
+	color:#737573;
+	text-align:center;
+}
+
+/* RKN_Top CSS Document */
+#Dialog_Top {  
+    background: #606060 url(../img/bg_topbar.png) repeat-x bottom left;
+    height:30px;
+    border-bottom: 1px solid #CCC;
+    color:#aaa;
+    padding:0 5px 0 10px;
+}
+#Dialog_Top #title {
+	color:#f5e173;
+	margin-top:5px;
+    float: left;
+    display: block;
+    font-size: 10.5pt; 
+    font-weight:bold;
+}
+
+#Dialog_Top #btn_close_dialog a {
+	float:right;
+	margin:5px 0 0 0;
+	width:20px;
+    text-indent: -10000px;
+	background: transparent url(/js/jquery/i/dialog-titlebar-close.png) no-repeat left center;
+}
+#Dialog_Top #btn_close_dialog a:hover {
+	background: transparent url(/js/jquery/i/dialog-titlebar-close-hover.png) no-repeat left center;
+}
+
+#Dialog_Top a {color:#FFF;margin:0 5px;font-size:10.5pt;font-weight:bold;}
+
+/* End RKN_Top */
+
+#Dialog_Content{
+    text-align:left;
+}
+
+#ThickboxDialog form {}
+#ThickboxDialog form input {padding:2px 3px;}
+#ThickboxDialog form tr.submit td {padding-top:20px;}
+
+
+/** 表单 **/
+#ThickboxDialog form table {margin:20px;}
+#ThickboxDialog form table tr th {text-align:right;}
+#ThickboxDialog form table tr td {padding:5px 0 5px 10px;}
+#ThickboxDialog form table tr td.heading {font-weight:bold;padding-left:0;}
+#ThickboxDialog form table tr td span.Tip {color:#F90;margin-left:10px;}
+#ThickboxDialog form table tr td span.Tip a {margin:0 5px;}
+#ThickboxDialog form table tr td input {padding:2px;}
+#ThickboxDialog form table tr td input.focusField {background:#ffc;}
+#ThickboxDialog form table tr td textarea {font-size:10pt;line-height:20px;padding:2px;}
+#ThickboxDialog form input.BUTTON {height:25px;line-height:25px;padding:0 3px;font-size:10.5pt;}
+#ThickboxDialog form input.SUBMIT {font-weight:bold;}
+
+#ThickboxDialog img#img_vcode {border:2px solid #9AF;}
+
+/* 表单 */
+#ThickboxDialog form h2 {font-size:12pt; border-bottom:1px solid #ccc;margin:0;padding:10px 0 10px 20px}
+#ThickboxDialog form h2 a {margin:0 5px;}
+
+#ThickboxDialog form tr.Tip td ol {
+	list-style-position:inside;
+	padding:5px 2px;
+	border:1px solid #09F;
+	line-height:22px;
+	color:#06F;
+}
+
+#ThickboxDialog form tr.Tip td ol li.first {font-weight:bold;padding-left:0px;font-size:10.5pt;}
+#ThickboxDialog form tr.Tip td ol li {padding-left:10px;}
