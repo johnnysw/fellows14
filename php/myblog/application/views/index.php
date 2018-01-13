@@ -24,17 +24,27 @@
 <![endif]-->
 <div id="OSC_Screen"><!-- #BeginLibraryItem "/Library/OSC_Banner.lbi" -->
 <div id="OSC_Banner">
-    <div id="OSC_Slogon">Johnny's Blog</div>
+    <div id="OSC_Slogon"><?php $user = $this->session->userdata('user');
+		if(isset($user)){
+			echo $user->username."'s Blog";
+		}?></div>
     <div id="OSC_Channels">
         <ul>
-        <li><a href="#" class="project">心情 here...</a></li>
+        <li><a href="#" class="project"><?php if(isset($user)){echo $user->mood;}?></a></li>
         </ul>
     </div>
     <div class="clear"></div>
 </div><!-- #EndLibraryItem --><div id="OSC_Topbar">
 	  <div id="VisitorInfo">
 		当前访客身份：
+		  	<?php
+			if(isset($user)){
+				echo $user->username;
+				?>
+				<a href='user/logout'>退出</a>
+		  <?php }else{?>
 				游客 [ <a href="user/login">登录</a> | <a href="user/reg">注册</a> ]
+		  <?php }?>
 				<span id="OSC_Notification">
 			<a href="inbox.htm" class="msgbox" title="进入我的留言箱">你有<em>0</em>新留言</a>
 					</span>

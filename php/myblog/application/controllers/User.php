@@ -116,11 +116,31 @@ class User extends CI_Controller {
 			echo 'email not exist';
 		}else{
 			if($result[0]->password == $pwd){
+				$this->session->set_userdata(array(
+					'user'=>$result[0]
+				));
 				echo 'success';
 			}else{
 				echo 'password error';
 			}
 		}
+	}
+
+	public function auto_login(){
+		$email = $this->input->get('email');
+		$result = $this->User_model->get_user_by_email($email);
+		$this->session->set_userdata(array(
+			'user'=>$result[0]
+		));
+		redirect("welcome/index");
+	}
+
+
+	public function logout(){
+
+		$this->session->unset_userdata('user');
+		redirect("welcome/index");
+
 	}
 
 }

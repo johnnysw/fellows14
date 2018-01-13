@@ -200,7 +200,7 @@ $(function(){
 				$('#error_msg').html("验证码不对");
 				$('#error_msg').show("fast");
 			}else{
-				location.href = 'user/login';
+				location.href = 'user/auto_login?email='+email;
 			}
 
 		},'text');
