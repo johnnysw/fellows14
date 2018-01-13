@@ -121,7 +121,7 @@
 		<tr>
     		<th>&nbsp;</th>		
 			<td>
-			<img id="img_vcode" alt="..." src="images/captcha.png" style="border: 2px solid rgb(204, 204, 204);" align="absmiddle">
+				<?php echo $img?>
             <script language="javascript">function _rvi(){document.getElementById('img_vcode').src = '/action/user/captcha?t='+Math.random(1000);}</script>
 			</td>
 		</tr>
@@ -177,6 +177,7 @@ $(function(){
 		var pwd2 = $('#f_pwd2').val();
 		var province = $('#userProvince').val();
 		var city = $('#userCity').val();
+		var code = $('#f_vcode').val();
 		$.get('user/add_user',{
 			email:email,
 			name:name,
@@ -184,10 +185,14 @@ $(function(){
 			pwd:pwd,
 			pwd2:pwd2,
 			province:province,
-			city:city
+			city:city,
+			code:code
 		},function(data){
 			if(data == 'pwd-error'){
 				$('#error_msg').html("两次密码不一致");
+				$('#error_msg').show("fast");
+			}else if(data == 'code-error'){
+				$('#error_msg').html("验证码不对");
 				$('#error_msg').show("fast");
 			}else{
 				location.href = 'user/login';
