@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="assets/css/oschina2011.css" type="text/css" media="screen">
   <link rel="stylesheet" href="assets/css/thickbox.css" type="text/css" media="screen">
   <link rel="stylesheet" href="assets/css/osc-popup.css" type="text/css" media="screen">
-  <script type="text/javascript" src="assets/js/jquery-1.js"></script>
-  <script type="text/javascript" src="assets/js/jquery.js"></script>
-  <script type="text/javascript" src="assets/js/thickbox.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="assets/js/thickbox.js"></script>
   <script type="text/javascript" src="assets/js/common.js"></script>
 
 	<style type="text/css">
@@ -36,7 +35,7 @@
 </style>
 
 <div class="MainForm" id="login_page">	
-  <form id="frm_login" action="/action/user/login" method="POST" style="float:left; width:620px;">
+  <form id="frm_login" action="/action/user/login" onsubmit="return false;" method="POST" style="float:left; width:620px;">
     <h2>登录个人博客，如果尚未加入的请点击<a href="user/reg">注册新会员</a></h2>
     <div id="error_msg" class="error_msg" style="display:none;"></div>
     <table>
@@ -55,7 +54,7 @@
     	<tr class="buttons">
     		<th>&nbsp;</th>
 			<td>
-    		<input value="现在登录" class="BUTTON SUBMIT" type="submit" />
+    		<input value="现在登录" id="btn-login" class="BUTTON SUBMIT" type="submit" />
 			</td>
     	</tr>
     	<tr height="40"><th></th><td></td></tr>
@@ -71,32 +70,63 @@
 <div class="clear"></div>
 </div>
 <script type="text/javascript">
-<!--
-$('#f_email').focus();$('#frm_login').ajaxForm({
-    beforeSubmit: function(a,f,o) {
-		if($('#f_email').val().length == 0){
-			$('#f_email').focus();
-			$('#error_msg').html("请输入登录的邮箱或者帐号");
-			$('#error_msg').show();
-			return false;
-		}
-		if($('#f_pwd').val().length == 0){
-			$('#f_pwd').focus();
-			$('#error_msg').html("请输入登录密码");
-			$('#error_msg').show();
-			return false;
-		}
-    },
-    success: function(html) {
-    	if(html.length > 0){
-    		$('#error_msg').hide();
-    		$('#error_msg').html(html);
-    		$('#error_msg').show();
-    	}else{
-			    		location.href="/home/go";
-    	}
-    }
-});
+
+
+	$('#btn-login').on('click',function(){
+
+		var email = $('#f_email').val();
+		var pwd = $('#f_pwd').val();
+
+		$.get('user/check_login',{
+			email:email,
+			pwd:pwd
+		},function(data){
+			if(data == 'email not exist'){
+				$('#error_msg').html("邮箱不存在");
+				$('#error_msg').show();
+			}else if(data == 'password error'){
+				$('#error_msg').html("密码错误");
+				$('#error_msg').show();
+			}else{
+				location.href = 'welcome/index';
+			}
+		},'text')
+
+
+	})
+
+
+
+
+
+
+
+//<!--
+//$('#f_email').focus();$('#frm_login').ajaxForm({
+//    beforeSubmit: function(a,f,o) {
+//		if($('#f_email').val().length == 0){
+//			$('#f_email').focus();
+//			$('#error_msg').html("请输入登录的邮箱或者帐号");
+//			$('#error_msg').show();
+//			return false;
+//		}
+//		if($('#f_pwd').val().length == 0){
+//			$('#f_pwd').focus();
+//			$('#error_msg').html("请输入登录密码");
+//			$('#error_msg').show();
+//			return false;
+//		}
+//    },
+//    success: function(html) {
+//    	if(html.length > 0){
+//    		$('#error_msg').hide();
+//    		$('#error_msg').html(html);
+//    		$('#error_msg').show();
+//    	}else{
+//			    		location.href="/home/go";
+//    	}
+//    }
+//});
 //-->
 </script></div>
 	<div id="OSC_Footer">© 赛斯特(WWW.SYSIT.ORG)</div>
