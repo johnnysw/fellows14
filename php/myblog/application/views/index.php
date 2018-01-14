@@ -71,6 +71,7 @@
 	<div class="clear"></div>
 </div>
 <div class="BlogList">
+
 <ul>
 
 	<?php foreach ($list as $article){?>
@@ -100,6 +101,9 @@
 
   <?php }?>
 </ul>
+
+	<?php echo $links?>
+
 <div class="clear"></div>
 	</div>
 <div class="BlogMenu"><div class="catalogs SpaceModule">

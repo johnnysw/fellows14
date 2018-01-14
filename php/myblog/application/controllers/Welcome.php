@@ -11,13 +11,28 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$results = $this->Article_model->get_article_list();
+		$this->load->library('pagination');
+		$total = $this->Article_model->get_count_article();
 
 
-		$user = $this->session->userdata('user');
+		$config['base_url'] = base_url().'welcome/index';//当前控制器方法
+		$config['total_rows'] = $total;//总数
+		$config['per_page'] = 1;//每页显示条数
+//
+//		$config['first_link'] = 'one';
+//
+//		$config['next_link'] = '**';
 
-		$types = $this->Article_model->get_article_type($user->user_id);
+		$this->pagination->initialize($config);
+		$links = $this->pagination->create_links();
 
-		$this->load->view('index',array('list'=>$results,'types'=>$types));
+
+
+		$results = $this->Article_model->get_article_list($this->uri->segment(3),$config['per_page']);
+
+
+		$types = $this->Article_model->get_article_type();
+
+		$this->load->view('index',array('list'=>$results,'types'=>$types,'links'=>$links));
 	}
 }
