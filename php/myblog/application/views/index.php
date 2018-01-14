@@ -34,7 +34,9 @@
         </ul>
     </div>
     <div class="clear"></div>
-</div><!-- #EndLibraryItem --><div id="OSC_Topbar">
+</div>
+	<!-- #EndLibraryItem -->
+	<div id="OSC_Topbar">
 	  <div id="VisitorInfo">
 		当前访客身份：
 		  	<?php
