@@ -67,4 +67,29 @@ class Welcome extends CI_Controller {
 
 		$this->load->view('newBlog',array('types'=>$types));
 	}
+
+	public function publish_blog(){
+
+		$title = $this->input->post('title');
+		$catalog = $this->input->post('catalog');
+		$content = $this->input->post('content');
+		$user = $this->session->userdata('user');
+		//获取user_id 和 当前时间
+
+
+		date_default_timezone_set('Asia/Shanghai');
+
+		$rows = $this->Article_model->publish_blog(array(
+			'title'=>$title,
+			'content'=>$content,
+			'post_date'=>date("Y-m-d h:m:s"),
+			'user_id'=>$user->user_id,
+			'type_id'=>$catalog
+		));
+
+		if($rows >0 ){
+			redirect('welcome/index_logined');
+		}
+
+	}
 }

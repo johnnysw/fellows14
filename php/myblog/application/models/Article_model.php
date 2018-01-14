@@ -26,6 +26,7 @@ class Article_model extends CI_Model
         $this->db->from('t_article a');
         $this->db->join('t_article_type t', 'a.type_id = t.type_id','left');
         $this->db->where('a.user_id',$user_id);
+        $this->db->order_by('a.article_id','desc');
         $this->db->limit($page_size, $offset);
         $query = $this->db->get();
 
@@ -77,6 +78,11 @@ class Article_model extends CI_Model
     public function get_type_by_user_id($user_id){
         $query = $this->db->get_where('t_article_type',array('user_id'=>$user_id));
         return $query->result();
+    }
+
+    public function publish_blog($article){
+        $this->db->insert('t_article',$article);
+        return $this->db->affected_rows();
     }
 
 }

@@ -87,7 +87,7 @@
 </div>
     <div id="AdminContent">
 <div class="MainForm">
-<form id="BlogForm" action="/action/blog/save?user=${g_user.id}" method="POST">
+<form id="BlogForm" action="welcome/publish_blog" method="POST">
 <input id="hdn_blog_id" name="draft" value="0" type="hidden">
   <table>
   <tbody><tr><td class="t">标题（必填）</td></tr>
