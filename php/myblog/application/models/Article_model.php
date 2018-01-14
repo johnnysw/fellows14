@@ -73,4 +73,10 @@ class Article_model extends CI_Model
         return $query->result();
 
     }
+
+    public function get_type_by_user_id($user_id){
+        $query = $this->db->get_where('t_article_type',array('user_id'=>$user_id));
+        return $query->result();
+    }
+
 }

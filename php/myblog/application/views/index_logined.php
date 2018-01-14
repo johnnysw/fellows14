@@ -58,7 +58,7 @@
 		<div class="clear"></div>
 	</div>
 	<div id="OSC_Content"><div class="SpaceChannel">
-	<div id="portrait"><a href="adminIndex.htm"><img src="images/portrait.gif" alt="Johnny" title="Johnny" class="SmallPortrait" user="154693" align="absmiddle"></a></div>
+	<div id="portrait"><a href="user/admin_index"><img src="images/portrait.gif" alt="Johnny" title="Johnny" class="SmallPortrait" user="154693" align="absmiddle"></a></div>
     <div id="lnks">
 		<strong>Johnny的博客</strong>
 		<div><a href="index_logined.htm">TA的博客列表</a>&nbsp;|
@@ -102,7 +102,7 @@
 <div class="BlogMenu"><div class="admin SpaceModule">
   <strong>博客管理</strong>
   <ul class="LinkLine">
-	<li><a href="newBlog.htm">发表博客</a></li>
+	<li><a href="welcome/new_blog">发表博客</a></li>
 			<li><a href="blogCatalogs.htm">博客分类管理</a></li>
 	<li><a href="blogs.htm">文章管理</a></li>
 	<li><a href="blogComments.htm">网友评论管理</a></li>

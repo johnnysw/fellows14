@@ -58,4 +58,13 @@ class Welcome extends CI_Controller {
 
 		$this->load->view('index',array('list'=>$results,'types'=>$types,'links'=>$links));
 	}
+
+	public function new_blog(){
+
+		$user = $this->session->userdata('user');
+		$types = $this->Article_model->get_type_by_user_id($user->user_id);
+
+
+		$this->load->view('newBlog',array('types'=>$types));
+	}
 }
