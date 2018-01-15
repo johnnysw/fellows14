@@ -92,4 +92,12 @@ class Article_model extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function edit_type($name,$type_id){
+        $this->db->where('type_id', $type_id);
+        $this->db->update('t_article_type', array(
+            "type_name" => $name,
+        ));
+        return $this->db->affected_rows();
+    }
+
 }

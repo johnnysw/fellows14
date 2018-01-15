@@ -90,6 +90,7 @@
     <h3> 添加博客分类 </h3>
     <div id="error_msg" class="error_msg" style="display:none;"></div>
     <label>分类名称:</label><input id="txt_link_name" name="name" size="15" tabindex="1" type="text">
+	<input type="hidden" id="type-id">
     <label>排序值:</label><input name="sort_order" value="0" size="3" type="text">
     <span class="submit">
           <input id='add-btn' value="添加&nbsp;»" tabindex="3" class="BUTTON SUBMIT" type="submit">
@@ -109,7 +110,7 @@
 	<?php foreach ($types as $index=>$type){?>
 	<tr id="catalog_92334">
 		<td class="idx"><?php echo $index+1?></td>
-		<td class="name"><?php echo $type->type_name?></td>
+		<td class="name" typeid="<?php echo $type->type_id?>"><?php echo $type->type_name?></td>
 		<td class="num"><?php echo $type->num?></td>
 		<td class="opts">
 			<a class="update-btn" href="javascript:;" title="点击修改博客分类">修改</a>
@@ -125,10 +126,11 @@
 
 	$('.update-btn').on('click',function(){
 		var txt = $(this).parents('tr').find('.name').text();
+		var type_id = $(this).parents('tr').find('.name').attr('typeid');
 		$('#txt_link_name').val(txt);
+		$('#type-id').val(type_id);
 		$('#edit-btn').show('fast');
 		$('#add-btn').hide('fast');
-
 	});
 
 	$('#add-btn').on('click',function(){
@@ -142,6 +144,23 @@
 		},'text');
 
 	});
+
+	$('#edit-btn').on('click',function(){
+		var name = $('#txt_link_name').val();
+		var type_id = $('#type-id').val();
+		$.get('welcome/edit_type',{
+			name:name,
+			typeId:type_id
+		},function(data){
+			if(data == 'success'){
+				location.href = 'welcome/blog_catalogs';
+			}
+		},'text');
+
+	});
+
+
+
 
 //$('#CatalogForm').ajaxForm({
 //    success: function(html) {

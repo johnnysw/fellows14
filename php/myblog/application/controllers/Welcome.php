@@ -108,4 +108,15 @@ class Welcome extends CI_Controller {
 			echo 'success';
 		}
 	}
+
+	public function edit_type(){
+		$name = $this->input->get('name');
+		$type_id = $this->input->get('typeId');
+		$rows = $this->Article_model->edit_type($name,$type_id);
+		if($rows >0){
+			echo 'success';
+		}
+
+
+	}
 }
