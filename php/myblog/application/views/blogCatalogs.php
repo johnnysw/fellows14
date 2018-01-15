@@ -114,7 +114,7 @@
 		<td class="num"><?php echo $type->num?></td>
 		<td class="opts">
 			<a class="update-btn" href="javascript:;" title="点击修改博客分类">修改</a>
-			<a href="#" onclick="return delete_catalog(154693,92334);">删除</a>
+			<a href="javascript:;" class="del-btn">删除</a>
 		</td>
 	</tr>
 	<?php }?>
@@ -159,6 +159,23 @@
 
 	});
 
+	$('.del-btn').on('click',function(){
+
+		if(confirm('确实要删除此博客分类吗？')){
+			var type_id = $(this).parents('tr').find('.name').attr('typeid');
+			$.get('welcome/del_type',{
+				typeId:type_id
+			},function(data){
+				if(data == 'fail'){
+					alert('这个分类不是你的!!!');
+				}
+				if(data == 'success'){
+					location.href = 'welcome/blog_catalogs';
+				}
+			},'text');
+		}
+
+	});
 
 
 

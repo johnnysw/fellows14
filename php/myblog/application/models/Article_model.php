@@ -100,4 +100,18 @@ class Article_model extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function del_type($type_id){
+
+        $this->db->delete('t_article_type', array('type_id' => $type_id));
+        return $this->db->affected_rows();
+    }
+
+    public function get_type_by_id_userid($user_id,$type_id){
+        $query = $this->db->get_where('t_article_type',array(
+            'user_id'=>$user_id,
+            'type_id'=>$type_id
+        ));
+        return $query->result();
+    }
+
 }
