@@ -133,7 +133,21 @@ class Welcome extends CI_Controller {
 				echo 'success';
 			}
 		}
+	}
+
+	public function blogs(){
+		$user = $this->session->userdata('user');
+		$result = $this->Article_model->get_blogs_by_user($user->user_id);
+
+		$this->load->view('blogs',array('result'=>$result));
+	}
 
 
+	public function del_article(){
+		$ids = $this->input->get('ids');
+		$rows = $this->Article_model->del_article_by_id($ids);
+		if($rows>0){
+			echo 'success';
+		}
 	}
 }

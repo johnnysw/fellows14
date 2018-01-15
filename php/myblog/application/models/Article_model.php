@@ -114,4 +114,14 @@ class Article_model extends CI_Model
         return $query->result();
     }
 
+    public function get_blogs_by_user($user_id){
+        $query = $this->db->get_where('t_article',array('user_id'=>$user_id));
+        return $query->result();
+    }
+
+    public function del_article_by_id($ids){
+        $this->db->where_in('article_id',$ids);
+        $this->db->delete('t_article');
+        return $this->db->affected_rows();
+    }
 }
