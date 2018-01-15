@@ -90,6 +90,22 @@ class Welcome extends CI_Controller {
 		if($rows >0 ){
 			redirect('welcome/index_logined');
 		}
+	}
 
+
+	public function blog_catalogs(){
+
+		$user = $this->session->userdata('user');
+		$types = $this->Article_model->get_logined_article_type($user->user_id);
+		$this->load->view('blogCatalogs',array('types'=>$types));
+	}
+
+	public function add_type(){
+		$name = $this->input->get('name');
+		$user = $this->session->userdata('user');
+		$rows = $this->Article_model->add_type($name,$user->user_id);
+		if($rows >0){
+			echo 'success';
+		}
 	}
 }

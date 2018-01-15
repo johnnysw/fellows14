@@ -63,12 +63,11 @@ class Article_model extends CI_Model
     }
 
     public function get_logined_article_type($user_id){
-        $sql ="select * from
-                 (select count(*) num,a.type_id
-                 from t_article a where a.user_id = $user_id
-                GROUP BY a.type_id) nt,
-                t_article_type t 
-                where t.type_id = nt.type_id";
+        $sql ="select *,(select count(*) from 
+            t_article a 
+            where a.type_id = t.type_id) num
+             from t_article_type t 
+            where t.user_id = $user_id";
 
         $query = $this->db->query($sql);
         return $query->result();
@@ -82,6 +81,14 @@ class Article_model extends CI_Model
 
     public function publish_blog($article){
         $this->db->insert('t_article',$article);
+        return $this->db->affected_rows();
+    }
+
+    public function add_type($name,$user_id){
+        $this->db->insert('t_article_type',array(
+            'type_name'=>$name,
+            'user_id'=>$user_id
+        ));
         return $this->db->affected_rows();
     }
 

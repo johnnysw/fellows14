@@ -78,7 +78,7 @@
 	<li class="caption">博客管理	
 		<ol>
 			<li class="current"><a href="newBlog.htm">发表博客</a></li>
-			<li><a href="blogCatalogs.htm">博客设置/分类管理</a></li>
+			<li><a href="welcome/blog_catalogs">博客设置/分类管理</a></li>
 			<li><a href="blogs.htm">文章管理</a></li>
 			<li><a href="blogComments.htm">博客评论管理</a></li>
 		</ol>
