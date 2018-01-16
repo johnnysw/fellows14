@@ -104,23 +104,14 @@
 			<ul id="BlogComments">
 	<?php foreach ($comments as $comment){?>
 	<li id='cmt_24027_154693_261665734'>
-
 	<div class='portrait'>
-
 		<a href="#"><img src="assets/images//portrait.gif" align="absmiddle" alt="sw0411" title="sw0411" class="SmallPortrait" user="154693"/></a>
-
 	</div>
-
 	<div class='body'>
-
 		<div class='title'>
-
 			<?php echo $comment->username?> 发表于 <?php echo $comment->post_date?></div>
-
 		<div class='post'><?php echo $comment->content?></div>
-
 		<div id='inline_reply_of_24027_154693_261665734' class='inline_reply'></div>
-
     </div>
 
 	<div class='clear'></div>
@@ -132,8 +123,9 @@
 		  </div>  
   <div class="CommentForm">
     <a name="postform"></a>
-    <form id="form_comment" action="/action/blog/add_comment?blog=24026" method="POST">          
-      <textarea id="ta_post_content" name="content" style="width: 450px; height: 100px;"></textarea><br>
+    <form id="form_comment" action="" onsubmit="return false;" method="POST">
+		<input type="hidden" id='article-id' value="<?php echo $article->article_id?>">
+		<textarea id="ta_post_content" name="content" style="width: 450px; height: 100px;"></textarea><br>
 	  <input value="发表评论" id="btn_comment" class="SUBMIT" type="submit"> 
 	  <img id="submiting" style="display: none;" src="images/loading.gif" align="absmiddle">
 	  <span id="cmt_tip">文明上网，理性发言</span>
@@ -152,29 +144,57 @@
 
 </div>
 <div class="clear"></div>
-
-<div id="inline_reply_editor" style="display:none;">
-<div class="CommentForm">
-	<form id="form_inline_comment" action="/action/blog/add_comment?blog=24026" method="POST">
-	  <input id="inline_reply_id" name="reply_id" value="" type="hidden">          
-      <textarea name="content" style="width: 450px; height: 60px;"></textarea><br>
-	  <input value="回复" id="btn_comment" class="SUBMIT" type="submit"> 
-	  <input value="关闭" class="SUBMIT" id="btn_close_inline_reply" type="button"> 文明上网，理性发言
-    </form>
-</div>
-</div>
 <script type="text/javascript" src="js/blog.htm" defer="defer"></script>
 <script type="text/javascript" src="js/brush.js"></script>
 <link type="text/css" rel="stylesheet" href="css/shCore.css">
 <link type="text/css" rel="stylesheet" href="css/shThemeDefault.css">
 <script type="text/javascript">
-<!--
-function delete_blog(blog_id){
-if(!confirm("文章删除后无法恢复，请确认是否删除此篇文章？")) return;
-ajax_post("/action/blog/delete?id="+blog_id,"",function(html){
-	location.href="index.htm";
-});
-}
+
+	$('#btn_comment').on('click',function(){
+		var content = $('#ta_post_content').val();
+		var articleId = $('#article-id').val();
+
+		$.get('welcome/add_comment',{
+			content:content,
+			articleId:articleId
+		},function(data){
+			if(data == 'success'){
+//				location.href = 'welcome/blog_detail?id='+articleId;
+
+			$('#BlogComments').append(`
+
+				<li id='cmt_24027_154693_261665734'>
+					<div class='portrait'>
+						<a href="#"><img src="assets/images//portrait.gif" align="absmiddle" alt="sw0411" title="sw0411" class="SmallPortrait" user="154693"/></a>
+					</div>
+					<div class='body'>
+						<div class='title'>
+							<?php echo $user->username?> 发表于 <?php echo date("Y-m-d h:m:s")?></div>
+						<div class='post'>${content}</div>
+						<div id='inline_reply_of_24027_154693_261665734' class='inline_reply'></div>
+					</div>
+
+					<div class='clear'></div>
+
+				</li>
+
+			`)
+				$('#ta_post_content').val('');
+
+			}
+		},'text');
+
+	});
+
+
+
+//<!--
+//function delete_blog(blog_id){
+//if(!confirm("文章删除后无法恢复，请确认是否删除此篇文章？")) return;
+//ajax_post("/action/blog/delete?id="+blog_id,"",function(html){
+//	location.href="index.htm";
+//});
+//}
 //-->
 </script>
 </div>

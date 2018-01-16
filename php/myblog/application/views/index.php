@@ -61,7 +61,7 @@
 		<div class="clear"></div>
 	</div>
 	<div id="OSC_Content"><div class="SpaceChannel">
-	<div id="portrait"><a href="adminIndex.htm"><img src="assets/images/portrait.gif" alt="Johnny" title="Johnny" class="SmallPortrait" user="154693" align="absmiddle"></a></div>
+	<div id="portrait"><a href="user/admin_index"><img src="assets/images/portrait.gif" alt="Johnny" title="Johnny" class="SmallPortrait" user="154693" align="absmiddle"></a></div>
     <div id="lnks">
 		<strong>Johnny的博客</strong>
 		<div>

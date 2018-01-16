@@ -7,6 +7,8 @@
       <link rel="stylesheet" href="assets/css/space2011.css" type="text/css" media="screen">
   <link rel="stylesheet" type="text/css" href="assets/css/jquery.css" media="screen">
   <script type="text/javascript" src="assets/js/jquery-1.11.2.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.js"></script>
+  <script type="text/javascript" src="assets/js/jquery_002.js"></script>
   <script type="text/javascript" src="assets/js/oschina.js"></script>
   <style type="text/css">
     body,table,input,textarea,select {font-family:Verdana,sans-serif,宋体;}	
@@ -60,7 +62,7 @@
 	<div id="OSC_Content">
 <div id="AdminScreen">
     <div id="AdminPath">
-        <a href="welcome/index_logined">返回我的首页</a>&nbsp;»
+        <a href="index_logined.htm">返回我的首页</a>&nbsp;»
     	<span id="AdminTitle">管理首页</span>
     </div>
     <div id="AdminMenu"><ul>
@@ -76,16 +78,59 @@
 <ul>
 	<li class="caption">博客管理	
 		<ol>
-			<li><a href="welcome/new_blog">发表博客</a></li>
-			<li><a href="welcome/blog_catalogs">博客设置/分类管理</a></li>
-			<li><a href="welcome/blogs">文章管理</a></li>
-			<li><a href="welcome/blog_comments">博客评论管理</a></li>
+			<li><a href="newBlog.htm">发表博客</a></li>
+			<li><a href="blogCatalogs.htm">博客设置/分类管理</a></li>
+			<li><a href="blogs.htm">文章管理</a></li>
+			<li class="current"><a href="welcome/blog_comments">博客评论管理</a></li>
 		</ol>
 	</li>
 </ul>
 </div>
     <div id="AdminContent">
-<p style="margin-top:150px;text-align:center;color:#666;">欢迎来到个人空间管理页面，请从左边菜单中选择</p></div>
+<div class="MainForm BlogCommentManage">
+  <h3>共有 3 篇博客评论，每页显示 20 个，共 1 页</h3>
+  <ul>
+	  <?php foreach ($result as $aa){?>
+		<li id="cmt_24027_154693_261665734" class="row_1">
+		<span class="portrait"><a href="#" target="_blank"><img src="assets/images/portrait.gif" alt="Johnny" title="Johnny" class="SmallPortrait" user="154693" align="absmiddle"></a></span>
+		<span class="comment">
+		<div class="user"><b><?php echo $aa->username?></b> 评论了 <a href="welcome/blog_detail?id=<?php echo $aa->article_id?>" target="_blank"><?php echo $aa->title?></a></div>
+		<div class="content"><p><?php echo $aa->content?></p></div>
+		<div class="opts">
+			<span style="float:right;">
+			<a href="javascript:delete_c_by_id(24027,154693,261665734)">删除</a> |
+			<a href="javascript:delete_c_by_user(154693)">删除此人所有评论</a>
+			</span>
+			<?php echo $aa->post_date?>
+		</div>
+		</span>
+		<div class="clear"></div>
+	</li>
+		<?php }?>
+	  </ul>
+</div>
+<script type="text/javascript">
+<!--
+function delete_c_by_id(nid,uid,cid){
+  if(confirm("您确认要删除此篇评论？")){
+    var args = "cmt="+cid+"#"+uid+"#"+nid;
+    ajax_post("/action/blog/delete_blog_comments?space=154693",args,function(){$("#cmt_"+nid+"_"+uid+"_"+cid).fadeOut();});
+  }
+}
+function delete_c_by_user(uid){
+  if(confirm("您确认要删除此人发表的所有评论？")){
+    var args = "user="+uid;
+    ajax_post("/action/blog/delete_blog_comments_by_user?space=154693",args,function(){location.reload();});
+  }
+}
+function delete_c_by_ip(ip){
+  if(confirm("您确认要删除来自IP地址："+ip+"发表的所有评论？")){
+    var args = "ip="+ip;
+    ajax_post("/action/blog/delete_blog_comments_by_ip?space=154693",args,function(){location.reload();});
+  }
+}
+//-->
+</script></div>
 	<div class="clear"></div>
 </div>
 <script type="text/javascript">
@@ -128,7 +173,7 @@ $('.AutoCommitJSONForm').ajaxForm({
 	<div class="clear"></div>
 	<div id="OSC_Footer">© 赛斯特(WWW.SYSIT.ORG)</div>
 </div>
-<script type="text/javascript" src="assets/js/space.htm" defer="defer"></script>
+<script type="text/javascript" src="js/space.htm" defer="defer"></script>
 <script type="text/javascript">
 <!--
 $(document).ready(function() {

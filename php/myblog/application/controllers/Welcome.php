@@ -185,6 +185,39 @@ class Welcome extends CI_Controller {
 	}
 
 
+	public function add_comment(){
+		$content = $this->input->get('content');
+		$article_id = $this->input->get('articleId');
+		$user = $this->session->userdata('user');
+
+		$rows = $this->Article_model->add_comment(array(
+			'content'=>$content,
+			'user_id'=>$user->user_id,
+			'post_date'=>date("Y-m-d h:m:s"),
+			'article_id'=>$article_id
+		));
+
+		if($rows >0){
+			echo 'success';
+		}
+	}
+
+	public function blog_comments(){
+
+		$user = $this->session->userdata('user');
+		$result = $this->Article_model->blog_comments($user->user_id);
+
+		$this->load->view('blogComments',array(
+			'result'=>$result
+		));
+	}
+
+
+
+
+
+
+
 	function time_tran($the_time)
 	{
 		$now_time = date("Y-m-d H:i:s", time() + 8 * 60 * 60);
