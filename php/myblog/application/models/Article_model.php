@@ -14,6 +14,7 @@ class Article_model extends CI_Model
         $this->db->from('t_article a');
         $this->db->join('t_article_type t', 'a.type_id = t.type_id','left');
         $this->db->limit($page_size, $offset);
+        $this->db->order_by('a.article_id','desc');
         $query = $this->db->get();
 
 //        $query = $this->db->query($sql);
@@ -39,10 +40,10 @@ class Article_model extends CI_Model
         return $this->db->count_all('t_article');
     }
 
-    public function get_logined_count_article($user_id){
+    public function get_logined_count_article(){
 
 
-        $query = $this->db->get_where('t_article',array('user_id'=>$user_id));
+        $query = $this->db->get('t_article');
 
         return count($query->result());
 //        return $this->db->count_all('t_article');
@@ -138,5 +139,9 @@ class Article_model extends CI_Model
         $this->db->join('t_user u','c.user_id=u.user_id');
         $this->db->where('c.article_id',$id);
         return $this->db->get()->result();
+    }
+
+    public function get_article_list_all(){
+        return $this->db->get('t_article')->result();
     }
 }

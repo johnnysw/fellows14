@@ -89,7 +89,15 @@
   <div class="BlogContent TextContent"><?php echo $article->content?></div>
       <div class="BlogLinks">
 	<ul>
-          <li>上篇 <span>(1小时前)</span>：<a href="viewPost_logined.htm" class="prev">测试文章2</a></li>            	</ul>
+		<?php if(isset($prev)){ ?>
+        	<li>上篇 <span>(1小时前)</span>：<a href="welcome/blog_detail?id=<?php echo $prev->article_id?>" class="prev"><?php echo $prev->title?></a></li>
+		<?php }?>
+
+		<?php if(isset($next)){ ?>
+		<li>下篇 <span>(1小时前)</span>：<a href="welcome/blog_detail?id=<?php echo $next->article_id?>" class="prev"><?php echo $next->title?></a></li>
+		<?php }?>
+
+	</ul>
   </div>
     <div class="BlogComments">
     <h2><a name="comments" href="#postform" class="opts">发表评论»</a>共有 <?php echo count($comments)?> 条网友评论</h2>

@@ -15,7 +15,7 @@ class Welcome extends CI_Controller {
 
 		$user = $this->session->userdata('user');
 
-		$total = $this->Article_model->get_logined_count_article($user->user_id);
+		$total = $this->Article_model->get_logined_count_article();
 
 
 		$config['base_url'] = base_url().'welcome/index_logined';//当前控制器方法
@@ -25,7 +25,7 @@ class Welcome extends CI_Controller {
 		$this->pagination->initialize($config);
 		$links = $this->pagination->create_links();
 
-		$results = $this->Article_model->get_logined_article_list($this->uri->segment(3),$config['per_page'],$user->user_id);
+		$results = $this->Article_model->get_article_list($this->uri->segment(3),$config['per_page']);
 
 		$types = $this->Article_model->get_logined_article_type($user->user_id);
 
@@ -154,17 +154,33 @@ class Welcome extends CI_Controller {
 	public function blog_detail(){
 		$id = $this->input->get('id');
 		$row = $this->Article_model->get_article_by_id($id);
-
-
 		$date_str = $this->time_tran($row->post_date);
 
 		$row->post_date = $date_str;
 
 		$comments = $this->Article_model->get_comment_by_article_id($id);
 
+		//查询上一篇和下一篇文章
+
+		//全部的文章
+		$result = $this->Article_model->get_article_list_all();
+		$next_article = null;
+		$prev_article = null;
+		foreach($result as $index=>$article){
+			if($article->article_id == $id){
+				if($index >0){
+					$prev_article = $result[$index-1];
+				}
+				if($index < count($result) - 1){
+					$next_article = $result[$index+1];
+				}
+			}
+		}
 		$this->load->view('viewPost_comment',array(
 			'article'=>$row,
-			'comments'=>$comments
+			'comments'=>$comments,
+			'next'=>$next_article,
+			'prev'=>$prev_article
 		));
 	}
 
