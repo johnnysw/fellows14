@@ -63,7 +63,7 @@
 	<div id="OSC_Content">
 <div id="AdminScreen">
     <div id="AdminPath">
-        <a href="index_logined.htm">返回我的首页</a>&nbsp;»
+        <a href="welcome/index_logined">返回我的首页</a>&nbsp;»
     	<span id="AdminTitle">博客文章管理</span>
     </div>
     <div id="AdminMenu"><ul>
@@ -79,9 +79,9 @@
 <ul>
 	<li class="caption">博客管理	
 		<ol>
-			<li><a href="newBlog.htm">发表博客</a></li>
-			<li><a href="blogCatalogs.htm">博客设置/分类管理</a></li>
-			<li class="current"><a href="blogs.htm">文章管理</a></li>
+			<li><a href="welcome/new_blog">发表博客</a></li>
+			<li><a href="welcome/blog_catalogs">博客设置/分类管理</a></li>
+			<li class="current"><a href="welcome/blogs">文章管理</a></li>
 			<li><a href="blogComments.htm">博客评论管理</a></li>
 		</ol>
 	</li>
@@ -126,10 +126,10 @@
 
 
 function select_all(){
-	$("input[name='blog']").attr("checked", true);
+	$("input[name='blog']").prop("checked", true);
 }
 function unselect_all(){
-	$("input[name='blog']").attr("checked", false); 
+	$("input[name='blog']").prop("checked", false);
 }
 function select_other(){
 	jQuery.each($("input[name='blog']"), function(i, n){

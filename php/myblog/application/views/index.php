@@ -79,7 +79,7 @@
 	<?php foreach ($list as $article){?>
   <li class='Blog' id='blog_24027'>
 
-	<h2 class='BlogAccess_true BlogTop_0'><a href="viewPost_comment.htm"><?php echo $article->title?></a></h2>
+	<h2 class='BlogAccess_true BlogTop_0'><a href="welcome/blog_detail?id=<?php echo $article->article_id?>"><?php echo $article->title?></a></h2>
 
 	<div class='outline'>
 
@@ -95,7 +95,7 @@
 
 			<?php echo $article->content?>
 
-		<div class='fullcontent'><a href="viewPost_comment.htm">阅读全文...</a></div>
+		<div class='fullcontent'><a href="welcome/blog_detail?id=<?php echo $article->article_id?>">阅读全文...</a></div>
 
 			</div>
 

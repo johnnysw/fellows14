@@ -25,7 +25,7 @@ class Article_model extends CI_Model
         $this->db->select('*');
         $this->db->from('t_article a');
         $this->db->join('t_article_type t', 'a.type_id = t.type_id','left');
-        $this->db->where('a.user_id',$user_id);
+//        $this->db->where('a.user_id',$user_id);
         $this->db->order_by('a.article_id','desc');
         $this->db->limit($page_size, $offset);
         $query = $this->db->get();
@@ -123,5 +123,20 @@ class Article_model extends CI_Model
         $this->db->where_in('article_id',$ids);
         $this->db->delete('t_article');
         return $this->db->affected_rows();
+    }
+
+    public function get_article_by_id($id){
+        $query = $this->db->get_where('t_article',array('article_id'=>$id));
+        return $query->row();
+    }
+
+    public function get_comment_by_article_id($id){
+//        $query = $this->db->get_where('t_comment',array('article_id'=>$id));
+
+        $this->db->select('*');
+        $this->db->from('t_comment c');
+        $this->db->join('t_user u','c.user_id=u.user_id');
+        $this->db->where('c.article_id',$id);
+        return $this->db->get()->result();
     }
 }

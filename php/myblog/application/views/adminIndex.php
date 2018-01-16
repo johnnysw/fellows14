@@ -60,7 +60,7 @@
 	<div id="OSC_Content">
 <div id="AdminScreen">
     <div id="AdminPath">
-        <a href="index_logined.htm">返回我的首页</a>&nbsp;»
+        <a href="welcome/index_logined">返回我的首页</a>&nbsp;»
     	<span id="AdminTitle">管理首页</span>
     </div>
     <div id="AdminMenu"><ul>
