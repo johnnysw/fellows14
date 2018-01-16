@@ -45,7 +45,7 @@
 				游客 [ <a href="user/login">登录</a> | <a href="user/reg">注册</a> ]
 			<?php }?>
 			<span id="OSC_Notification">
-			<a href="inbox.htm" class="msgbox" title="进入我的留言箱">你有<em>0</em>新留言</a>
+			<a href="inbox.htm" class="msgbox" title="进入我的留言箱">你有<em><?php echo $count;?></em>新留言</a>
 					</span>
 		</div>
 		<div id="SearchBar">

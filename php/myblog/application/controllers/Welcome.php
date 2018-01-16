@@ -7,16 +7,14 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Article_model');
+		$this->load->model('User_model');
 	}
 
 	public function index_logined(){
 
 		$this->load->library('pagination');
-
 		$user = $this->session->userdata('user');
-
 		$total = $this->Article_model->get_logined_count_article();
-
 
 		$config['base_url'] = base_url().'welcome/index_logined';//当前控制器方法
 		$config['total_rows'] = $total;//总数
@@ -29,7 +27,17 @@ class Welcome extends CI_Controller {
 
 		$types = $this->Article_model->get_logined_article_type($user->user_id);
 
-		$this->load->view('index_logined',array('list'=>$results,'types'=>$types,'links'=>$links));
+
+		$msg_count = $this->Article_model->get_msg_count($user->user_id);
+
+
+
+		$this->load->view('index_logined',array(
+			'list'=>$results,
+			'types'=>$types,
+			'links'=>$links,
+			'count'=>$msg_count
+		));
 	}
 
 	public function index()
@@ -212,7 +220,31 @@ class Welcome extends CI_Controller {
 		));
 	}
 
+	public function send_msg(){
 
+		$id = $this->input->get('id');
+		$user = $this->User_model->get_user_by_id($id);
+
+		$this->load->view("sendMsg",array('autor'=>$user));
+
+	}
+	public function send_msg_ok(){
+		$id = $this->input->post('autorId');
+		$content = $this->input->post('content');
+		$user = $this->session->userdata('user');
+
+		$rows = $this->Article_model->add_msg(array(
+			'content'=>$content,
+			'sender'=>$user->user_id,
+			'post_date'=>date("Y-m-d h:m:s"),
+			'receiver'=>$id
+		));
+
+		if($rows >0){
+			redirect("welcome/index_logined");
+		}
+
+	}
 
 
 
@@ -246,4 +278,12 @@ class Welcome extends CI_Controller {
 			}
 		}
 	}
+	
+
+// select * from t_message m,t_user u where m.sender =u.user_id and m.receiver = 53
+//
+// update t_message set is_read = 1 where receiver = 53
+//
+// select * from t_article where title like '%钢铁%' or content like '%钢铁%'
+
 }

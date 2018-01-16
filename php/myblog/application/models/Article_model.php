@@ -127,8 +127,11 @@ class Article_model extends CI_Model
     }
 
     public function get_article_by_id($id){
-        $query = $this->db->get_where('t_article',array('article_id'=>$id));
-        return $query->row();
+        $this->db->select('*');
+        $this->db->from('t_article a');
+        $this->db->join('t_user u','a.user_id=u.user_id');
+        $this->db->where('a.article_id',$id);
+        return $this->db->get()->row();
     }
 
     public function get_comment_by_article_id($id){
@@ -161,5 +164,16 @@ class Article_model extends CI_Model
             and a.user_id = $user_id";
 
         return $this->db->query($sql)->result();
+    }
+
+    public function add_msg($msg){
+        $this->db->insert('t_message',$msg);
+        return $this->db->affected_rows();
+    }
+
+    public function get_msg_count($user_id){
+
+        $query = $this->db->get_where('t_message',array('receiver'=>$user_id,'is_read'=>0));
+        return count($query->result());
     }
 }
