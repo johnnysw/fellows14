@@ -1,0 +1,8 @@
+node是一个平台
+
+1 http服务器
+2 js运行（编译）环境
+3 API
+
+
+node + java
