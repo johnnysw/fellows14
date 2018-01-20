@@ -13,6 +13,21 @@ router.get('/login', function(req, res, next) {
     res.render('login');
 });
 
+router.get('/reg', function(req, res, next) {
+    res.render('regist');
+});
+
+router.get('/regist', function(req, res, next) {
+    var uname = req.query.name;
+    var pwd = req.query.pwd;
+    var pwd2 = req.query.pwd2;
+    if(pwd != pwd2){
+        res.send('pwd-error');
+    }else{
+        res.send('success');
+    }
+});
+
 router.post('/login', function(req, res, next) {
     var uname = req.body.uname;
     var pwd = req.body.pwd;

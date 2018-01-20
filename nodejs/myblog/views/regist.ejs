@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <form action="reg" onsubmit="return false;">
+    <div>用户名：<input type="text" id="name" name="uname"></div>
+    <div>密  码：<input type="password" id="pwd1" name="pwd"></div>
+    <div>确认密码：<input type="password" id="pwd2" name="pwd2"></div>
+    <div><input type="submit" id="btn"></div>
+  </form>
+  <script src="/javascripts/jquery-1.11.2.js"></script>
+  <script>
+    $(function(){
+
+        $('#btn').on('click',function(){
+            var name = $('#name').val();
+            var p1 = $('#pwd1').val();
+            var p2 = $('#pwd2').val();
+            $.get('regist',{
+                name:name,
+                pwd:p1,
+                pwd2:p2
+            },function(data){
+              if(data =='pwd-error'){
+                  $('#pwd2').after("<span>密码不一致</span>");
+              }else{
+                  $('#pwd2').after("<span>success</span>");
+              }
+            },"text");
+
+
+        });
+
+    });
+
+
+  </script>
+  </body>
+</html>
