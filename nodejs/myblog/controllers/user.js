@@ -2,13 +2,31 @@
  * Created by apple on 18/1/20.
  */
 var userModel = require("../models/userModel");
+var blogModel = require("../models/blogModel");
 
 exports.login =function(req,res){
     res.render('login');
 };
 
 exports.index =function(req,res){
-    res.render('index');
+
+        blogModel.getBlogs(function(blogs){
+           if(blogs.length > 0){
+               blogModel.getTypes(function(types){
+                   res.render('index',{
+                       name:req.session.loginUser,
+                       blogs:blogs,
+                       types:types
+                   });
+               });
+           }else{
+               res.render('error');
+           }
+        })
+
+
+
+
 };
 exports.reg =function(req,res){
     res.render('regist');
@@ -32,9 +50,7 @@ exports.checkLogin = function (req,res) {
     userModel.getUserByNameAndPwd(name,pwd,function(results){
         if(results.length > 0){
             req.session.loginUser = results[0];
-            res.render('index',{
-                name:name
-            });
+            res.redirect('/');
         }else{
             res.redirect('/login');
         }

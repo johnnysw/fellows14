@@ -5,6 +5,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <p>欢迎 <%= name%></p>
+    <p>欢迎 <%= name?name.username:'游客'%></p>
+    <ul>
+      <% for(var i=0;i<blogs.length;i++){%>
+      <li><%=blogs[i].title%></li>
+      <%}%>
+    </ul>
+    <hr>
+    <ul>
+        <% for(var i=0;i<types.length;i++){%>
+      <li><%=types[i].type_name%></li>
+        <%}%>
+    </ul>
   </body>
 </html>
