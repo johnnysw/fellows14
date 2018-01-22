@@ -6,7 +6,9 @@ exports.regist = function(uname,pwd,callback){
     var sql = `insert into t_user(username,password) values('${uname}','${pwd}')`;
     db.query(sql,callback);
 }
-exports.getUser = function(){
-
+exports.getUserByNameAndPwd = function(name,pwd,callback){
+    // var sql = `select * from t_user where username='${name}' and password = '${pwd}')`;
+    var sql = "select * from t_user where email='"+name+"' and password = '"+pwd+"'";
+    db.query(sql,callback);
 }
 

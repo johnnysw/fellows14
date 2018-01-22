@@ -6,8 +6,12 @@ var router = express.Router();
 
 router.get('/login', user.login);
 
+router.post('/login', user.checkLogin);
+
 router.get('/reg', user.reg);
 
 router.get('/regist', user.regist);
+
+router.get('/',user.index);
 
 module.exports = router;
