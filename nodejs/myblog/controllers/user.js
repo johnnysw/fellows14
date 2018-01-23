@@ -59,4 +59,14 @@ exports.checkLogin = function (req,res) {
 
 }
 
+// header('Access-Control-Allow-Origin:* ');
+// header('Access-Control-Allow-Headers: X-Requested-With, Content-Type');
+
+// var cors=require("cors");
+// app.use(cors({
+//     origin:['http://localhost:8080'],
+//     methods:['GET','POST'],
+//     alloweHeaders:['Conten-Type', 'Authorization']
+// }));
+
 
