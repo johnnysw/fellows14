@@ -10,12 +10,23 @@ import MovieTop250 from '@/components/movie/MovieTop250'
 import Albums from '@/components/music/musicList'
 import Player from '@/components/music/MusicPlayer'
 import PhotoDetail from '@/components/photo/PhotoDetail'
+import Login from '@/components/welcome/Login'
+import Index from '@/components/welcome/Index'
+
 // import CommonFooter from '@/components/common/CommonFooter'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path     : '/login',
+      component: Login
+    },
+    {
+      path     : '/index',
+      component: Index
+    },
     {
       path: '/',
       // component: 
@@ -49,7 +60,7 @@ export default new Router({
       component: Photo
     },
     {
-      path     : '/photo/detail/:index',
+      path     : '/photo_detail/:index',
       component: PhotoDetail
     }
   ]
