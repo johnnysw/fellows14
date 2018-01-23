@@ -31,6 +31,11 @@ class User_model extends CI_Model
         return $query->result();
     }
 
+    public function get_user_by_email_and_pwd($email,$pwd){
+        $query = $this->db->get_where('t_user', array('email' => $email,'password'=>$pwd));
+        return $query->row();
+    }
+
     public function update($id,$name){
         $this->db->where('id', $id);
         $this->db->update('t_user', array(

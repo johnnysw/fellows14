@@ -10,6 +10,39 @@ class Welcome extends CI_Controller {
 		$this->load->model('User_model');
 	}
 
+	public function vue_login(){
+
+		header('Access-Control-Allow-Origin:* ');
+ 		header('Access-Control-Allow-Headers: X-Requested-With, Content-Type');
+		$name = $this->input->get('username');
+		$pwd = $this->input->get('pwd');
+
+		$user = $this->User_model->get_user_by_email_and_pwd($name,$pwd);
+
+		$this->session->set_userdata(array(
+			"user" => $user
+		));
+
+		echo json_encode($user);
+
+	}
+
+	public function vue_index(){
+		header('Access-Control-Allow-Origin:* ');
+		header('Access-Control-Allow-Headers: X-Requested-With, Content-Type');
+
+		$user = $this->session->userdata('user');
+
+		echo json_encode($user);
+	}
+
+
+
+
+
+
+
+
 	public function index_logined(){
 
 		$this->load->library('pagination');
@@ -278,7 +311,7 @@ class Welcome extends CI_Controller {
 			}
 		}
 	}
-	
+
 
 // select * from t_message m,t_user u where m.sender =u.user_id and m.receiver = 53
 //
